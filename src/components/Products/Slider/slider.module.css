@@ -1,0 +1,118 @@
+.container{
+  width: 80%; 
+  margin: auto;
+  margin-top: 20px;
+  margin-right: 2%;
+  cursor: pointer;
+}
+.card {
+    width: 25%;
+    border-radius: 5px;
+    flex-direction: row;
+    text-align: center;
+    font-weight: bold;
+  }
+  .container2{
+    width: 80%; 
+    margin: auto;
+    height: 280px;
+    margin-top: 0px;
+    margin-right: 2%;
+    border-left: 20px solid #eaeaea;
+    border-right: 20px solid #eaeaea;
+    border-bottom: 10px solid #eaeaea;
+  }
+  .innerContainer{
+  
+    width: 80%;
+    margin: auto;
+  }
+  .bankcontainer{
+    width: 80%; 
+    margin: auto;
+    margin-right: 2%;
+  }
+  .clothing{
+    width: 81%; 
+    margin: auto;
+    margin-right: 1%;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    column-gap: 20px;
+    text-align: center;
+  }
+  .clothing>div{
+    cursor: pointer;
+  }
+  .clothing>div>h1{
+    font-weight: bold;
+  }
+  .clothingHeading{
+    width: 100%; 
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+  }
+.trendyFashion{
+  width: 80%; 
+  margin: auto;
+  margin-right: 1%;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  /* column-gap: 20px; */
+  text-align: center;
+}
+.trendyFashion>div{
+  cursor: pointer;
+}
+.bandg{
+  width: 82%; 
+  margin: auto;
+  margin-right: 1%;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  /* column-gap: 20px; */
+  text-align: center;
+}
+.bandg>div{
+  cursor: pointer;
+}
+.brandsHeading{
+    width: 100%; 
+    margin: auto;
+    margin-top: 10px;
+    /* text-align: center; */
+    font-size: 25px;
+    font-weight: bold;
+}
+.brandsborder{
+  width: 80%; 
+  margin: auto;
+  /* height: 280px; */
+  margin-top: 0px;
+  margin-right: 2%;
+  border-left: 20px solid #eaeaea;
+  border-right: 20px solid #eaeaea;
+  border-bottom: 10px solid #eaeaea; 
+  border-top: 10px solid #eaeaea; 
+  padding: 10px;
+  padding-bottom: 20px;
+}
+.brandsfashion{
+  width: 100%; 
+  margin: auto;
+  margin-right: 5%;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  gap: 25px;
+  text-align: center;
+}
+.brandsfashion>div{
+  cursor: pointer;
+}

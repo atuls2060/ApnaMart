@@ -2,9 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
+    unoptimized:true,
     remotePatterns:[{
       protocol:"https",
-      hostname:"firebasestorage.googleapis.com",
+      hostname:"m.media-amazon.com",
       port:"",
       pathname:"**"
     }]
