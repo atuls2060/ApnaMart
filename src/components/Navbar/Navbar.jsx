@@ -60,11 +60,13 @@ export const NavbarTop = () => {
         />
         <Text>EN</Text>
       </HStack>
-      <Box>
-        <Text fontSize="12px">Hello, sign in</Text>
-        <Heading size="xs">Account & Lists</Heading>
-      </Box>
-      <Link  href="/products/1">
+      <Link href="/login">
+        <Box>
+          <Text fontSize="12px">Hello, sign in</Text>
+          <Heading size="xs">Account & Lists</Heading>
+        </Box>
+      </Link>
+      <Link href="/products/1">
         <Box>
           <Text fontSize="12px">Returns</Text>
           <Heading size="xs">& Orders</Heading>
