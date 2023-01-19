@@ -1,19 +1,36 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card, CardBody, Container, FormControl, FormLabel, Heading, Input, Button, Text, HStack, Divider, Checkbox } from '@chakra-ui/react'
 import Link from 'next/link'
+import { loginUser } from '@/redux/auth/auth.action'
+import { useDispatch, useSelector } from 'react-redux'
+import { useRouter } from 'next/router'
 
 const LoginPage = () => {
     const [email, setEmail] = useState("")
     const [password, setPasseord] = useState("")
     const [toggleView, setToggleView] = useState(true)
 
-    const onSubmit = () => {
+    const dispatch = useDispatch()
+    const { data: { isAuthenticated } } = useSelector((store) => store.authManager)
+    const router = useRouter()
 
+    const handleSubmit = () => {
+        if (!email || !password) {
+            alert("All field required")
+            return
+        }
+        dispatch(loginUser({ email, password }))
     }
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            router.replace("/")
+        }
+    }, [isAuthenticated])
 
     return (
         toggleView ? <EmailView toggleView={setToggleView} email={email} onChange={(value) => setEmail(value)} />
-            : <PasswordView toggleView={setToggleView} email={email} password={password} onChange={(value) => setPasseord(value)} />
+            : <PasswordView onSubmit={handleSubmit} toggleView={setToggleView} email={email} password={password} onChange={(value) => setPasseord(value)} />
     )
 }
 
@@ -61,7 +78,7 @@ const EmailView = ({ toggleView, email, onChange }) => {
             </Button></Link>
     </Container>
 }
-const PasswordView = ({ toggleView, email, password, onChange }) => {
+const PasswordView = ({ toggleView, email, password, onChange, onSubmit }) => {
     return <Container mt="20px">
         <Card border="1px solid #e4e4e4">
             <CardBody>
@@ -86,6 +103,7 @@ const PasswordView = ({ toggleView, email, password, onChange }) => {
                     _hover={{
                         bg: "#EFBE42"
                     }}
+                    onClick={onSubmit}
                 >
                     Continue
                 </Button>

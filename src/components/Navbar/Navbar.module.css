@@ -1,0 +1,13 @@
+.nav_link_arrow{
+    position: absolute;
+    left: 50%;
+    bottom: -7px;
+    transform: rotate(45deg);
+    background-color: white;
+    width: 13px;
+    height: 13px;
+    border: 1px solid gray;
+    z-index: 2;
+    border-bottom-color: white;
+    border-right-color: white;
+}

@@ -1,16 +1,22 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
+import Styles from "./Navbar.module.css"
 
 import { Box, Text, Heading, HStack, Input, InputGroup, InputLeftElement, InputRightElement } from '@chakra-ui/react'
 import { BiCart, BiMenu } from "react-icons/bi"
 import { BsSearch } from "react-icons/bs"
 import { SlLocationPin } from "react-icons/sl"
 import Link from 'next/link'
+import { useDispatch, useSelector } from 'react-redux'
 
-const Navbar = () => {
+const Navbar = ({ showBottomNav = false }) => {
+  const dispatch = useDispatch()
+  const { data: { token, isAuthenticated } } = useSelector((store) => store.authManager)
+
   return <>
     <NavbarTop />
-    <NavbarBottom />
+    <NavbarMiddle />
+    {showBottomNav && <NavbarBottom />}
   </>
 
 }
@@ -82,7 +88,7 @@ export const NavbarTop = () => {
   </HStack>
 }
 
-export const NavbarBottom = () => {
+export const NavbarMiddle = () => {
   const Links = [
     {
       label: "All",
@@ -152,5 +158,93 @@ export const NavbarBottom = () => {
     </Box>
   </HStack>
 }
+export const NavbarBottom = () => {
+  const [subMenu, toggleSubMenu] = useState(false)
+  const [subMenuData, setSubMenuData] = useState(0)
+
+  const Links = [
+    {
+      label: "Electronics",
+      href: "/products"
+    },
+    {
+      label: "Mobiles & Accessories",
+      href: "/products"
+    },
+    {
+      label: "Laptops & Accessories",
+      href: "/products"
+    },
+    {
+      label: "TV & Home Entertainment",
+      href: "/products"
+    },
+    {
+      label: "Audio",
+      href: "/products"
+    },
+    {
+      label: "Cameras",
+      href: "/products"
+    },
+    {
+      label: "Computer Peripherals",
+      href: "/products"
+    },
+    {
+      label: "Smart Technology",
+      href: "/products"
+    },
+    {
+      label: "Musical Instruments",
+      href: "/products"
+    },
+    {
+      label: "Office & Stationery",
+      href: "/products"
+    },
+  ]
+
+
+  return <Box position="relative">
+    <HStack borderBottom="1px solid #e4e4e4" justifyContent="space-evenly">
+      {
+        Links.map((link, index) => {
+          return <Link key={link.label} href={link.href}>
+            <Text
+              position="relative"
+              py="3"
+              onMouseEnter={() => {
+                toggleSubMenu(true);
+                setSubMenuData(index)
+              }}
+              onMouseLeave={() => toggleSubMenu(false)}
+              fontWeight={index === 0 && "bold"}
+              fontSize="13px">
+              {link.label}
+              {
+                subMenu && index === subMenuData && < Box className={Styles.nav_link_arrow}></Box>
+              }
+            </Text>
+          </Link>
+        })
+      }
+    </HStack>
+    {
+      subMenu && <HStack
+        position="absolute"
+        zIndex="1" bg="white"
+        border="1px solid gray"
+        width="100%"
+        height="300px"
+        onMouseEnter={() => toggleSubMenu(true)}
+        onMouseLeave={() => toggleSubMenu(false)}
+      >
+        <Text>Hello</Text>
+      </HStack>
+    }
+  </Box >
+}
+
 
 export default Navbar
