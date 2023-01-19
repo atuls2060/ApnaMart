@@ -1,0 +1,31 @@
+.outer {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    display: flex
+  }
+  .border{
+    margin: 0 auto;
+    padding: 0;
+    text-align: center
+  }
+  .border li {
+    display: inline;
+  
+  }
+  .border li a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding: 5px 10px;
+    float: left;
+  
+  }
+  .border li a {
+    -webkit-transition: background-color 0.4s;
+    transition: background-color 0.4s
+  }
+  .border li a:hover {
+    background: #ddd;
+  }
