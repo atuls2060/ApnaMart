@@ -104,28 +104,28 @@ export default class Bestseller extends Component {
         <Box>
           <Slider {...settings}>
             <div>
-              <Image src={cart_best1} width="255px" height="500px" />
+              <Image src={cart_best1} width="255px" height="500px" alt="img" />
             </div>
             <div>
-              <Image src={cart_best2} width="255px" height="500px" />
+              <Image src={cart_best2} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_best3} width="255px" height="500px" />
+              <Image src={cart_best3} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_best4} width="255px" height="500px" />
+              <Image src={cart_best4} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_best5} width="255px" height="500px" />
+              <Image src={cart_best5} width="255px" height="500px" alt="img" />
             </div>
             <div>
-              <Image src={cart_best6} width="255px" height="500px" />
+              <Image src={cart_best6} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_best2} width="255px" height="500px" />
+              <Image src={cart_best2} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_best3} width="255px" height="500px" />
+              <Image src={cart_best3} width="255px" height="500px" alt="img"/>
             </div>
             
           </Slider>

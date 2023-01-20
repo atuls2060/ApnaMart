@@ -1,0 +1,86 @@
+.container{
+    width: 100%; 
+    margin: auto;
+    margin-top: 20px;
+    margin-right: 2%;
+    cursor: pointer;
+  }
+  .card {
+      width: 25%;
+      border-radius: 5px solid red;
+      flex-direction: row;
+      text-align: center;
+      font-weight: bold;
+    }
+    .container2{
+      width: 100%; 
+      margin: auto;
+      /* height: 280px; */
+      border: 2px solid green;
+      margin-top: 20px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .innerContainer{
+    
+      width: 85%;
+      margin: auto;
+    }
+   .card2{
+
+    border:2px solid red;
+    margin: auto;
+    height: 200px;
+    padding:2px;
+    display: block;
+    margin: auto;
+   }
+   .cardimage{
+    display: block;
+    margin: auto;
+    border: 2px solid purple;
+    width: 90%;
+    margin-bottom: 5px;
+   }
+   .buttoncarousel{
+    background-color: #CC0C39;
+    padding: 2%;
+   }
+   .buttoncarousel1{
+    background-color: #FFFFFF;
+    padding: 2%;
+    color: #CC0C39;
+   }
+   .textcarousel{
+    color:black;
+   }
+   .headingbody{
+    color: #0F1111;
+    font:41px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+   }
+
+   .headingbody1{
+    color: #007185;
+    font:41px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+   }
+ .container3{
+  width: 100%; 
+  margin: auto;
+  /* height: 250px; */
+  border: 2px solid green;
+  margin-top: 20px;
+  padding: 10px;
+  
+}
+.card3{
+  border:2px solid red;
+  margin: auto;
+  height: 250px;
+  padding:2px;
+  display: block;
+  margin: auto;
+}

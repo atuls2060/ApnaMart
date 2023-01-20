@@ -23,13 +23,13 @@ export default function History() {
         </Flex>
         
         <Flex gap={2}>
-            <Image src={cart_history1} width={120} height={100}/>
-            <Image src={cart_history2} width={120} height={100}/>
-            <Image src={cart_history3} width={120} height={100}/>
-            <Image src={cart_history4} width={120} height={100}/>
-            <Image src={cart_history5} width={120} height={100}/>
-            <Image src={cart_history6} width={120} height={100}/>
-            <Image src={cart_history7} width={120} height={100}/>
+            <Image src={cart_history1} width={120} height={100} alt="img"/>
+            <Image src={cart_history2} width={120} height={100} alt="img"/>
+            <Image src={cart_history3} width={120} height={100} alt="img"/>
+            <Image src={cart_history4} width={120} height={100} alt="img"/>
+            <Image src={cart_history5} width={120} height={100} alt="img"/>
+            <Image src={cart_history6} width={120} height={100} alt="img"/>
+            <Image src={cart_history7} width={120} height={100} alt="img"/>
         </Flex>
     </Box>
     
