@@ -116,27 +116,27 @@ const Clothing = () => {
         <h1 className={styles.clothingHeading}>Trendy fashion accessories</h1>
         <div className={styles.trendyFashion}>
                 <div>
-                    <Image src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Unrec/SBCs/Accessories/Eng_07.jpg" width={360} height={300} alt="clothes"/>
+                    <Image className={styles.trendyImg} src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Unrec/SBCs/Accessories/Eng_07.jpg" width={360} height={300} alt="clothes"/>
                    
                 </div>
                 <div>
-                    <Image src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Unrec/SBCs/Accessories/Eng_12.jpg" width={360} height={300} alt="clothes"/>
+                    <Image className={styles.trendyImg} src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Unrec/SBCs/Accessories/Eng_12.jpg" width={360} height={300} alt="clothes"/>
                    
                 </div>
                 <div>
-                    <Image src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Unrec/SBCs/Accessories/Eng_17.jpg" width={360} height={300} alt="clothes"/>
+                    <Image className={styles.trendyImg} src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Unrec/SBCs/Accessories/Eng_17.jpg" width={360} height={300} alt="clothes"/>
                     
                 </div>
                 <div>
-                    <Image src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Unrec/SBCs/Accessories/Eng_09.jpg" width={360} height={300} alt="clothes"/>
+                    <Image className={styles.trendyImg} src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Unrec/SBCs/Accessories/Eng_09.jpg" width={360} height={300} alt="clothes"/>
                     
                 </div>
                 <div>
-                    <Image src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Unrec/SBCs/Accessories/Eng_14.jpg" width={360} height={300} alt="clothes"/>
+                    <Image className={styles.trendyImg} src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Unrec/SBCs/Accessories/Eng_14.jpg" width={360} height={300} alt="clothes"/>
                     
                 </div>
                 <div>
-                    <Image src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Unrec/SBCs/Accessories/Eng_19.jpg" width={360} height={300} alt="clothes"/>
+                    <Image className={styles.trendyImg} src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Unrec/SBCs/Accessories/Eng_19.jpg" width={360} height={300} alt="clothes"/>
                     
                 </div>
         </div>
@@ -196,27 +196,27 @@ const Clothing = () => {
         <h1 className={styles.clothingHeading}>Beauty & grooming</h1>
         <div className={styles.bandg}>
                 <div>
-                    <Image src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/SBC/beauty/unrec/english/Top-Picks-in-Beauty--Grooming--_03.jpg" width={390} height={300} alt="clothes"/>
+                    <Image className={styles.trendyImg} src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/SBC/beauty/unrec/english/Top-Picks-in-Beauty--Grooming--_03.jpg" width={390} height={300} alt="clothes"/>
                    
                 </div>
                 <div>
-                    <Image src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/SBC/beauty/unrec/english/Top-Picks-in-Beauty--Grooming--_04.jpg" width={390} height={300} alt="clothes"/>
+                    <Image className={styles.trendyImg} src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/SBC/beauty/unrec/english/Top-Picks-in-Beauty--Grooming--_04.jpg" width={390} height={300} alt="clothes"/>
                    
                 </div>
                 <div>
-                    <Image src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/SBC/beauty/unrec/english/Top-Picks-in-Beauty--Grooming--_05.jpg" width={390} height={300} alt="clothes"/>
+                    <Image className={styles.trendyImg} src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/SBC/beauty/unrec/english/Top-Picks-in-Beauty--Grooming--_05.jpg" width={390} height={300} alt="clothes"/>
                     
                 </div>
                 <div>
-                    <Image src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/SBC/beauty/unrec/english/Top-Picks-in-Beauty--Grooming--_06.jpg" width={390} height={300} alt="clothes"/>
+                    <Image className={styles.trendyImg} src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/SBC/beauty/unrec/english/Top-Picks-in-Beauty--Grooming--_06.jpg" width={390} height={300} alt="clothes"/>
                     
                 </div>
                 <div>
-                    <Image src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/SBC/beauty/unrec/english/Top-Picks-in-Beauty--Grooming--_07.jpg" width={390} height={300} alt="clothes"/>
+                    <Image className={styles.trendyImg} src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/SBC/beauty/unrec/english/Top-Picks-in-Beauty--Grooming--_07.jpg" width={390} height={300} alt="clothes"/>
                     
                 </div>
                 <div>
-                    <Image src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/SBC/beauty/unrec/english/Top-Picks-in-Beauty--Grooming--_08.jpg" width={390} height={300} alt="clothes"/>
+                    <Image className={styles.trendyImg} src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/SBC/beauty/unrec/english/Top-Picks-in-Beauty--Grooming--_08.jpg" width={390} height={300} alt="clothes"/>
                     
                 </div>
         </div>

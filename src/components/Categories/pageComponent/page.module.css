@@ -14,7 +14,7 @@
     display: inline;
   
   }
-  .border li a {
+  .border li p {
     display: block;
     text-decoration: none;
     color: #000;
@@ -22,10 +22,11 @@
     float: left;
   
   }
-  .border li a {
+  .border li p {
     -webkit-transition: background-color 0.4s;
     transition: background-color 0.4s
   }
-  .border li a:hover {
+  .border li p:hover {
     background: #ddd;
+    cursor: pointer;
   }
