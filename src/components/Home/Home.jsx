@@ -30,8 +30,7 @@ const Home = () => {
                 <MainBody2/>
                 <BodyCarousel3/>
                 </Box>
-               
-             </Box>
+            </Box>
              
         </>
     )
