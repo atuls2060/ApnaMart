@@ -1,5 +1,5 @@
 .container{
-  width: 80%; 
+  width: 100%; 
   margin: auto;
   margin-top: 20px;
   margin-right: 2%;
@@ -13,27 +13,32 @@
     font-weight: bold;
   }
   .container2{
-    width: 80%; 
+    width: 100%; 
     margin: auto;
-    height: 280px;
+    height: 300px;
     margin-top: 0px;
-    margin-right: 2%;
+    /* margin-right: 2%; */
     border-left: 20px solid #eaeaea;
     border-right: 20px solid #eaeaea;
     border-bottom: 10px solid #eaeaea;
   }
+  .card2{
+    width: 90%;
+    margin: auto;
+    height: 250px;
+  }
   .innerContainer{
   
-    width: 80%;
+    width: 84%;
     margin: auto;
   }
   .bankcontainer{
-    width: 80%; 
+    width: 100%; 
     margin: auto;
-    margin-right: 2%;
+    /* margin-right: 2%; */
   }
   .clothing{
-    width: 81%; 
+    width: 100%; 
     margin: auto;
     margin-right: 1%;
     margin-top: 10px;
@@ -57,22 +62,24 @@
     font-weight: bold;
   }
 .trendyFashion{
-  width: 80%; 
+  width: 100%; 
   margin: auto;
-  margin-right: 1%;
+  /* margin-right: 1%; */
   margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  /* column-gap: 20px; */
+  gap: 30px;
   text-align: center;
 }
-.trendyFashion>div{
+.trendyImg{
   cursor: pointer;
+  width: 80%;
+  margin: auto;
 }
 .bandg{
-  width: 82%; 
+  width: 100%; 
   margin: auto;
-  margin-right: 1%;
+  /* margin-right: 1%; */
   margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -91,7 +98,7 @@
     font-weight: bold;
 }
 .brandsborder{
-  width: 80%; 
+  width: 100%; 
   margin: auto;
   /* height: 280px; */
   margin-top: 0px;
