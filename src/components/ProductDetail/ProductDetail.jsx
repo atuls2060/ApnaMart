@@ -1,5 +1,7 @@
 import React from 'react'
 import {Box,Flex,Text,Image, VStack, HStack, Button} from '@chakra-ui/react'
+import {ChevronDownIcon} from "@chakra-ui/icons"
+
 
 const ProductDetail = () => {
  
@@ -37,14 +39,14 @@ const ProductDetail = () => {
                     <Box></Box>
                     <Box></Box>
                 </Box>
-                <Box style={{height:"120vh", width:"40%",}}>
+                <Box padding={"10px"} border={"3px solid #F7F8F8"} style={{height:"120vh", width:"45%",}}>
                     
                     <VStack>
-                        <Text style={{color:"#007AA0",fontSize:"15px"}}>Visit the Allen Solly Store</Text>
+                        <Text style={{color:"#007AA0",fontSize:"16px",fontWeight:"bold"}}>Visit the Allen Solly Store</Text>
                         <Text style={{fontSize:"22px",fontWeight:"bold"}}>Allen Solly Men Cotton Hooded Neck Sweatshirt</Text>
-                        <HStack><span><Image style={{height:"60px"}} src="https://media.istockphoto.com/id/1140391316/vector/five-yellow-stars-customer-product-rating-icon-fow-web-applications-and-websites.jpg?b=1&s=170667a&w=0&k=20&c=0oTDNjPGdClD5HtUDPXp7FkPFh5aNsY0dzKFvn6siO8="></Image></span><Text style={{color:"#007AA0",fontSize:"15px"}}>11,363 ratings</Text ><Text style={{color:"#007AA0",fontSize:"15px"}}>185 answered questions</Text>
+                        <HStack><span><Image style={{height:"60px"}} src="https://media.istockphoto.com/id/1140391316/vector/five-yellow-stars-customer-product-rating-icon-fow-web-applications-and-websites.jpg?b=1&s=170667a&w=0&k=20&c=0oTDNjPGdClD5HtUDPXp7FkPFh5aNsY0dzKFvn6siO8="></Image></span><Text style={{color:"#007AA0",fontSize:"15px",fontWeight:"bold"}}>11,363 ratings</Text ><Text style={{color:"#007AA0",fontSize:"15px",fontWeight:"bold"}}>185 answered questions</Text>
                         </HStack>
-                        <HStack><span><Button  style={{color:"#ffffff", width:"90%" ,height:"23px",backgroundColor:"#C45500"}}>#1 Best Seller</Button></span><Text style={{color:"#007AA0",fontSize:"15px"}}>in Men's Coats </Text ><Text style={{color:"#007AA0",fontSize:"15px"}}>Jackets & Vests</Text>
+                        <HStack><span><Button  style={{color:"#ffffff", width:"90%" ,height:"23px",backgroundColor:"#C45500"}}>#1 Best Seller</Button></span><Text style={{color:"#007AA0",fontSize:"15px",fontWeight:"bold"}}>in Men's Coats </Text ><Text style={{color:"#007AA0",fontSize:"15px",fontWeight:"bold"}}>Jackets & Vests</Text>
                         </HStack>
                         
                     </VStack>
@@ -72,8 +74,8 @@ const ProductDetail = () => {
                     <br />
                     <hr />
                     <VStack style={{marginRight:"400px"}}>
-                        <Text style={{}}>Fit:<span style={{color:"#949696"}}> True to size. Order usual size</span></Text>
-                        <p>Size Chart</p>
+                        <Text style={{}}>Fit:<span style={{color:"#949696"}}> True to size. Order usual size<ChevronDownIcon fontSize={"20px"}></ChevronDownIcon></span></Text>
+                        <Text><ChevronDownIcon fontSize={"20px"}></ChevronDownIcon>Size Chart</Text>
                         <Text>Product Details</Text>
                         <Text style={{}}>Material Composition:<span style={{color:"#949696"}}> 60% Cotton 40% Polyester</span></Text>
                         
@@ -99,13 +101,7 @@ const ProductDetail = () => {
                     </VStack>
                     <br />
                     <hr />
-    
-
-
-                </Box>
-                <Box style={{height:"120vh", width:"20%"}}></Box>
-                </Flex>
-            </Box>
+                    
 
             <Box>
                 <VStack style={{marginRight:"80%"}}>

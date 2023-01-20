@@ -104,34 +104,34 @@ export default class TopPick extends Component {
         <Box>
           <Slider {...settings}>
             <div>
-              <Image src={cart_freq_gro1} width="255px" height="500px" />
+              <Image src={cart_freq_gro1} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_freq_gro2} width="255px" height="500px" />
+              <Image src={cart_freq_gro2} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_freq_gro3} width="255px" height="500px" />
+              <Image src={cart_freq_gro3} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_freq_gro4} width="255px" height="500px" />
+              <Image src={cart_freq_gro4} width="255px" height="500px"alt="img" />
             </div>
             <div>
-              <Image src={cart_freq_gro5} width="255px" height="500px" />
+              <Image src={cart_freq_gro5} width="255px" height="500px"alt="img" />
             </div>
             <div>
-              <Image src={cart_freq_gro6} width="255px" height="500px" />
+              <Image src={cart_freq_gro6} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_freq_gro7} width="255px" height="500px" />
+              <Image src={cart_freq_gro7} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_freq_gro3} width="255px" height="500px" />
+              <Image src={cart_freq_gro3} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_freq_gro4} width="255px" height="500px" />
+              <Image src={cart_freq_gro4} width="255px" height="500px"alt="img" />
             </div>
             <div>
-              <Image src={cart_freq_gro5} width="255px" height="500px" />
+              <Image src={cart_freq_gro5} width="255px" height="500px" alt="img"/>
             </div>
             
           </Slider>

@@ -113,49 +113,49 @@ export default class PetSupplies extends Component {
         <Box>
           <Slider {...settings}>
             <div>
-              <Image src={gro1} width="255px" height="500px" />
+              <Image src={gro1} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={gro2} width="255px" height="500px" />
+              <Image src={gro2} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={gro3} width="255px" height="500px" />
+              <Image src={gro3} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={gro4} width="255px" height="500px" />
+              <Image src={gro4} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={gro5} width="255px" height="500px" />
+              <Image src={gro5} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={gro6} width="255px" height="500px" />
+              <Image src={gro6} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={gro7} width="255px" height="500px" />
+              <Image src={gro7} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={gro8} width="255px" height="500px" />
+              <Image src={gro8} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={gro9} width="255px" height="500px" />
+              <Image src={gro9} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={gro10} width="255px" height="500px" />
+              <Image src={gro10} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={gro11} width="255px" height="500px" />
+              <Image src={gro11} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={gro12} width="255px" height="500px" />
+              <Image src={gro12} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={gro13} width="255px" height="500px" />
+              <Image src={gro13} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={gro14} width="255px" height="500px" />
+              <Image src={gro14} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={gro15} width="255px" height="500px" />
+              <Image src={gro15} width="255px" height="500px" alt="img"/>
             </div>
           </Slider>
         </Box>

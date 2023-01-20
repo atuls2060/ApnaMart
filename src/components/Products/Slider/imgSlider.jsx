@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 import styles from "./slider.module.css";
+import Router from "next/router";
 
 
 function NextArrow(props) {
@@ -57,12 +58,15 @@ const ImgSlider = () => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
+  const handleClik=()=>{
+    Router.push("/women")
+  }
   return (
     <div className={styles.container}>
       <Slider {...settings}>
         <div className={styles.card}>
           <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/2._SS300_QL85_.png " width={180} height={180} alt="Hello"/>
-          <h1>Women&apos;s Clothing</h1>
+          <h1 onClick={handleClik}>Women&apos;s Clothing</h1>
         </div>
         <div  className={styles.card}>
         <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/1._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
