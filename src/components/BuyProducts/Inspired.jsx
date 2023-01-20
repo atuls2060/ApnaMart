@@ -104,28 +104,28 @@ export default class Inspired extends Component {
         <Box>
           <Slider {...settings}>
             <div>
-              <Image src={cart_smart1} width="255px" height="500px" />
+              <Image src={cart_smart1} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_smart2} width="255px" height="500px" />
+              <Image src={cart_smart2} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_smart3} width="255px" height="500px" />
+              <Image src={cart_smart3} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_smart4} width="255px" height="500px" />
+              <Image src={cart_smart4} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_smart5} width="255px" height="500px" />
+              <Image src={cart_smart5} width="255px" height="500px" alt="img" />
             </div>
             <div>
-              <Image src={cart_smart6} width="255px" height="500px" />
+              <Image src={cart_smart6} width="255px" height="500px" alt="img"/>
             </div>
             <div>
-              <Image src={cart_smart7} width="255px" height="500px" />
+              <Image src={cart_smart7} width="255px" height="500px" alt="img" />
             </div>
             <div>
-              <Image src={cart_smart3} width="255px" height="500px" />
+              <Image src={cart_smart3} width="255px" height="500px" alt="img"/>
             </div>
             
           </Slider>
