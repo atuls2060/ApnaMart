@@ -15,7 +15,7 @@ const Home = () => {
     return (
         <>
         
-             <Box w="100%" color="white" p={4} mt="-15px" backgroundColor="#f2f2f2" >
+             <Box w="100%" color="white" p={4} backgroundColor="#f2f2f2" >
                 <ImageSlider slides={SlideData} />
                 <Box  w="100%"  mt="-50px">
                 <MainBody/> 
