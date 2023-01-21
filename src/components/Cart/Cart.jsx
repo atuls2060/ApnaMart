@@ -1,12 +1,19 @@
 import React from 'react'
 import { Heading } from '@chakra-ui/react'
-import BuyProductPage from '../BuyProducts/BuyProductPage'
+import Shoppingcart from './Shoppingcart'
+import History from '../BuyProducts/History'
+import TopPick from '../BuyProducts/TopPicks'
+import Inspired from '../BuyProducts/Inspired'
+import Supplies from '../BuyProducts/Supplies'
 
 const Cart = () => {
   return (
     <>
-      <Heading>Cart Page</Heading>
-      <BuyProductPage/>
+      <Shoppingcart/>
+      <Supplies/>
+      <Inspired/>
+      <TopPick/>
+      <History/>
     </>
   )
 }

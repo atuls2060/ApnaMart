@@ -10,7 +10,6 @@ import History from '../BuyProducts/History'
 export default function BuyProductPage() {
   return (
     <div>
-      <h1>BuyProductPage</h1>
       <YourOrders/>
       <Grocery/>
       <PetSupplies/>

@@ -7,7 +7,6 @@ import {
     Text,
     Flex,
     Button,
-    Grid,GridItem 
   } from '@chakra-ui/react';
   import data from "./data.js";
   import Image from 'next/image'
@@ -100,14 +99,8 @@ export default class Grocery extends Component {
         <Text fontSize={['md', 'lg', 'xl', '25px']} fontWeight='bold' marginBottom={5}>Discover</Text>
         <Text fontSize={['md', 'lg', 'xl', '24px']} fontWeight='bold'>Frequently repurchased in Grocery</Text>
         <Slider {...settings}>
-          <Grid  
-            templateColumns='repeat(6, 1fr)' 
-            gap={4} 
-            border="2px solid green" 
-            padding={2}
-          >
             {data.products.map((el) => (
-            <GridItem key={el.id} style={{
+            <Box key={el.id} style={{
               border:"2px solid red",
               gap:"5px",
               width:"100%",
@@ -152,8 +145,7 @@ export default class Grocery extends Component {
                 borderRadius={30}>
                 {el.buttontext}
               </Button>
-            </GridItem>))}
-          </Grid>
+            </Box>))}
         </Slider>
     </Box>
   )
