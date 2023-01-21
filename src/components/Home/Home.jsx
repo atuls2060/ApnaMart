@@ -11,11 +11,15 @@ import BodyCarousel2 from './Bodycarousel/BodyCarousel2';
 import BodyCarousel3 from './Bodycarousel/BodyCarousel3';
 import {BodyImage} from './Bodyimage/BodyImage';
 import { BodyImage1 } from './Bodyimage/BodyImage';
+import Footer1 from "./Footer/footer1";
+import Footer2 from "./Footer/footer2"
+import Footer3 from "./Footer/footer3"
+import Footer4 from "./Footer/footer4"
 const Home = () => {
     return (
         <>
         
-             <Box w="100%" color="white" p={4} mt="-15px" backgroundColor="#f2f2f2" >
+             <Box w="100%" color="white"  mt="-15px" backgroundColor="#f2f2f2" >
                 <ImageSlider slides={SlideData} />
                 <Box  w="100%"  mt="-50px">
                 <MainBody/> 
@@ -29,6 +33,10 @@ const Home = () => {
                 <BodyImage1/>
                 <MainBody2/>
                 <BodyCarousel3/>
+                <Footer1/>
+                <Footer2/>
+                <Footer3/>
+                <Footer4/>
                 </Box>
             </Box>
              
