@@ -99,6 +99,10 @@ export const NavbarMiddle = () => {
       href: "/categories"
     },
     {
+      label: "Buy Again",
+      href: "/buyagain"
+    },
+    {
       label: "Amazon miniTV",
       href: "/categories"
     },
@@ -141,7 +145,7 @@ export const NavbarMiddle = () => {
   ]
 
   return <HStack bg="#232F3E" color="white" py="1" px="3" justifyContent="space-between">
-    <HStack spacing="4">
+    <HStack spacing="3">
       <BiMenu />
       {
         Links.map((link) => {
