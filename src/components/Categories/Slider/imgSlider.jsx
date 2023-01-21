@@ -58,45 +58,45 @@ const ImgSlider = () => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
-  const handleClik=()=>{
-    Router.push("/women")
+  const handleClik=(category)=>{
+    Router.push(`/products?category=${category}`)
   }
   return (
     <div className={styles.container}>
       <Slider {...settings}>
-        <div className={styles.card}>
+        <div onClick={()=>handleClik("womens")} className={styles.card}>
           <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/2._SS300_QL85_.png " width={180} height={180} alt="Hello"/>
-          <h1 onClick={handleClik}>Women&apos;s Clothing</h1>
+          <h1 >Women&apos;s Clothing</h1>
         </div>
-        <div  className={styles.card}>
+        <div onClick={()=>handleClik("mens")} className={styles.card}>
         <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/1._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
-        <h1>Men&apos;s Clothing</h1>
+        <h1 >Men&apos;s Clothing</h1>
         </div>
-        <div  className={styles.card}>
+        <div onClick={()=>handleClik("footwear")}  className={styles.card}>
         <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/4._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
         <h1>Footwear</h1>
         </div>
         <div  className={styles.card}>
-        <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/7._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
+        <Image onClick={()=>handleClik("jewellery")} src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/7._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
         <h1>Jewellery</h1>
         </div>
-        <div  className={styles.card}>
-        <Image src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/7._SS300_QL85_.png " width={180} height={180} alt="Hello"/>
+        <div onClick={()=>handleClik("luggage")}   className={styles.card}>
+        <Image src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/5._SS300_QL85_.png " width={180} height={180} alt="Hello"/>
         <h1>Luggage & backpacks</h1>
         </div>
-        <div  className={styles.card}>
+        <div onClick={()=>handleClik("watches")}  className={styles.card}>
         <Image src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/6-._SS300_QL85_.png " width={180} height={180} alt="Hello"/>
         <h1>Watches</h1>
         </div>
-        <div  className={styles.card}>
+        <div onClick={()=>handleClik("beauty")}  className={styles.card}>
         <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/3._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
         <h1>Beauty</h1>
         </div>
-        <div  className={styles.card}>
+        <div onClick={()=>handleClik("handbag")}  className={styles.card}>
         <Image src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/8._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
         <h1>Handbags</h1>
         </div>
-        <div  className={styles.card}>
+        <div onClick={()=>handleClik("kids")}  className={styles.card}>
         <Image src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/9._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
         <h1>Kids&apos; fashion</h1>
         </div>
@@ -109,7 +109,6 @@ const ImgSlider = () => {
         <h1>Amazon brands</h1>
         </div>
       </Slider>
-      <Image style={{marginTop:"15px"}} src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Cashaback/banner1._CB615765745_.gif" width={1600} height={300} alt="hello"/>
     </div>
   );
 };

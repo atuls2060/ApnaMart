@@ -92,11 +92,11 @@ export const NavbarMiddle = () => {
   const Links = [
     {
       label: "All",
-      href: "/products"
+      href: "/categories"
     },
     {
       label: "Sell",
-      href: "/products"
+      href: "/categories"
     },
     {
       label: "Buy Again",
@@ -104,43 +104,43 @@ export const NavbarMiddle = () => {
     },
     {
       label: "Amazon miniTV",
-      href: "/products"
+      href: "/categories"
     },
     {
       label: "Best Sellers",
-      href: "/products"
+      href: "/categories"
     },
     {
       label: "Mobiles",
-      href: "/products"
+      href: "/categories"
     },
     {
       label: "Today's Deals",
-      href: "/products"
+      href: "/categories"
     },
     {
       label: "Customer Service",
-      href: "/products"
+      href: "/categories"
     },
     {
       label: "Electronics",
-      href: "/products"
+      href: "/categories"
     },
     {
       label: "Prime",
-      href: "/products"
+      href: "/categories"
     },
     {
       label: "Fashion",
-      href: "/products"
+      href: "/categories"
     },
     {
       label: "Amazon Pay",
-      href: "/products"
+      href: "/categories"
     },
     {
       label: "Home & Kitchen",
-      href: "/products"
+      href: "/categories"
     },
   ]
 

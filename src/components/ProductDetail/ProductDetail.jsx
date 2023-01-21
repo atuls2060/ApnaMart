@@ -101,7 +101,45 @@ const ProductDetail = () => {
                     </VStack>
                     <br />
                     <hr />
+                    <Text fontWeight={"bold"} fontSize={"1rem"} p={"20px"}>About this Item</Text>
+                    <VStack mr={"80%"}>
+                        <Text>Occasion : <span style={{color:"#949696"}}>Casual</span></Text>
+                        <Text>Product Type : <span style={{color:"#949696"}} >Sweatshirt</span></Text>
+                        <Text>Pattern : <span style={{color:"#949696"}}>Solid</span></Text>
+                    </VStack>
+                    <br />
+                    <hr />
+                    <Text fontWeight={"bold"} fontSize={"1rem"} p={"20px"}>Description</Text>
+                    <br />
+                    <Text fontWeight={"bold"} color={"#007AA0"} fontSize={"15px"}><ChevronDownIcon fontSize={"20px"}></ChevronDownIcon>See more</Text>
+
                     
+
+    
+
+
+                </Box>
+                <Box style={{height:"120vh", width:"20%"}}>
+                    
+
+                    <Box  margin={"auto"} style={{height:"180px",border:"1px solid #D5D9D9",width:"80%",borderRadius:"10px"}}>
+                        <VStack marginTop={"20px"}>
+                            <Text fontSize={"16px"} >To buy ,select Size</Text>
+                            <Button  _hover={"#F7CA00"} color={"#0F1111"} borderRadius={"10px"} h={"35px"} w={"80%"} backgroundColor={"#F7CA00"}>Add to Cart</Button>
+                            
+                            <hr />
+                            <Button color={"#24113C"} border={"1px solid black"} borderRadius={"3px"} h={"35px"} w={"80%"} backgroundColor={"#F0F2F4"}>Add to Wish List</Button>
+                        </VStack>
+
+                    </Box>
+                    
+                    <VStack marginTop={"20px"} marginRight={"20px"}>
+                        <Text fontSize={"16px"}>Have one to sell?</Text>
+                        <Button border={"0.5px solid grey"} backgroundColor={"white"}>Sell on Amazon</Button>
+                    </VStack>
+                </Box>
+                </Flex>
+            </Box>
 
             <Box>
                 <VStack style={{marginRight:"80%"}}>
