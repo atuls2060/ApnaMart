@@ -1,6 +1,9 @@
 import React from 'react'
-import {Box,Flex,Text,Image, VStack, HStack, Button} from '@chakra-ui/react'
+import {Box,Flex,Text,Image, VStack, HStack, Button, Center} from '@chakra-ui/react'
 import {ChevronDownIcon} from "@chakra-ui/icons"
+import Carousel from './Carousel'
+
+
 
 
 const ProductDetail = () => {
@@ -141,13 +144,93 @@ const ProductDetail = () => {
                 </Flex>
             </Box>
 
-            <Box>
-                <VStack style={{marginRight:"80%"}}>
-                    <Text style={{fontWeight:"bold"}}>Special offers and product promotions</Text>
-                    <Text>colour: BLACK | Size: XL <span>Promotions can vary depending on colour/size.</span></Text>
+            <Box  w={"100%"} padding={"20px"}>
+                <VStack w={"30%"} style={{marginRight:"80%"}}>
+                    <Text fontSize={"20px"} p={"20px"} style={{fontWeight:"bold"}}>Special offers and product promotions</Text>
+                    <Text fontWeight={"bold"}>colour: BLACK | Size: XL <span style={{color:"grey"}}>Promotions can vary depending on colour/size.</span></Text>
+                    <br />
+                    <Text fontWeight={"bold"}> Buy 3 Get 5% Off, Buy 4 Get 10% Off <span style={{color:"grey"}}>Here's how</span> </Text>
+                    <br />
+                    <Text fontWeight={"bold"}> 5% Instant Discount up to INR 250 on HSBC Cashback Card Credit Card Transactions. Minimum purchase value INR 1000 <span style={{color:"grey"}}>Here's how</span> </Text>
+                    <br />
+                    <Text fontWeight={"bold"}> No cost EMI available on select cards. Please check 'EMI options' above for more details. <span style={{color:"grey"}}>Here's how</span> </Text>
+                    <br />
+                    <Text fontWeight={"bold"}> Get GST invoice and save up to 28% on business purchases. Sign up for free <span style={{color:"grey"}}>Here's how</span> </Text>
 
                 </VStack>
+                
             </Box>
+            <Text padding={"25px"} fontWeight={"bold"}> Get GST invoice and save up to 28% on business purchases. Sign up for free <span style={{color:"grey"}}>Here's how</span> </Text>
+            <Carousel/>
+            <Box h={"100vh"} w={"100%"} p={"20px"}>
+            <VStack w={"30%"} style={{marginRight:"80%"}}>
+                    <Text fontSize={"20px"} p={"20px"} style={{fontWeight:"bold"}}>Products Details</Text>
+                    <Text fontWeight={"bold"} color={"black"} fontSize={"13px"}>Product Dimension : <span style={{color:"grey"}}>  28 x 27 x 2 cm; 350 Grams</span></Text>
+                    <Text  fontWeight={"bold"} color={"black"} fontSize={"13px"}>Date First Available : <span style={{color:"grey"}}>13 June 2018</span></Text>
+                    <Text  fontWeight={"bold"} color={"black"} fontSize={"13px"}>Manufacturer  :  <span style={{color:"grey"}}>Aditya Birla Fashion and Retail Limited</span></Text>
+                    <Text   fontWeight={"bold"}color={"black"} fontSize={"13px"}>ASIN : <span style={{color:"grey"}}>B07DPTGB8Z</span></Text>
+                    <Text  fontWeight={"bold"} color={"black"} fontSize={"13px"}>Item model number : <span style={{color:"grey"}}>ASSTORGPX52409S_Navy 19-3810 TCX</span></Text>
+                    <Text  fontWeight={"bold"} color={"black"} fontSize={"13px"}>Department : <span style={{color:"grey"}}>Men</span></Text>
+                    <Text  fontWeight={"bold"} color={"black"} fontSize={"13px"}>Manufacturer : <span style={{color:"grey"}}>Aditya Birla Fashion and Retail Limited, SPACE FASHIONS PVT LTD,Phase VI,,Focal Point-141010,Ludhiana,Punjab,India</span></Text>
+                    <Text  fontWeight={"bold"} color={"black"} fontSize={"13px"}>Packer  : <span style={{color:"grey"}}>SPACE FASHIONS PVT LTD,Phase VI,,Focal Point-141010,Ludhiana,Punjab,India</span></Text>
+                    <Text  fontWeight={"bold"} color={"black"} fontSize={"13px"}>Item Weight : <span style={{color:"grey"}}>350 g</span></Text>
+                    <Text  fontWeight={"bold"} color={"black"} fontSize={"13px"}>Item Dimensions LxWxH : <span style={{color:"grey"}}>28 x 27 x 2 Centimeters</span></Text>
+                    <Text  fontWeight={"bold"} color={"black"} fontSize={"13px"}>Net Quantity  : <span style={{color:"grey"}}>1 count</span></Text>
+                    <Text  fontWeight={"bold"}  color={"black"}fontSize={"13px"}>Included Components : <span style={{color:"grey"}}>1-Shirt</span></Text>
+                    <Text  fontWeight={"bold"}  color={"black"}fontSize={"13px"}>Generic Name : <span style={{color:"grey"}}>Sweatshirt</span></Text>
+                    <Text  fontWeight={"bold"} color={"black"} fontSize={"13px"}>Best Sellers Rank: : <span style={{color:"grey"}}>#6 in Clothing & Accessories (See Top 100 in Clothing & Accessories)</span></Text>
+                    <Text  fontWeight={"bold"} color={"black"} fontSize={"13px"}> Customer Reviews: : <span style={{color:"grey"}}>11,403 ratings</span></Text>
+                    
+
+                </VStack>
+                </Box>
+                <Carousel/>
+                <Box>
+                <Text fontSize={"20px"} p={"20px"} style={{fontWeight:"bold"}}>From the manufacturer</Text>
+                <VStack>
+                    <Image src='https://m.media-amazon.com/images/S/aplus-media-library-service-media/43333131-f5c0-4265-923e-b2cfbbcbd131.__CR0,0,4042,2500_PT0_SX970_V1___.png'></Image>
+                    <Image src='https://m.media-amazon.com/images/S/aplus-media-library-service-media/8d472d6e-839f-4e9a-bc65-0050e972f549.__CR0,0,4042,2500_PT0_SX970_V1___.png'></Image>
+                    <Image src='https://m.media-amazon.com/images/S/aplus-media-library-service-media/4d162edf-4ec7-4ba9-b119-ff79f75d3732.__CR0,0,4043,2501_PT0_SX970_V1___.png'></Image>
+                </VStack>
+
+
+                </Box>
+                <Box>
+                <Text fontSize={"20px"} p={"20px"} style={{fontWeight:"bold"}}>Customers who viewed this item also viewed</Text>
+            
+
+                <Carousel/>
+
+                </Box>
+                <Box>
+                <Text fontSize={"20px"} p={"20px"} style={{fontWeight:"bold"}}>Best Sellers in Men's Clothing</Text>
+            
+
+                <Carousel/>
+
+                </Box>
+                <Box>
+                <Text fontSize={"20px"} p={"20px"} style={{fontWeight:"bold"}}>Related to items you've viewed</Text>
+            
+
+                <Carousel/>
+
+                </Box>
+
+                <Box p={"120px"}>
+                    <VStack>
+                        
+                        <Text fontSize={"17px"}>See personalized recommendations</Text>
+                        <Button _hover={"#FFC637"} color={"black"} bg={"#FFC637"}>Sign In</Button>
+                        <Text>New Customer ? <span style={{color:"#007AA0",cursor:"pointer"}}>start here</span></Text>
+
+
+                    </VStack>
+                </Box>
+
+
+
+            
         </>
     )
 }
