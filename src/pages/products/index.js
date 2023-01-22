@@ -143,10 +143,10 @@ const handleSort =(e)=>{
  
 
   if(loading){
-    return <h1 style={{width:"100%",fontSize:"40px",margin:"auto"}}>Loading...</h1>
+    return <h1 style={{width:"100%",fontSize:"40px",margin:"auto",textAlign:"center",marginTop:"100px"}}>Loading...</h1>
   }
   if(error){
-    return <h1>Error...</h1>
+    return <h1 style={{width:"100%",fontSize:"40px",margin:"auto",textAlign:"center",marginTop:"100px"}}>Error...</h1>
   }
   return (
     <div>
