@@ -7,7 +7,7 @@ const Footer3 = () => {
                 <Divider/>
         <Box w="20%" m="auto" mb="20px" mt={4}>
            
-              <Grid templateColumns='repeat(2, 1fr)'>
+              <Grid templateColumns={{sm:"repeat(1,1fr)",md:"repeat(2,1fr)",lg:"repeat(2, 1fr)"}}>
                     <GridItem w='100%' mt={10} >
                     <Link href="/">
                                           <Image src="http://localhost:3000/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Flook-your-best.appspot.com%2Fo%2FAmazon-clone%252Flogos%252Flogo.png%3Falt%3Dmedia%26token%3D0d097020-fb24-4bc4-9367-e9fbb75192b4&w=256&q=75" h="20px"/> 

@@ -17,7 +17,7 @@ function NextArrow(props) {
         color: "grey",
         height: "5.5rem",
         width: "2.5rem",
-        right:"-100",
+        right:"0",
         boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"
 
         // marginRight:"-25px"
@@ -39,7 +39,7 @@ function PrevArrow(props) {
         height: "5.5rem",
         width: "2.5rem",
         zIndex:"5",
-        left:"-100",
+        left:"0",
         boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
        
 
@@ -56,7 +56,7 @@ const BodyCarousel = () => {
     infinite: true,
     speed: 500,
     dots:false,
-    slidesToShow: 6,
+    slidesToShow: 7,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -166,14 +166,7 @@ const BodyCarousel = () => {
             <button className={styles.buttoncarousel1}>Republic Day Sale</button>
             <p className={styles.textcarousel}><sup>₹</sup>29,900<sup>00</sup></p>
           </div>
-        </div>
-        
-
-       
-
-        
-
-        
+        </div>    
       </Slider>
       </div>
     </div>

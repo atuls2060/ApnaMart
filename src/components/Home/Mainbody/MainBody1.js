@@ -6,9 +6,9 @@ import Link from 'next/link'
 
 export const MainBody1 = () => {
   return (
-    <Grid templateColumns='repeat(4, 1fr)'  gap={6} w="100%" >
+    <Grid templateColumns={{sm:"repeat(1,1fr)",md:"repeat(2,1fr)",lg:"repeat(4, 1fr)"}}  gap={6} w="100%"  >
 
-        <GridItem w='100%' bg='#fff' border="2px solid red" p="15px">
+        <GridItem w='100%' bg='#fff'  p="15px" boxShadow='md'>
             <Text fontSize="21px" color="#0F1111">Starting ₹79 | Home, kitchen & more</Text>
 
             <Grid templateColumns='repeat(2, 1fr)' gap={4} m="15px 0px" mb="25px">
@@ -36,7 +36,7 @@ export const MainBody1 = () => {
                 </Link>
         </GridItem>
                    {/* ===================================== */}
-        <GridItem w='100%' bg='#fff' border="2px solid red" p="15px">
+        <GridItem w='100%' bg='#fff'  p="15px" boxShadow='md'>
             <Text  fontSize="21px" color="#0F1111">Register for free | Get business exclusive deals</Text>
 
             <Grid templateColumns='repeat(2, 1fr)' gap={4} m="15px 0px" mb="25px">
@@ -68,7 +68,7 @@ export const MainBody1 = () => {
 
         {/* ========================================= */}
 
-        <GridItem w='100%' bg='#fff' border="2px solid red" p="15px">
+        <GridItem w='100%' bg='#fff' p="15px" boxShadow='md'>
             <Text  fontSize="21px" color="#0F1111">Great Republic Day Sale | Brands in Focus</Text>
 
             <Grid templateColumns='repeat(2, 1fr)' gap={4} m="15px 0px" mb="25px">
@@ -100,7 +100,7 @@ export const MainBody1 = () => {
 
         {/* =============================================================================== */}
         
-        <GridItem w='100%' bg='#fff' border="2px solid red" p="15px">
+        <GridItem w='100%' bg='#fff' p="15px" boxShadow='md'>
             <Text  fontSize="21px" color="#0F1111">Up to 70% OFF | Bestselling PC Accessories</Text>
 
             <Grid templateColumns='repeat(1, 1fr)' gap={4} m="15px 0px" >
@@ -125,9 +125,9 @@ export const MainBody1 = () => {
 
  export const MainBody2 = () => {
     return (
-      <Grid templateColumns='repeat(4, 1fr)'  gap={6} w="100%">
+      <Grid templateColumns={{sm:"repeat(1,1fr)",md:"repeat(2,1fr)",lg:"repeat(4, 1fr)"}}  gap={6} w="100%">
   
-          <GridItem w='100%' bg='#fff' border="2px solid red" p="15px">
+          <GridItem w='100%' bg='#fff'  p="15px" boxShadow='md'>
               <Text fontSize="21px" color="#0F1111">Up to 75% off | Deals on top rated home products</Text>
   
               <Grid templateColumns='repeat(2, 1fr)' gap={4} m="15px 0px" mb="25px">
@@ -155,7 +155,7 @@ export const MainBody1 = () => {
                   </Link>
           </GridItem>
                      {/* ===================================== */}
-          <GridItem w='100%' bg='#fff' border="2px solid red" p="15px">
+          <GridItem w='100%' bg='#fff'  p="15px" boxShadow='md'>
               <Text  fontSize="21px" color="#0F1111">Shop by brand</Text>
   
               <Grid templateColumns='repeat(2, 1fr)' gap={4} m="15px 0px" mb="25px">
@@ -187,7 +187,7 @@ export const MainBody1 = () => {
   
           {/* ========================================= */}
   
-          <GridItem w='100%' bg='#fff' border="2px solid red" p="15px">
+          <GridItem w='100%' bg='#fff'  p="15px" boxShadow='md'>
               <Text  fontSize="21px" color="#0F1111">Amazon Pay | Pay utility bills fast & conveniently</Text>
   
               <Grid templateColumns='repeat(2, 1fr)' gap={4} m="15px 0px" mb="25px">
@@ -219,7 +219,7 @@ export const MainBody1 = () => {
   
           {/* =============================================================================== */}
           
-          <GridItem w='100%' bg='#fff' border="2px solid red" p="15px">
+          <GridItem w='100%' bg='#fff'  p="15px" boxShadow='md'>
               <Text  fontSize="21px" color="#0F1111">Starting ₹5,999 | TVs for every budget</Text>
   
               <Grid templateColumns='repeat(1, 1fr)' gap={4} m="15px 0px" >
