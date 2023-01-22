@@ -18,10 +18,11 @@ import Footer4 from "./Footer/footer4"
 const Home = () => {
     return (
         <>
-        
-             <Box w="100%" color="white"  backgroundColor="#f2f2f2" 
+            <Box>
+             <Box w="100%" color="white"  backgroundColor="#f2f2f2" >
                 <ImageSlider slides={SlideData} />
-                <Box  w="100%"  mt="-50px">
+             </Box>
+                <Box  w="100%"  mt="-50px" backgroundColor="#f2f2f2" >
                 <MainBody/> 
                 <BodyCarousel/>
                 <BodyCarousel1/>

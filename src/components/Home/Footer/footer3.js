@@ -26,7 +26,7 @@ const Footer3 = () => {
         </Box>
         <Box>
             <Link href="/">
-               <Center  color='"#FFFF"' p={1} gap={4}>
+               <Center  color="#FFFF" p={1} gap={4}>
                   <Text fontSize="14px">Australia</Text>
                   <Text fontSize="14px">Brazil</Text>
                   <Text fontSize="14px">China</Text>
@@ -42,7 +42,7 @@ const Footer3 = () => {
         </Box>
         <Box>
         <Link href="/">
-        <Center  color='"#FFFF"' p="0 10px 20px 10px" gap={4}>
+        <Center  color="#FFFF" p="0 10px 20px 10px" gap={4}>
                   <Text fontSize="14px">United States</Text>
                   <Text fontSize="14px">United Kingdom</Text>
                </Center>
