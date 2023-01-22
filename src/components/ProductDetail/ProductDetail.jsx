@@ -2,20 +2,47 @@ import React from 'react'
 import {Box,Flex,Text,Image, VStack, HStack, Button, Center} from '@chakra-ui/react'
 import {ChevronDownIcon} from "@chakra-ui/icons"
 import Carousel from './Carousel'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import axios from 'axios'
+import Footer2 from '../Home/Footer/footer2'
+import Footer1 from '../Home/Footer/footer1'
+import Footer3 from '../Home/Footer/footer3'
+import Footer4 from '../Home/Footer/footer4'
+
 
 
 
 
 const ProductDetail = () => {
- 
+    const [data,setData] = useState({})
+    const router = useRouter();
+
+    const {query} = router;
+    const id = query.id;
+
+    const getProduct =async (id)=>{
+        try {
+             const res = await axios.get(`http://localhost:8080/products/${id}`)
+             setData(res.data)
+        } catch (error) {
+            
+        }
+    }
+
+    useEffect(()=>{
+        getProduct(id)
+    },[id])
+    console.log(data)
     return (
         <>
         
             <Box  style={{height:"50px" ,width:"100%",backgroundColor:"#F7F8F8"}}>
                 <Flex style={{justifyContent:"space-around" ,alignItem:"center"}}>
-                    <Image style={{height:"50px", width:"40px"}} src="https://m.media-amazon.com/images/I/319kt4GvHwL._AC_SR320,400_.jpg"></Image>
-                    <Text style={{marginTop:"10px"}}>United Colors of Benetton Men Printed Sweatshirt</Text>
-                    <Text style={{fontSize:"20px" ,color:"#AE2E0E",fontWeight:"bold"}}>₹1,190 <span style={{color:"#2992BD",fontSize:"16px" ,fontWeight:"bold"}}>prime</span></Text>
+                    <Image style={{height:"50px", width:"40px"}} src={data.url}></Image>
+                    <Text style={{marginTop:"10px"}}>{data.desc}</Text>
+                    <Text style={{fontSize:"20px" ,color:"#AE2E0E",fontWeight:"bold"}}>₹{data.price} <span style={{color:"#2992BD",fontSize:"16px" ,fontWeight:"bold"}}>prime</span></Text>
                 </Flex>
             </Box>
             <Box >
@@ -36,7 +63,7 @@ const ProductDetail = () => {
                     <Box style={{height:"12vh", width:"40%",border:"1px solid red"}} ></Box> */}
                     </VStack>
                     <HStack></HStack>
-                    <Image style={{height:"500px", marginLeft:"20%"}} src="https://m.media-amazon.com/images/I/319kt4GvHwL._AC_SR320,400_.jpg"></Image>
+                    <Image style={{height:"500px", marginLeft:"7%"}} src={data.url}></Image>
                     
                     <Box></Box>
                     <Box></Box>
@@ -45,25 +72,25 @@ const ProductDetail = () => {
                 <Box padding={"10px"} border={"3px solid #F7F8F8"} style={{height:"120vh", width:"45%",}}>
                     
                     <VStack>
-                        <Text style={{color:"#007AA0",fontSize:"16px",fontWeight:"bold"}}>Visit the Allen Solly Store</Text>
-                        <Text style={{fontSize:"22px",fontWeight:"bold"}}>Allen Solly Men Cotton Hooded Neck Sweatshirt</Text>
+                        <Text style={{color:"#007AA0",fontSize:"16px",fontWeight:"bold"}}>{data.desc}</Text>
+                        <Text style={{fontSize:"22px",fontWeight:"bold"}}>{data.desc}</Text>
                         <HStack><span><Image style={{height:"60px"}} src="https://media.istockphoto.com/id/1140391316/vector/five-yellow-stars-customer-product-rating-icon-fow-web-applications-and-websites.jpg?b=1&s=170667a&w=0&k=20&c=0oTDNjPGdClD5HtUDPXp7FkPFh5aNsY0dzKFvn6siO8="></Image></span><Text style={{color:"#007AA0",fontSize:"15px",fontWeight:"bold"}}>11,363 ratings</Text ><Text style={{color:"#007AA0",fontSize:"15px",fontWeight:"bold"}}>185 answered questions</Text>
                         </HStack>
-                        <HStack><span><Button  style={{color:"#ffffff", width:"90%" ,height:"23px",backgroundColor:"#C45500"}}>#1 Best Seller</Button></span><Text style={{color:"#007AA0",fontSize:"15px",fontWeight:"bold"}}>in Men's Coats </Text ><Text style={{color:"#007AA0",fontSize:"15px",fontWeight:"bold"}}>Jackets & Vests</Text>
+                        <HStack><span><Button  style={{color:"#ffffff", width:"90%" ,height:"23px",backgroundColor:"#C45500"}}>#1 Best Seller</Button></span><Text style={{color:"#007AA0",fontSize:"15px",fontWeight:"bold"}}>{data.desc}</Text ><Text style={{color:"#007AA0",fontSize:"15px",fontWeight:"bold"}}></Text>
                         </HStack>
                         
                     </VStack>
                     <br />
                     <hr />
                     <VStack style={{marginRight:"400px"}}>
-                        <Text>Price:<span style={{color:"#BD492B",fontWeight:"bold"}}> ₹850-₹930</span></Text>
+                        <Text>Price:<span style={{color:"#BD492B",fontWeight:"bold"}}>₹{data.price}</span></Text>
                         <Text style={{fontSize:"13PX",fontWeight:""}}>inclusive of all taxes</Text>
                         
                     </VStack>
                     <br />
                     <hr />
                     <VStack style={{marginRight:"400px"}}>
-                        <Text>Color: <span style={{color:"black",fontWeight:"bold"}}>BLACK</span></Text>
+                        <Text>Color: <span style={{color:"black",fontWeight:"bold"}}></span></Text>
                         <Text style={{fontSize:"13PX",fontWeight:""}}>inclusive of all taxes</Text>
                         
                     </VStack>
@@ -227,8 +254,10 @@ const ProductDetail = () => {
 
                     </VStack>
                 </Box>
-
-
+                 <Footer1/>
+                <Footer2/>
+                <Footer3/>
+                <Footer4/>
 
             
         </>
