@@ -4,15 +4,15 @@ import { Image } from "@chakra-ui/react";
 import Link from 'next/link'
 const MainBody = () => {
   return (
-    <Grid templateColumns='repeat(4, 1fr)'  gap={6} w="100%" >
+    <Grid templateColumns={{sm:"repeat(1,1fr)",md:"repeat(2,1fr)",lg:"repeat(4, 1fr)"}}  gap={6} w="100%"  mt={{sm:0,md:-100,lg:-250}} z-index={100} position="relative" >
 
-        <GridItem w='100%' bg='#fff' border="2px solid red" p="15px">
+        <GridItem w='100%' bg='#fff'  p="15px" boxShadow='md'>
             <Text fontSize="21px" color="#0F1111">Most searched smartphone series on Amazon</Text>
 
             <Grid templateColumns='repeat(2, 1fr)' gap={4} m="15px 0px">
                 <GridItem w='100%'  bg='#fff'>
                     <Image src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/sabikhit/MSO-Tiles/Jan-ART/D68361814_INWLD_JanArt_PC_QuadCard_186X116_1._SY116_CB615734550_.jpg" /> 
-                    <Text fontSize="12px" color="#0F1111">Redmi series : Starting</Text>
+                    <Text fontSize="12px" color="#0F1111" fontFamily="Amazon Ember">Redmi series : Starting</Text>
                     <Text fontSize="12px" color="#0F1111">₹5,999</Text>
                 </GridItem>
                 <GridItem w='100%'  bg='#fff'>
@@ -36,7 +36,7 @@ const MainBody = () => {
                 </Link>
         </GridItem>
                    {/* ===================================== */}
-        <GridItem w='100%' bg='#fff' border="2px solid red" p="15px">
+        <GridItem w='100%' bg='#fff' boxShadow='md' p="15px">
             <Text  fontSize="21px" color="#0F1111">Starting ₹199 | Men's fashion</Text>
 
             <Grid templateColumns='repeat(2, 1fr)' gap={4} m="15px 0px" mb="25px">
@@ -68,7 +68,7 @@ const MainBody = () => {
 
         {/* ========================================= */}
 
-        <GridItem w='100%' bg='#fff' border="2px solid red" p="15px">
+        <GridItem w='100%' bg='#fff' boxShadow='md' p="15px">
             <Text  fontSize="21px" color="#0F1111">Latest and upcoming launches on Amazon</Text>
 
             <Grid templateColumns='repeat(2, 1fr)'  gap={4} m="15px 0px">
@@ -98,17 +98,17 @@ const MainBody = () => {
             
         </GridItem>
                     {/* ======================================= */}
-        <GridItem w='100%' bg='#fff' border="2px solid red" p="15px 15px 0px 15px">
-                <Box border="2px solid red" mb="20px" p="0px 15px">
+        <GridItem w='100%' bg='#fff' boxShadow='md' p="15px 15px 0px 15px">
+                <Box  mb="20px" p="0px 15px">
                         
                           <Text fontSize='21px'color="#0F1111">
                           Sign in for your best experience
                            </Text>
                           <Button backgroundColor="#ff9900" w="100%" fontSize="13px" mt='10px' >
-                            Sign in securely
+                           <Link href="/signin">Sign in securely</Link> 
                           </Button>
                 </Box>
-            <Box  w='100%'  color='white'border="2px solid red" >
+            <Box  w='100%'  color='white' boxShadow='md' >
                 <Image src="https://m.media-amazon.com/images/G/31/img19/AMS/Houseads/Laptops-Sept2019._CB436595915_.jpg" w="100%" h="300px" />
                     
             </Box>
@@ -117,7 +117,7 @@ const MainBody = () => {
 
         {/* =============================================================================== */}
         
-        <GridItem w='100%' bg='#fff' border="2px solid red" p="15px">
+        <GridItem w='100%' bg='#fff' boxShadow='md' p="15px">
             <Text  fontSize="21px" color="#0F1111">Starting ₹49 | Books, toys & more</Text>
 
             <Grid templateColumns='repeat(2, 1fr)' gap={4} m="15px 0px" mb="25px">
@@ -149,7 +149,7 @@ const MainBody = () => {
 
         {/* ================================================== */}
 
-        <GridItem w='100%' bg='#fff' border="2px solid red" p="15px">
+        <GridItem w='100%' bg='#fff' boxShadow='md' p="15px">
             <Text  fontSize="21px" color="#0F1111">Starting ₹79 | Home, kitchen & more</Text>
 
             <Grid templateColumns='repeat(2, 1fr)' gap={4} m="15px 0px" mb="25px">
@@ -180,7 +180,7 @@ const MainBody = () => {
         </GridItem>
     {/* =================================================== */}
 
-    <GridItem w='100%' bg='#fff' border="2px solid red" p="15px">
+    <GridItem w='100%' bg='#fff' boxShadow='md' p="15px">
             <Text  fontSize="21px" color="#0F1111">Up to 75% off | Top deals on Amazon brands & more</Text>
 
             <Grid templateColumns='repeat(2, 1fr)' gap={4} m="15px 0px" mb="25px">
@@ -212,7 +212,7 @@ const MainBody = () => {
     
     {/* ========================================= */}
 
-    <GridItem w='100%' bg='#fff' border="2px solid red" p="15px">
+    <GridItem w='100%' bg='#fff' boxShadow='md' p="15px">
             <Text  fontSize="21px" color="#0F1111">Up to 60% off | Upgrade to Smart TVs</Text>
 
             <Grid templateColumns='repeat(1, 1fr)' gap={4} m="15px 0px" mb="25px">

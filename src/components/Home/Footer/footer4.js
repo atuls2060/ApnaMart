@@ -6,7 +6,7 @@ const Footer4 = () => {
     <Box w="100%" backgroundColor="#131A22" p={5}>
     <Link href="/">
     <Box w="60%" margin="auto" >
-       <Grid templateColumns='repeat(5, 1fr)' gap={4}>
+       <Grid templateColumns={{sm:"repeat(2,1fr)",md:"repeat(3,1fr)",lg:"repeat(5, 1fr)"}} gap={4}>
             <GridItem>
                 <Text  fontSize="12px" color="#DDDDDD">Abe Books</Text>
                 <Text  fontSize="12px" color="#999999">Books , art</Text>

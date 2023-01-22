@@ -16,19 +16,23 @@
       width: 100%; 
       margin: auto;
       /* height: 280px; */
-      border: 2px solid green;
+      /* border: 2px solid green; */
       margin-top: 20px;
       padding: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      background-color: #FFFFFF;
     }
     .innerContainer{
     
-      width: 85%;
+      width: 100%;
       margin: auto;
+      margin-top: 15px;
+      margin-bottom: 25px;
     }
    .card2{
-
-    border:2px solid red;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+    /* border:2px solid red; */
     margin: auto;
     height: 200px;
     padding:2px;
@@ -38,9 +42,10 @@
    .cardimage{
     display: block;
     margin: auto;
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     width: 90%;
     margin-bottom: 5px;
+    
    }
    .buttoncarousel{
     background-color: #CC0C39;
@@ -59,6 +64,7 @@
     font:41px;
     margin-bottom: 5px;
     margin-left: 20px;
+    
    }
 
    .headingbody1{
@@ -71,16 +77,19 @@
   width: 100%; 
   margin: auto;
   /* height: 250px; */
-  border: 2px solid green;
+  /* border: 2px solid green; */
   margin-top: 20px;
   padding: 10px;
-  
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: #FFFFFF;
 }
 .card3{
-  border:2px solid red;
+  /* border:2px solid red; */
+  margin-top: 20px;
   margin: auto;
   height: 250px;
   padding:2px;
   display: block;
   margin: auto;
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
 }
