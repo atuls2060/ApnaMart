@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { loginUser } from '@/redux/auth/auth.action'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
+import { auth } from '@/utils/firebase'
 
 const LoginPage = () => {
     const [email, setEmail] = useState("")
@@ -13,6 +14,7 @@ const LoginPage = () => {
     const dispatch = useDispatch()
     const { data: { isAuthenticated } } = useSelector((store) => store.authManager)
     const router = useRouter()
+    const currentUser = auth.currentUser
 
     const handleSubmit = () => {
         if (!email || !password) {
@@ -23,10 +25,11 @@ const LoginPage = () => {
     }
 
     useEffect(() => {
-        if (isAuthenticated) {
+        if (currentUser !== null) {
+            
             router.replace("/")
         }
-    }, [isAuthenticated])
+    }, [currentUser])
 
     return (
         toggleView ? <EmailView toggleView={setToggleView} email={email} onChange={(value) => setEmail(value)} />

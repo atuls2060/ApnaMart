@@ -10,21 +10,27 @@ import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import SignInPopUp from './SignInPopUp'
 import {useCart} from 'react-use-cart';
-
+import { useEffect } from 'react'
+import { auth } from '@/utils/firebase'
 const Navbar = ({ showBottomNav = false }) => {
   
   const dispatch = useDispatch()
   const { data: { token, isAuthenticated } } = useSelector((store) => store.authManager)
+  const currentUser = auth.currentUser
+
+  useEffect(()=>{
+  
+  },[currentUser])
 
   return <>
-    <NavbarTop />
+    <NavbarTop name={currentUser != null ? currentUser.displayName : "sign in"} />
     <NavbarMiddle />
     {showBottomNav && <NavbarBottom />}
   </>
 
 }
 
-export const NavbarTop = () => {
+export const NavbarTop = ({name = "rahul"}) => {
   const {totalItems} = useCart();
   const [showSignIn, toggleSignInPopUp] = useState(false);
 
@@ -73,7 +79,7 @@ export const NavbarTop = () => {
         <Text>EN</Text>
       </HStack>
       <Box  onMouseEnter={() => toggleSignInPopUp(true)} >
-        <Text fontSize="12px">Hello, sign in</Text>
+        <Text fontSize="12px">Hello, {name}</Text>
         <Heading size="xs">Account & Lists</Heading>
         {
           showSignIn && <SignInPopUp togglePopUp={(value)=>toggleSignInPopUp(value)} />
