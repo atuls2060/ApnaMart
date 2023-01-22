@@ -34,10 +34,10 @@ const Home = () => {
                 <BodyImage1/>
                 <MainBody2/>
                 <BodyCarousel3/>
-                <Footer1/>
+                {/* <Footer1/>
                 <Footer2/>
                 <Footer3/>
-                <Footer4/>
+                <Footer4/> */}
                 </Box>
             </Box>
              
