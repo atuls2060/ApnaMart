@@ -16,10 +16,6 @@ const Pagination = ({page,onPageChange}) => {
          <div className={styles.outer}>
    <ul className={styles.border}>
    <li  disabled={page === 1} onClick={()=>handleClick(page-1)}><p style={page === 1 ? {display:"none"} : {}} className={styles.active} >« Previous</p></li>
-
-   {/* {Array.from({ length: totalPages }, (_, i) => (
-        <p key={i} onClick={() =>handleClick(i+1)} style={{ cursor: 'pointer', margin: '0 5px', fontWeight: i + 1 === page ? 'bold' : 'normal' }}>{i + 1}</p>
-      ))} */}
    <li   onClick={()=>handleClick(1)}><p style={page === 1 ? {backgroundColor:"grey"} : {}} >1</p></li>
    <li  onClick={()=>handleClick(2)}><p style={page === 2 ? {backgroundColor:"grey"} : {}} >2</p></li>
    <li  onClick={()=>handleClick(3)}><p style={page === 3 ? {backgroundColor:"grey"} : {}} >3</p></li>
