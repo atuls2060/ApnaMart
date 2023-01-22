@@ -2,7 +2,7 @@ import React from 'react'
 import ProductDetail from '@/components/ProductDetail/ProductDetail'
 
 const SingleProductPage = () => {
-    return <h1>hello</h1>
+    return <ProductDetail/>
 }
 
 export default SingleProductPage
