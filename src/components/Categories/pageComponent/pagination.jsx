@@ -5,13 +5,8 @@ import { useSelector } from 'react-redux'
 
 
 const Pagination = ({page,onPageChange}) => {
-  const {data,total} = useSelector((state)=>state.productsManager)
-  console.log(data)
-  const totalPages = Math.ceil(data.length / 12)
-  // console.log(totalPages)
-  
   const handleClick=(newPage)=>{
-    if (newPage >= 1 && newPage <= 25) {
+    if (newPage >= 1 && newPage <=5) {
       onPageChange(newPage);
     }
   }
@@ -20,13 +15,17 @@ const Pagination = ({page,onPageChange}) => {
     <div style={{marginTop:"40px"}}>
          <div className={styles.outer}>
    <ul className={styles.border}>
-   <li disabled={page === 1} onClick={()=>handleClick(page-1)}><p className={styles.active} >« Previous</p></li>
+   <li  disabled={page === 1} onClick={()=>handleClick(page-1)}><p style={page === 1 ? {display:"none"} : {}} className={styles.active} >« Previous</p></li>
 
-   {Array.from({ length: totalPages }, (_, i) => (
+   {/* {Array.from({ length: totalPages }, (_, i) => (
         <p key={i} onClick={() =>handleClick(i+1)} style={{ cursor: 'pointer', margin: '0 5px', fontWeight: i + 1 === page ? 'bold' : 'normal' }}>{i + 1}</p>
-      ))}
-
-   <li disabled={page === totalPages} onClick={()=>handleClick(page+1)}><p >Next »</p></li>
+      ))} */}
+   <li   onClick={()=>handleClick(1)}><p style={page === 1 ? {backgroundColor:"grey"} : {}} >1</p></li>
+   <li  onClick={()=>handleClick(2)}><p style={page === 2 ? {backgroundColor:"grey"} : {}} >2</p></li>
+   <li  onClick={()=>handleClick(3)}><p style={page === 3 ? {backgroundColor:"grey"} : {}} >3</p></li>
+   <li  onClick={()=>handleClick(4)}><p style={page === 4 ? {backgroundColor:"grey"} : {}} >4</p></li>
+   <li  onClick={()=>handleClick(5)}><p style={page === 5  ? {backgroundColor:"grey"} : {}} >5</p></li>
+   <li  onClick={()=>handleClick(page+1)}><p >Next »</p></li>
  </ul> 
 </div>
 
