@@ -12,6 +12,7 @@ const SignInPopUp = ({ togglePopUp }) => {
     const handleClick = () => {
         if (currentUser !== null) {
             signOut(auth).then(() => {
+                localStorage.removeItem("username")
                 router.push("/")
            
             }).catch((error) => {

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build & next export",
     "start": "next start",
     "lint": "next lint"
   },
@@ -31,5 +31,6 @@
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
     "slick-carousel": "^1.8.1"
-  }
+  },
+  "homepage": "."
 }

@@ -59,7 +59,7 @@ const EmailView = ({ toggleView, email, onChange }) => {
                 >
                     Continue
                 </Button>
-                <Text fontSize="14px" mt="4">By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</Text>
+                <Text fontSize="14px" mt="4">By continuing, you agree to Amazon&apos;s Conditions of Use and Privacy Notice.</Text>
                 <Link href="/"><Text fontSize="14px" mt="5">Need Help?</Text></Link>
             </CardBody>
         </Card>

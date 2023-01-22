@@ -66,7 +66,7 @@ const Cart = () => {
                     fontSize='sm'
                   >
                     Your shopping cart is waiting. Give it purpose – fill it with groceries, clothing, household supplies, electronics and more.
-Continue shopping on the <span style={{color:'#007185'}}>Amazon.in homepage</span>, learn about <span style={{color:'#007185'}}>today's deals</span>, or visit your <span style={{color:'#007185'}}>Wish List</span>.
+Continue shopping on the <span style={{color:'#007185'}}>Amazon.in homepage</span>, learn about <span style={{color:'#007185'}}>today&apos;s deals</span>, or visit your <span style={{color:'#007185'}}>Wish List</span>.
                   </Text>
                 </Flex>
                 <hr/>
@@ -96,7 +96,7 @@ Continue shopping on the <span style={{color:'#007185'}}>Amazon.in homepage</spa
               marginTop={5}
               // border="2px solid red"
               >
-                <Text>The price and availability of items at Amazon.in are subject to change. The shopping cart is a temporary place to store a list of your items and reflects each item's most recent price. Do you have a promotional code? We'll ask you to enter your claim code when it's time to pay.</Text>
+                <Text>The price and availability of items at Amazon.in are subject to change. The shopping cart is a temporary place to store a list of your items and reflects each item&apos;s most recent price. Do you have a promotional code? We&apos;ll ask you to enter your claim code when it&apos;s time to pay.</Text>
               </Box>
           </Box >
             <Box 
@@ -212,7 +212,7 @@ Continue shopping on the <span style={{color:'#007185'}}>Amazon.in homepage</spa
                   height='auto' 
                 >
                   {items.map((el,index)=>{return(
-                    <Box marginBottom={5}>
+                    <Box marginBottom={5} key={index}> 
                       <Box
                         // border="2px solid red"
                         height={200}
@@ -328,7 +328,7 @@ Continue shopping on the <span style={{color:'#007185'}}>Amazon.in homepage</spa
               marginTop={5}
               // border="2px solid red"
               >
-                <Text>The price and availability of items at Amazon.in are subject to change. The shopping cart is a temporary place to store a list of your items and reflects each item's most recent price. Do you have a promotional code? We'll ask you to enter your claim code when it's time to pay.</Text>
+                <Text>The price and availability of items at Amazon.in are subject to change. The shopping cart is a temporary place to store a list of your items and reflects each item&apos;s most recent price. Do you have a promotional code? We&apos;ll ask you to enter your claim code when it&apos;s time to pay.</Text>
               </Box>
           </Box >
             <Box 

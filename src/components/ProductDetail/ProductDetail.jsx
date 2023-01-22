@@ -193,18 +193,18 @@ const ProductDetail = () => {
                     <Text fontSize={"20px"} p={"20px"} style={{fontWeight:"bold"}}>Special offers and product promotions</Text>
                     <Text fontWeight={"bold"}>colour: BLACK | Size: XL <span style={{color:"grey"}}>Promotions can vary depending on colour/size.</span></Text>
                     <br />
-                    <Text fontWeight={"bold"}> Buy 3 Get 5% Off, Buy 4 Get 10% Off <span style={{color:"grey"}}>Here's how</span> </Text>
+                    <Text fontWeight={"bold"}> Buy 3 Get 5% Off, Buy 4 Get 10% Off <span style={{color:"grey"}}>Here&apos;s how</span> </Text>
                     <br />
-                    <Text fontWeight={"bold"}> 5% Instant Discount up to INR 250 on HSBC Cashback Card Credit Card Transactions. Minimum purchase value INR 1000 <span style={{color:"grey"}}>Here's how</span> </Text>
+                    <Text fontWeight={"bold"}> 5% Instant Discount up to INR 250 on HSBC Cashback Card Credit Card Transactions. Minimum purchase value INR 1000 <span style={{color:"grey"}}>Here&apos;s how</span> </Text>
                     <br />
-                    <Text fontWeight={"bold"}> No cost EMI available on select cards. Please check 'EMI options' above for more details. <span style={{color:"grey"}}>Here's how</span> </Text>
+                    <Text fontWeight={"bold"}> No cost EMI available on select cards. Please check &apos;EMI options&apos; above for more details. <span style={{color:"grey"}}>Here&apos;s how</span> </Text>
                     <br />
-                    <Text fontWeight={"bold"}> Get GST invoice and save up to 28% on business purchases. Sign up for free <span style={{color:"grey"}}>Here's how</span> </Text>
+                    <Text fontWeight={"bold"}> Get GST invoice and save up to 28% on business purchases. Sign up for free <span style={{color:"grey"}}>Here&apos;s how</span> </Text>
 
                 </VStack>
                 
             </Box>
-            <Text padding={"25px"} fontWeight={"bold"}> Get GST invoice and save up to 28% on business purchases. Sign up for free <span style={{color:"grey"}}>Here's how</span> </Text>
+            <Text padding={"25px"} fontWeight={"bold"}> Get GST invoice and save up to 28% on business purchases. Sign up for free <span style={{color:"grey"}}>Here&apos;s how</span> </Text>
             <Carousel/>
             <Box h={"100vh"} w={"100%"} p={"20px"}>
             <VStack w={"30%"} style={{marginRight:"80%"}}>
@@ -247,14 +247,14 @@ const ProductDetail = () => {
 
                 </Box>
                 <Box>
-                <Text fontSize={"20px"} p={"20px"} style={{fontWeight:"bold"}}>Best Sellers in Men's Clothing</Text>
+                <Text fontSize={"20px"} p={"20px"} style={{fontWeight:"bold"}}>Best Sellers in Men&apos;s Clothing</Text>
             
 
                 <Carousel/>
 
                 </Box>
                 <Box>
-                <Text fontSize={"20px"} p={"20px"} style={{fontWeight:"bold"}}>Related to items you've viewed</Text>
+                <Text fontSize={"20px"} p={"20px"} style={{fontWeight:"bold"}}>Related to items you&apos;ve viewed</Text>
             
 
                 <Carousel/>

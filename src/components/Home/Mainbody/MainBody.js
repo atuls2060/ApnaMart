@@ -37,7 +37,7 @@ const MainBody = () => {
         </GridItem>
                    {/* ===================================== */}
         <GridItem w='100%' bg='#fff' boxShadow='md' p="15px">
-            <Text  fontSize="21px" color="#0F1111">Starting ₹199 | Men's fashion</Text>
+            <Text  fontSize="21px" color="#0F1111">Starting ₹199 | Men&apos;s fashion</Text>
 
             <Grid templateColumns='repeat(2, 1fr)' gap={4} m="15px 0px" mb="25px">
                 <GridItem w='100%' bg='#fff' mb="10px">

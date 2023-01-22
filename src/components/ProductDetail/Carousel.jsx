@@ -9,7 +9,7 @@ const Carousel = () => {
     <HStack>
     <Box cursor={"pointer"}  h={"300px"} w={"12%"} border={"1px solid #949696"}>
     <Image src="https://m.media-amazon.com/images/I/41-NMtHvu0L._AC_SR160,200_.jpg"></Image>
-      <Text style={{color:"#007AA0",fontSize:"12px",fontWeight:"medium"}}>URKNIT Winter Wear Polyester Sweatshirts for Men's</Text>
+      <Text style={{color:"#007AA0",fontSize:"12px",fontWeight:"medium"}}>URKNIT Winter Wear Polyester Sweatshirts for Men&apos;s</Text>
       <Button _hover={{backgroundColor:"#B12704"}} h={"10%"} color={"white"} bg={"#B12704"}>Deal of the Day</Button>
       
       
@@ -33,7 +33,7 @@ const Carousel = () => {
     </Box>
     <Box  cursor={"pointer"} h={"300px"} w={"12%"} border={"1px solid #949696"}>
     <Image src="https://m.media-amazon.com/images/I/31ICo93zojL._AC_SR160,200_.jpg"></Image>
-      <Text style={{color:"#007AA0",fontSize:"12px",fontWeight:"medium"}}>Alan Jones Clothing Men's Cotton Hooded Sweatshirt</Text>
+      <Text style={{color:"#007AA0",fontSize:"12px",fontWeight:"medium"}}>Alan Jones Clothing Men&apos;s Cotton Hooded Sweatshirt</Text>
       <Button _hover={{backgroundColor:"#B12704"}} h={"10%"} color={"white"} bg={"#B12704"}>Deal of the Day</Button>
 
       
@@ -57,7 +57,7 @@ const Carousel = () => {
     </Box>
     <Box  cursor={"pointer"} h={"300px"} w={"12%"} border={"1px solid #949696"}>
     <Image src="https://m.media-amazon.com/images/I/41-NMtHvu0L._AC_SR160,200_.jpg"></Image>
-      <Text style={{color:"#007AA0",fontSize:"12px",fontWeight:"medium"}}>URKNIT Winter Wear Polyester Sweatshirts for Men's</Text>
+      <Text style={{color:"#007AA0",fontSize:"12px",fontWeight:"medium"}}>URKNIT Winter Wear Polyester Sweatshirts for Men&apos;s</Text>
       <Button _hover={{backgroundColor:"#B12704"}} h={"10%"} color={"white"} bg={"#B12704"}>Deal of the Day</Button>
 
       

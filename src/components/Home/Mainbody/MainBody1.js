@@ -84,7 +84,7 @@ export const MainBody1 = () => {
                 <GridItem w='100%'  bg='#fff'>
                     <Image src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/TVs/JanART/Samsung/PC_QuadCard_372X232_2._SY116_CB615740626_.jpg" h={125}  /> 
                    
-                    <Text fontSize="12px" color="#0F1111">Series of Smart Tv's</Text>
+                    <Text fontSize="12px" color="#0F1111">Series of Smart Tv&apos;s</Text>
                 </GridItem>
                 <GridItem w='100%'  bg='#fff'>
                      <Image src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Wireless/devjyoti/JanART23/Tecno/Ascent/D67951420_IN_WLD_JanART23_Tecno_Ascent_PC_QuadCard_186X116._SY116_CB616976241_.jpg" h={125}  /> 

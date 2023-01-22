@@ -20,7 +20,9 @@ export const createAccountApi = async ({ name, email, password }) => {
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password)
         const user = userCredential.user;
-       
+        
+        localStorage.setItem("username",name)
+
         updateProfile(user,{
             displayName:name
         }).then(()=>{
