@@ -14,8 +14,11 @@ import styles from "../../components/Categories/pageComponent/page.module.css"
 
 const Products = (props) => {
   const {loading,error,data} = useSelector((state)=>state.productsManager)
-  // console.log(data)
-  // const [limit,setLimit] = useState(12)
+  const [jeans, setjeans] = useState(false)
+  const [tshirt, settshirt] = useState(false)
+  const [shirt, setshirt] = useState(false)
+  const [jacket, setjacket] = useState(false)
+  const [sweatshirt, setsweatshirt] = useState(false)
   const [payOnDelivery, setPayOnDelivery] = useState(false);
   const [raymond,setRaymond] = useState(false)
   const [levi, setlevi] = useState(false)
@@ -31,79 +34,108 @@ const Products = (props) => {
   const dispatch=useDispatch()
   const limit =12
   useEffect(()=>{
-    setPage(1);
+    // setPage(1);
+    setjeans(false)
+    settshirt(false)
+    setshirt(false)
+    setjacket(false)
+    setsweatshirt(false)
     setPayOnDelivery(false)
+    setRaymond(false)
+    setlevi(false)
+    setnike(false)
+    setpuma(false)
+    setreebok(false)
+    setamazon(false)
+    setus(false)
+  },[category,page])
+  useEffect(()=>{
+   setPage(1)
   },[category])
+
   useEffect(()=>{
     dispatch(getProducts(category,page,limit))
   },[category,page,limit])
-//  let payData;
-  const handleChange1 = ()=>{
+
+const handleJeans=()=>{
+  setjeans(!jeans)
+  let payData= data.filter((items)=>items.desc.includes("Jeans"))
+  setItem(payData)
+}
+const handleTshirt=()=>{
+  settshirt(!tshirt)
+  let payData= data.filter((items)=>items.desc.includes("Polo"))
+  setItem(payData)
+}
+const handleShirt=()=>{
+  setshirt(!shirt)
+  let payData= data.filter((items)=>items.desc.includes("Shirt"))
+  setItem(payData)
+}
+const handleJacket=()=>{
+  setjacket(!jacket)
+  let payData= data.filter((items)=>items.desc.includes("Jacket"))
+  setItem(payData)
+}
+
+const handleSweatshirt=()=>{
+  setsweatshirt(!sweatshirt)
+  let payData= data.filter((items)=>items.desc.includes("Sweatshirt"))
+  setItem(payData)
+}
+
+
+
+
+
+  const handleDelivery = ()=>{
     setPayOnDelivery(!payOnDelivery)
       let payData= data.filter((items)=>items.base)
-      setItem(payData)
-  }
-  let payData;
-  const handleChange2=()=>{
-    // console.log(e.target.checked)
-    setRaymond(!raymond)
-      payData= data.filter((items)=> items.title==="Raymond")
       setItem([...item,...payData])
   }
-  const handleChange3=()=>{
-    //  setlevi(!levi)
-   if(!puma){
-      let payData= data.filter((items)=>items.title==="Levi's")
-      setItem([...item,...payData])
-      setlevi(true)
-    }else{
-      let payData= data.filter((items)=>items.title!=="Levi's")
-      setItem([...item,...payData])
-      setlevi(false)
-    }
+  const handleAmazon=()=>{
+    setamazon(!amazon)
+   let payData= data.filter((items)=>items.title.includes("Amazon Brand"))
+   setItem(payData)
   }
-  const handleChange4=()=>{
-    setpuma(!puma)
-    if(puma){
-      let payData= data.filter((items)=>items.title==="Puma")
-      setItem([...item,...payData])
-    }else{
-      let payData= data.filter((items)=>items.title!=="Puma")
-      setItem([...item,...payData])
-    }
-   
-  }
-  
-  const handleChange6=()=>{
+  const handleReebok=()=>{
     setreebok(!reebok)
    let payData= data.filter((items)=>items.title==="Reebok")
    setItem([...item,...payData])
   }
-  const handleChange7=()=>{
-    setamazon(!amazon)
-   let payData= data.filter((items)=>items.title==="Amazon Brand - Symbol")
-   setItem(payData)
+  const handlePuma=()=>{
+    setpuma(!puma)
+      let payData= data.filter((items)=>items.title==="Puma")
+      setItem([...item,...payData])
+   
   }
-  const handleChange8=()=>{
+  const handleRaymond=()=>{
+    setRaymond(!raymond)
+     let payData= data.filter((items)=> items.title==="Raymond")
+      setItem([...item,...payData])
+  }
+  const handleLevi=()=>{
+     setlevi(!levi)
+     setRaymond(!raymond)
+     let payData= data.filter((items)=> items.title==="Levi's")
+      setItem([...item,...payData])
+  }
+  const handleUs=()=>{
     setus(!us)
    let payData= data.filter((items)=>items.title==="U.S. POLO ASSN.")
-   setItem(payData)
+   setItem([...item,...payData])
   }
-  const handleClick=()=>{
-    setus(!us)
-    let payData= data.filter((items)=>items.desc.includes("Sweatshirt"))
-   setItem(payData)
-  }
+  
   
 const handleSort =(e)=>{
   let filter;
   if(e.target.value==="ltoh"){
-    // setus(!us)
+     setus(!us)
     filter = data.sort((a,b)=>a.price-b.price)
     console.log(filter)
     setItem(filter)
   }else if(e.target.value==="htol"){
-    // setus(!us)
+     setus(!us)
    filter= data.sort((a,b)=>b.price-a.price)
     setItem(filter)
   }
@@ -122,7 +154,7 @@ const handleSort =(e)=>{
       
         <div style={{display:"flex"}}>
              <div style={{width:"20%"}}>
-              <Filter onclick={handleClick} onChange1={handleChange1}  onChange2={handleChange2} onChange3={handleChange3} onChange4={handleChange4}  onChange6={handleChange6} onChange7={handleChange7} onChange8={handleChange8}/>
+              <Filter onclick1={handleJeans} onclick2={handleTshirt} onclick3={handleShirt} onclick4={handleJacket}  onclick6={handleSweatshirt} onChange1={handleDelivery}  onChange2={handleRaymond} onChange3={handleLevi} onChange4={handlePuma}  onChange6={handleReebok} onChange7={handleAmazon} onChange8={handleUs}/>
               </div>
              <div style={{width:"85%"}}>
              <div>
@@ -139,7 +171,7 @@ const handleSort =(e)=>{
           <p style={{color:"grey"}}>Price and other details may vary based on product size and colour.</p>
           </div>
           <div className={styles.grid} >
-           {payOnDelivery|| raymond ||levi||puma||nike||reebok||amazon|| us? item.map((el)=><Pages key={el.id} {...el}/>) : data.map((el)=><Pages key={el.id} {...el}/>)}             
+           {jeans|| tshirt|| shirt|| jacket|| sweatshirt ||payOnDelivery|| raymond ||levi||puma||nike||reebok||amazon|| us? item.map((el)=><Pages key={el.id} {...el}/>) : data.map((el)=><Pages key={el.id} {...el}/>)}             
           </div>
               <Pagination page={page} onPageChange={setPage}/>
              </div>
