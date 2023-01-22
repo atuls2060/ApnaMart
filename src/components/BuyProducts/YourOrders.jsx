@@ -12,12 +12,14 @@ import {
 export default function YourOrders() {
   return (
     <Box 
-    border='2px solid black' 
+    // border='2px solid black' 
     width='60%' 
     height='auto' 
     textAlign='center'
     margin='auto'
-    paddingBottom={5}>
+    paddingBottom={5}
+    marginTop={2}
+    >
       <Flex minWidth='max-content' alignItems='center' gap='2' >
         <Text fontSize='sm'>Your Account ›</Text>
         <Text fontSize='sm' color='#c45500'>Your Orders</Text>

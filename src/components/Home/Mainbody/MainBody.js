@@ -104,7 +104,7 @@ const MainBody = () => {
                           <Text fontSize='21px'color="#0F1111">
                           Sign in for your best experience
                            </Text>
-                          <Button  colorScheme='orange' w="100%" fontSize="13px" mt='10px' >
+                          <Button backgroundColor="#ff9900" w="100%" fontSize="13px" mt='10px' >
                             Sign in securely
                           </Button>
                 </Box>

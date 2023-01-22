@@ -7,18 +7,20 @@ import Bestseller from '../BuyProducts/Bestseller'
 import Inspired from '../BuyProducts/Inspired'
 import TopPick from '../BuyProducts/TopPicks'
 import History from '../BuyProducts/History'
+import { Button } from '@chakra-ui/react'
+
 export default function BuyProductPage() {
   return (
     <div>
-      <h1>BuyProductPage</h1>
       <YourOrders/>
-      <Grocery/>
+      {/* <Grocery/> */}
       <PetSupplies/>
       <Supplies/>
       <Bestseller/>
       <Inspired/>
       <TopPick/>
       <History/>
+      
     </div>
   )
 }

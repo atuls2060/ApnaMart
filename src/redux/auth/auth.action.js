@@ -1,6 +1,6 @@
 import { AUTH_SIGN_IN_ERROR, AUTH_SIGN_IN_LOADING, AUTH_SIGN_IN_SUCCESS } from "./auth.types"
 
-const { loginUserApi } = require("./auth.api")
+const { loginUserApi, createAccountApi } = require("./auth.api")
 
 
 export const loginUser = (cred) => async (dispatch) => {
@@ -13,8 +13,16 @@ export const loginUser = (cred) => async (dispatch) => {
         dispatch({ type: AUTH_SIGN_IN_ERROR })
     }
 }
-const createAccount = (cred) => (dispatch) => {
-
+export const createAccount = (cred) => async (dispatch) => {
+    dispatch({ type: AUTH_SIGN_IN_LOADING })
+    try {
+        const data = await createAccountApi(cred)
+        console.log("data",data)
+        dispatch({ type: AUTH_SIGN_IN_SUCCESS, payload: data })
+    } catch (error) {
+        console.log("error", error)
+        dispatch({ type: AUTH_SIGN_IN_ERROR })
+    }
 }
 const logoutUser = () => (dispatch) => {
 
