@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { useSelector } from 'react-redux'
 
-const Filter = ({onChange1,onChange2,onChange3,onChange4,onChange6,onChange7,onChange8,onclick1,onclick2,onclick3,onclick4,onclick6}) => {
+const Filter = ({onChange1,onChange2,onChange3,onChange4,onChange6,onChange7,onChange8,onclick1,onclick2,onclick3,onclick4,onclick6,onclick7,onclick8,onclick9,onclick10,onclick11}) => {
   const {data} = useSelector((state)=>state.productsManager)
   return (
     <div style={{width:"80%",margin:"auto",marginTop:"62px"}}>
@@ -33,14 +33,11 @@ const Filter = ({onChange1,onChange2,onChange3,onChange4,onChange6,onChange7,onC
         </div>
         <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Price</h1>
         <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`,fontWeight:"500"}}>
-        <h1>Under ₹300</h1>
-        <h1>₹300 - ₹500</h1>
-        <h1>₹500 - ₹1,000</h1>
-        <h1>₹1,000 - ₹1,500</h1>
-        <h1>Over ₹1,500</h1>
-        </div>
-        <div style={{marginTop:"5px"}}>
-        <input style={{width:"60px",outline:"none",border:"1px solid grey",padding:"5px",marginRight:"7px"}} type="text" placeholder='₹ Min' /><input style={{width:"60px",outline:"none",border:"1px solid grey",marginRight:"7px",padding:"5px"}} type="text" placeholder='₹ Max' /><button style={{border:"1px solid grey",padding:"5px"}}>Go</button>
+        <h1 onClick={onclick7}>Under ₹300</h1>
+        <h1 onClick={onclick8}>₹300 - ₹500</h1>
+        <h1 onClick={onclick9}>₹500 - ₹1,000</h1>
+        <h1 onClick={onclick10}>₹1,000 - ₹1,500</h1>
+        <h1 onClick={onclick11}>Over ₹1,500</h1>
         </div>
         <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Pay On Delivery</h1>
         <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`}}>

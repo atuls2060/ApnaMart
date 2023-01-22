@@ -14,6 +14,11 @@ import styles from "../../components/Categories/pageComponent/page.module.css"
 
 const Products = (props) => {
   const {loading,error,data} = useSelector((state)=>state.productsManager)
+  const [price,setprice] = useState(false)
+  const [price2, setprice2] = useState(false)
+  const [price3, setprice3] = useState(false)
+  const [price4, setprice4] = useState(false)
+  const [price5, setprice5] = useState(false)
   const [jeans, setjeans] = useState(false)
   const [tshirt, settshirt] = useState(false)
   const [shirt, setshirt] = useState(false)
@@ -33,8 +38,14 @@ const Products = (props) => {
    const category = props.category;
   const dispatch=useDispatch()
   const limit =12
+  
   useEffect(()=>{
     // setPage(1);
+    setprice(false)
+    setprice2(false)
+    setprice3(false)
+    setprice4(false)
+    setprice5(false)
     setjeans(false)
     settshirt(false)
     setshirt(false)
@@ -55,7 +66,7 @@ const Products = (props) => {
 
   useEffect(()=>{
     dispatch(getProducts(category,page,limit))
-  },[category,page,limit])
+  },[category,page,limit,dispatch])
 
 const handleJeans=()=>{
   setjeans(!jeans)
@@ -81,6 +92,31 @@ const handleJacket=()=>{
 const handleSweatshirt=()=>{
   setsweatshirt(!sweatshirt)
   let payData= data.filter((items)=>items.desc.includes("Sweatshirt"))
+  setItem(payData)
+}
+const handle3=()=>{
+  setprice(!price)
+  let payData= data.filter((items)=>items.price<=300)
+  setItem(payData)
+}
+const handle3to5=()=>{
+  setprice2(!price2)
+  let payData= data.filter((items)=>items.price>=300 && items.price<=500)
+  setItem(payData)
+}
+const handle5to1=()=>{
+  setprice3(!price3)
+  let payData= data.filter((items)=>items.price>=500 && items.price<=1000)
+  setItem(payData)
+}
+const handle1to15=()=>{
+  setprice4(!price4)
+  let payData= data.filter((items)=>items.price>=1000 && items.price<=1500)
+  setItem(payData)
+}
+const handle15=()=>{
+  setprice5(!price5)
+  let payData= data.filter((items)=>items.price>=1500)
   setItem(payData)
 }
 
@@ -127,19 +163,7 @@ const handleSweatshirt=()=>{
   }
   
   
-const handleSort =(e)=>{
-  let filter;
-  if(e.target.value==="ltoh"){
-     setus(!us)
-    filter = data.sort((a,b)=>a.price-b.price)
-    console.log(filter)
-    setItem(filter)
-  }else if(e.target.value==="htol"){
-     setus(!us)
-   filter= data.sort((a,b)=>b.price-a.price)
-    setItem(filter)
-  }
-}
+
  
 
   if(loading){
@@ -154,24 +178,15 @@ const handleSort =(e)=>{
       
         <div style={{display:"flex"}}>
              <div style={{width:"20%"}}>
-              <Filter onclick1={handleJeans} onclick2={handleTshirt} onclick3={handleShirt} onclick4={handleJacket}  onclick6={handleSweatshirt} onChange1={handleDelivery}  onChange2={handleRaymond} onChange3={handleLevi} onChange4={handlePuma}  onChange6={handleReebok} onChange7={handleAmazon} onChange8={handleUs}/>
+              <Filter onclick1={handleJeans} onclick2={handleTshirt} onclick3={handleShirt} onclick4={handleJacket}  onclick6={handleSweatshirt} onclick7={handle3} onclick8={handle3to5} onclick9={handle5to1} onclick10={handle1to15} onclick11={handle15} onChange1={handleDelivery}  onChange2={handleRaymond} onChange3={handleLevi} onChange4={handlePuma}  onChange6={handleReebok} onChange7={handleAmazon} onChange8={handleUs}/>
               </div>
              <div style={{width:"85%"}}>
-             <div>
-          <select style={{float:"right",marginTop:"20px",border:"1px solid black"}} onChange={handleSort}   name="sort by: Featured" id="">
-            <option value="featured">Sort by: Featured</option>
-            <option value="ltoh">Price:Low to High</option>
-            <option value="htol">Price:High to Low</option>
-            <option value="review">Avg.Customer Review</option>
-            <option value="new">Newest Arrivals</option>
-          </select>
-          </div>
           <div style={{marginTop:"60px"}}>
           <h1 style={{fontWeight:"bold",fontSize:"20px"}}>RESULTS</h1>
           <p style={{color:"grey"}}>Price and other details may vary based on product size and colour.</p>
           </div>
           <div className={styles.grid} >
-           {jeans|| tshirt|| shirt|| jacket|| sweatshirt ||payOnDelivery|| raymond ||levi||puma||nike||reebok||amazon|| us? item.map((el)=><Pages key={el.id} {...el}/>) : data.map((el)=><Pages key={el.id} {...el}/>)}             
+           {jeans||price || price2||price3||price4|| price5 || tshirt|| shirt|| jacket|| sweatshirt ||payOnDelivery|| raymond ||levi||puma||nike||reebok||amazon|| us? item.map((el)=><Pages key={el.id} {...el}/>) : data.map((el)=><Pages key={el.id} {...el}/>)}             
           </div>
               <Pagination page={page} onPageChange={setPage}/>
              </div>
