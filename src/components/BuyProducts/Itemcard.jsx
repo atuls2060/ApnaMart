@@ -12,16 +12,24 @@ export default function Itemcard(props) {
     let {addItem} = useCart();
     // console.log('addItem:',addItem(props))
   return (
-    <div>
+    <div 
+    style={{
+      // border:"2px solid blue",
+      // display:"grid",
+      // gridTemplateColumns:'repeat(3,1fr)',
+      // gap:"5px"
+      }}>
         <Box 
-              key={props.id} 
-              style={{
-                border:"2px solid red",
-                gap:"5px",
-                width:"100%",
-                padding:"10px"
-            }}>
-              <Box height={320} border="2px solid yellow">
+            // border="2px solid green"
+            width='95%'
+            justifyContent='space-around'
+            gap={1}
+            key={props.id} 
+              
+           >
+              <Box height={320} 
+              // border="2px solid yellow"
+              >
                 <Box style={{
                     paddingLeft:"60px",
                     height:"130px"
@@ -39,15 +47,16 @@ export default function Itemcard(props) {
                 lineHeight={1.2}
                 letterSpacing={0.1}
                 fontWeight={500}
+                textAlign='left'
                 >{props.details}</Text>
-                <Text color='#565959' fontSize='13px'>{props.brand}</Text>
-                <Text color='#007185' fontSize='13px'>{props.rating}</Text>
-                <Flex color='#565959' fontSize='13px' gap={5}>
-                  <Text color="black" fontSize='15px'>₹ {props.price}</Text>
+                <Text color='#565959' fontSize='13px' textAlign='left'>{props.brand}</Text>
+                <Text color='#007185' fontSize='13px' textAlign='left'>{props.rating}</Text>
+                <Flex color='#565959' fontSize='13px' gap={5} textAlign='left'>
+                  <Text color="black" fontSize='15px' textAlign='left'>₹ {props.price}</Text>
                   <Text><strike>{props.prizestrike}</strike></Text>
                 </Flex>
-                <Text color='#565959' fontSize='13px'>{props.discount}</Text>
-                <Text color='#565959' fontSize='13px'>Get it by 
+                <Text color='#565959' fontSize='13px' textAlign='left'>{props.discount}</Text>
+                <Text color='#565959' fontSize='13px' textAlign='left'>Get it by 
                   <span style={{color:'black', fontSize:'15px', fontWeight:"600"}}>
                     {props.delivery}
                   </span>
