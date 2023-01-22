@@ -9,9 +9,10 @@ import { SlLocationPin } from "react-icons/sl"
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import SignInPopUp from './SignInPopUp'
+import {useCart} from 'react-use-cart';
 
 const Navbar = ({ showBottomNav = false }) => {
-
+  
   const dispatch = useDispatch()
   const { data: { token, isAuthenticated } } = useSelector((store) => store.authManager)
 
@@ -24,6 +25,7 @@ const Navbar = ({ showBottomNav = false }) => {
 }
 
 export const NavbarTop = () => {
+  const {totalItems} = useCart();
   const [showSignIn, toggleSignInPopUp] = useState(false);
 
   return <HStack bg="#131921" zIndex="5" top="0" p="2" position="fixed" w="100%" color="white" justifyContent="space-between" gap="4" onMouseLeave={() => toggleSignInPopUp(false)}>
@@ -86,7 +88,7 @@ export const NavbarTop = () => {
       <Link href="/cart">
         <HStack>
           <BiCart size="35px" />
-          <Text>Cart</Text>
+          <Text>Cart {totalItems}</Text>
         </HStack>
       </Link>
     </HStack>
