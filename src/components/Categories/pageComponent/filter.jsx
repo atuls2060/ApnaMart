@@ -1,22 +1,21 @@
 import React from 'react'
 import Image from 'next/image'
+import { useSelector } from 'react-redux'
 
-const Filter = () => {
+const Filter = ({onChange1,onChange2,onChange3,onChange4,onChange6,onChange7,onChange8,onclick1,onclick2,onclick3,onclick4,onclick6}) => {
+  const {data} = useSelector((state)=>state.productsManager)
   return (
     <div style={{width:"80%",margin:"auto",marginTop:"62px"}}>
         <h1 style={{fontWeight:"bold",fontSize:"18px"}}>Category</h1>
         <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`}}>
-        <h1>Fashion</h1>
-        <h1> Fresh Picks of the Month | Dec 2022</h1>
-        <h1>Women</h1>
-        <h1>Clothing</h1>
-        <h1>Western Wear</h1>
+        <h1 onClick={onclick1}>Jeans</h1>
+        <h1 onClick={onclick2}>T-Shirt</h1>
+        <h1 onClick={onclick3}>Shirt</h1>
         </div>
             <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Winter Wear</h1>
             <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`}}>
-            <h1>Coats, Jackets & Vests</h1>
-            <h1>Sweaters</h1>
-            <h1>Sweatshirts & Hoodies</h1>
+            <h1 onClick={onclick4}>Coats, Jackets & Vests</h1>
+            <h1 onClick={onclick6} >Sweatshirts & Hoodies</h1>
             </div>
         <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Avg. Customer Review</h1>
         <div style={{display:"grid",gridTemplateColumns:"repeat(6,20px)"}}><Image src="https://i.ibb.co/G9KvM8Q/star.png" width={20} height={20} alt="image"/><Image src="https://i.ibb.co/G9KvM8Q/star.png" width={20} height={20} alt="image"/><Image src="https://i.ibb.co/G9KvM8Q/star.png" width={20} height={20} alt="image"/><Image src="https://i.ibb.co/G9KvM8Q/star.png" width={20} height={20} alt="image"/><Image src="https://i.ibb.co/ZJFJbZG/rating.png" width={20} height={20} alt="image"/></div>
@@ -25,13 +24,12 @@ const Filter = () => {
         <div style={{display:"grid",gridTemplateColumns:"repeat(6,20px)"}}><Image src="https://i.ibb.co/G9KvM8Q/star.png" width={20} height={20} alt="image"/><Image src="https://i.ibb.co/ZJFJbZG/rating.png" width={20} height={20} alt="image"/></div>
         <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Brands</h1>
         <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`}}>
-        <div><input type="checkbox" name="" value="" id="" /> Qube By Fort Collins</div>
-        <div><input type="checkbox" name="" value="" id="" /> Amazon Brand - Symbol</div>
-        <div><input type="checkbox" name="" value="" id="" /> Marks & Spencer</div>
-        <div><input type="checkbox" name="" value="" id="" /> Amazon Brand - Eden & Ivy</div>
-        <div><input type="checkbox" name="" value="" id="" /> Max</div>
-        <div><input type="checkbox" name="" value="" id="" /> Monte Carlo</div>
-        <div><input type="checkbox" name="" value="" id="" /> U.S. POLO ASSN.</div>
+        <div><input onChange={e => onChange7(e.target.checked)} type="checkbox" name="" value="" id="" /> Amazon Brand - Symbol</div>
+        <div><input onChange={e => onChange6(e.target.checked)} type="checkbox" name="" value="" id="" /> Reebok</div>
+        <div><input onChange={e => onChange4(e.target.checked)} type="checkbox" name="" value="" id="" /> Puma</div>
+        <div><input onChange={e => onChange2(e.target.checked)} type="checkbox" name="" value="" id="" /> Raymond</div>
+        <div><input onChange={e => onChange3(e.target.checked)} type="checkbox" name="" value="" id="" /> Levi&apos;s</div>
+        <div><input onChange={e => onChange8(e.target.checked)} type="checkbox" name="" value="" id="" /> U.S. POLO ASSN.</div>
         </div>
         <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Price</h1>
         <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`,fontWeight:"500"}}>
@@ -44,6 +42,10 @@ const Filter = () => {
         <div style={{marginTop:"5px"}}>
         <input style={{width:"60px",outline:"none",border:"1px solid grey",padding:"5px",marginRight:"7px"}} type="text" placeholder='₹ Min' /><input style={{width:"60px",outline:"none",border:"1px solid grey",marginRight:"7px",padding:"5px"}} type="text" placeholder='₹ Max' /><button style={{border:"1px solid grey",padding:"5px"}}>Go</button>
         </div>
+        <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Pay On Delivery</h1>
+        <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`}}>
+        <div><input type="checkbox" name="" value="" id="" onChange={e => onChange1(e.target.checked)} /> Eligible for Pay On Delivery</div>
+        </div>
         <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Deals & Discounts</h1>
         <h1 style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`,fontWeight:"500"}}>Today&apos; Deals</h1>
         <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Amazon Fashion</h1>
@@ -51,10 +53,6 @@ const Filter = () => {
         <div><input type="checkbox" name="" value="" id="" /> Top Brands</div>
         <div><input type="checkbox" name="" value="" id="" /> Made for Amazon</div>
         <div><input type="checkbox" name="" value="" id="" /> Premium Brands</div>
-        </div>
-        <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Pay On Delivery</h1>
-        <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`}}>
-        <div><input type="checkbox" name="" value="" id="" /> Eligible for Pay On Delivery</div>
         </div>
         <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Seller</h1>
         <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`}}>
@@ -66,10 +64,6 @@ const Filter = () => {
         <div><input type="checkbox" name="" value="" id="" /> Cravatex Brands</div>
         <div><input type="checkbox" name="" value="" id="" /> plusS</div>
         <div><input type="checkbox" name="" value="" id="" /> Sera Brands</div>
-        </div>
-        <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Availability</h1>
-        <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`}}>
-        <div><input type="checkbox" defaultChecked name="" value="" id="" /> In Stock Only</div>
         </div>
 
         

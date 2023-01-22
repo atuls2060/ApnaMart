@@ -7,6 +7,7 @@ import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 import styles from "./slider.module.css";
 import Router from "next/router";
+import Link from "next/link";
 
 
 function NextArrow(props) {
@@ -58,59 +59,63 @@ const ImgSlider = () => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
-  const handleClik=(category)=>{
-    Router.push(`/products?category=${category}`)
-  }
+  // const handleClik=(category)=>{
+  //   Router.push(`/products?category=${category}`)
+  // }
   return (
     <div className={styles.container}>
       <Slider {...settings}>
-        <div onClick={()=>handleClik("womens")} className={styles.card}>
-          <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/2._SS300_QL85_.png " width={180} height={180} alt="Hello"/>
-          <h1 >Women&apos;s Clothing</h1>
-        </div>
-        <div onClick={()=>handleClik("mens")} className={styles.card}>
-        <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/1._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
-        <h1 >Men&apos;s Clothing</h1>
-        </div>
-        <div onClick={()=>handleClik("footwear")}  className={styles.card}>
-        <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/4._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
-        <h1>Footwear</h1>
-        </div>
-        <div  className={styles.card}>
-        <Image onClick={()=>handleClik("jewellery")} src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/7._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
-        <h1>Jewellery</h1>
-        </div>
-        <div onClick={()=>handleClik("luggage")}   className={styles.card}>
-        <Image src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/5._SS300_QL85_.png " width={180} height={180} alt="Hello"/>
-        <h1>Luggage & backpacks</h1>
-        </div>
-        <div onClick={()=>handleClik("watches")}  className={styles.card}>
-        <Image src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/6-._SS300_QL85_.png " width={180} height={180} alt="Hello"/>
-        <h1>Watches</h1>
-        </div>
-        <div onClick={()=>handleClik("beauty")}  className={styles.card}>
-        <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/3._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
-        <h1>Beauty</h1>
-        </div>
-        <div onClick={()=>handleClik("handbag")}  className={styles.card}>
-        <Image src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/8._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
-        <h1>Handbags</h1>
-        </div>
-        <div onClick={()=>handleClik("kids")}  className={styles.card}>
+      <Link href={`/products?category=kids`}  className={styles.card}>
         <Image src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/9._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
         <h1>Kids&apos; fashion</h1>
-        </div>
-        <div  className={styles.card}>
+        </Link>
+        <Link href={`/products?category=womens`}  className={styles.card}>
+          <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/2._SS300_QL85_.png " width={180} height={180} alt="Hello"/>
+          <h1 >Women&apos;s Clothing</h1>
+        </Link>
+        <Link href={`/products?category=mens`} className={styles.card}>
+        <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/1._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
+        <h1 >Men&apos;s Clothing</h1>
+        </Link>
+
+        <Link href={`/products?category=foot`}  className={styles.card}>
+        <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/4._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
+        <h1>Footwear</h1>
+        </Link>
+        <Link href={`/products?category=jewell`} className={styles.card}>
+        <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/7._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
+        <h1>Jewellery</h1>
+        </Link>
+        <Link  href={`/products?category=lug`}  className={styles.card}>
+        <Image src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/5._SS300_QL85_.png " width={180} height={180} alt="Hello"/>
+        <h1>Luggage & backpacks</h1>
+        </Link>
+        <Link href={`/products?category=watch`}  className={styles.card}>
+        <Image src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/6-._SS300_QL85_.png " width={180} height={180} alt="Hello"/>
+        <h1>Watches</h1>
+        </Link>
+        <Link  href={`/products?category=beauty`} className={styles.card}>
+        <Image src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/3._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
+        <h1>Beauty</h1>
+        </Link>
+        <Link href={`/products?category=hand`}  className={styles.card}>
+        <Image src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/8._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
+        <h1>Handbags</h1>
+        </Link>
+        <Link href={`/products?category=sun`} className={styles.card}>
         <Image src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/10._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
         <h1>Sunglasses & frames</h1>
-        </div>
-        <div  className={styles.card}>
+        </Link>
+        <Link href={`/products?category=brand`} className={styles.card}>
         <Image src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Halo/Amazon._SS300_QL85_.png" width={180} height={180} alt="Hello"/>
         <h1>Amazon brands</h1>
-        </div>
+        </Link>
       </Slider>
     </div>
   );
 };
+
+
+
 
 export default ImgSlider;

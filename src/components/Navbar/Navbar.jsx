@@ -8,8 +8,11 @@ import { BsSearch } from "react-icons/bs"
 import { SlLocationPin } from "react-icons/sl"
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
+import SignInPopUp from './SignInPopUp'
+import {useCart} from 'react-use-cart';
 
 const Navbar = ({ showBottomNav = false }) => {
+  
   const dispatch = useDispatch()
   const { data: { token, isAuthenticated } } = useSelector((store) => store.authManager)
 
@@ -22,7 +25,10 @@ const Navbar = ({ showBottomNav = false }) => {
 }
 
 export const NavbarTop = () => {
-  return <HStack bg="#131921" p="2" color="white" justifyContent="space-between" gap="4">
+  const {totalItems} = useCart();
+  const [showSignIn, toggleSignInPopUp] = useState(false);
+
+  return <HStack bg="#131921" zIndex="5" top="0" p="2" position="fixed" w="100%" color="white" justifyContent="space-between" gap="4" onMouseLeave={() => toggleSignInPopUp(false)}>
     <HStack spacing="15px">
       <Link href="/">
         <Image src="https://firebasestorage.googleapis.com/v0/b/look-your-best.appspot.com/o/Amazon-clone%2Flogos%2Flogo.png?alt=media&token=0d097020-fb24-4bc4-9367-e9fbb75192b4" alt='logo'
@@ -66,12 +72,13 @@ export const NavbarTop = () => {
         />
         <Text>EN</Text>
       </HStack>
-      <Link href="/login">
-        <Box>
-          <Text fontSize="12px">Hello, sign in</Text>
-          <Heading size="xs">Account & Lists</Heading>
-        </Box>
-      </Link>
+      <Box  onMouseEnter={() => toggleSignInPopUp(true)} >
+        <Text fontSize="12px">Hello, sign in</Text>
+        <Heading size="xs">Account & Lists</Heading>
+        {
+          showSignIn && <SignInPopUp togglePopUp={(value)=>toggleSignInPopUp(value)} />
+        }
+      </Box>
       <Link href="/products/1">
         <Box>
           <Text fontSize="12px">Returns</Text>
@@ -81,7 +88,7 @@ export const NavbarTop = () => {
       <Link href="/cart">
         <HStack>
           <BiCart size="35px" />
-          <Text>Cart</Text>
+          <Text>Cart {totalItems}</Text>
         </HStack>
       </Link>
     </HStack>
@@ -144,7 +151,7 @@ export const NavbarMiddle = () => {
     },
   ]
 
-  return <HStack bg="#232F3E" color="white" py="1" px="3" justifyContent="space-between">
+  return <HStack bg="#232F3E" color="white" py="1" px="3" mt="56px" justifyContent="space-between">
     <HStack spacing="3">
       <BiMenu />
       {

@@ -1,9 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
-const Pages = ({url,title,desc,price,cutprice,save}) => {
+const Pages = ({url,title,desc,price,cutprice,save,cut,base,id}) => {
+  console.log(id)
   return (<>
-          <div style={{margin:"auto",textAlign:"center"}}>
+          <Link href={`http://localhost:3000/products/${id}`} style={{margin:"auto",textAlign:"center"}}>
             <div style={{width:"50%",margin:"auto"}}>
             <Image style={{width:"100%",height:"200px",margin:"auto"}} src={url} width={150} height={150} alt="images"/>
             </div>
@@ -23,9 +25,9 @@ const Pages = ({url,title,desc,price,cutprice,save}) => {
               <p  style={{fontSize:"16px",textDecoration:"line-through"}}>₹{cutprice}</p>
               <p>{save}</p>
               </div>
-            <p>Buy 2 Get 5% Off, Buy 3 Get 10%…</p>
-            <p style={{fontWeight:"500"}}>FREE Delivery by Amazon</p>
-          </div>     
+            <p>{cut}</p>
+            <p style={{fontWeight:"500"}}>{base}</p>
+          </Link>     
     </>)
 }
 
