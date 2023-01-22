@@ -16,7 +16,23 @@ import Footer4 from '../Home/Footer/footer4'
 
 
 const ProductDetail = () => {
+
+
+    const [cart,setCart]=useState([])
     const [data,setData] = useState({})
+
+    const addtocart=async()=>{
+      setCart([...cart,data])
+      await fetch("http://localhost:8080/cart",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(data)
+      })
+    }
+    console.log(cart)
+    
     const router = useRouter();
 
     const {query} = router;
@@ -155,7 +171,8 @@ const ProductDetail = () => {
                     <Box  margin={"auto"} style={{height:"180px",border:"1px solid #D5D9D9",width:"80%",borderRadius:"10px"}}>
                         <VStack marginTop={"20px"}>
                             <Text fontSize={"16px"} >To buy ,select Size</Text>
-                            <Button  _hover={"#F7CA00"} color={"#0F1111"} borderRadius={"10px"} h={"35px"} w={"80%"} backgroundColor={"#F7CA00"}>Add to Cart</Button>
+
+                            <Button onClick={addtocart}   _hover={"#F7CA00"} color={"#0F1111"} borderRadius={"10px"} h={"35px"} w={"80%"} backgroundColor={"#F7CA00"}>Add to Cart</Button>
                             
                             <hr />
                             <Button color={"#24113C"} border={"1px solid black"} borderRadius={"3px"} h={"35px"} w={"80%"} backgroundColor={"#F0F2F4"}>Add to Wish List</Button>
