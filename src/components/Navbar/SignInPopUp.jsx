@@ -1,11 +1,29 @@
 import React from 'react'
 import { Box, Button } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
+import { auth } from '@/utils/firebase'
+import { signOut } from "firebase/auth";
 
-const SignInPopUp = ({togglePopUp}) => {
+
+const SignInPopUp = ({ togglePopUp }) => {
     const router = useRouter();
+    const currentUser = auth.currentUser
+
+    const handleClick = () => {
+        if (currentUser !== null) {
+            signOut(auth).then(() => {
+                router.push("/")
+           
+            }).catch((error) => {
+                // An error happened.
+            });
+        } else {
+            router.push("/login")
+        }
+    }
+
     return (
-        <Box position="absolute" zIndex="5" p="2" bg="white" top="56px"  onMouseEnter={() => togglePopUp(true)} onMouseLeave={() => togglePopUp(false)}>
+        <Box position="absolute" zIndex="5" p="2" bg="white" top="56px" onMouseEnter={() => togglePopUp(true)} onMouseLeave={() => togglePopUp(false)}>
             <Button
                 mt="4"
                 type='submit'
@@ -14,9 +32,11 @@ const SignInPopUp = ({togglePopUp}) => {
                 _hover={{
                     bg: "#EFBE42"
                 }}
-                onClick={() => router.push("/login")}
+                onClick={handleClick}
             >
-                Sign in
+                {
+                    currentUser !== null ? "logout" : "  Sign in"
+                }
             </Button>
         </Box>
     )

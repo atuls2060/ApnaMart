@@ -4,11 +4,13 @@ import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import { createAccount } from '@/redux/auth/auth.action'
+import { auth } from '@/utils/firebase'
 
 const RegisterPage = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPasseord] = useState("")
+    const currentUser = auth    .currentUser
 
     const dispatch = useDispatch()
     const { data: { isAuthenticated } } = useSelector((store) => store.authManager)
@@ -23,10 +25,10 @@ const RegisterPage = () => {
     }
 
     useEffect(() => {
-        if (isAuthenticated) {
+        if (currentUser !== null) {
             router.replace("/")
         }
-    }, [isAuthenticated])
+    }, [currentUser])
 
 
     return (
@@ -41,14 +43,14 @@ const RegisterPage = () => {
                     <FormControl mt="4">
                         <FormLabel>Mobile number</FormLabel>
                         <HStack spacing="4">
-                            <NumberInput maxW="80px" value="+91">
+                            {/* <NumberInput maxW="80px" value="+91">
                                 <NumberInputField />
                                 <NumberInputStepper>
                                     <NumberIncrementStepper />
                                     <NumberDecrementStepper />
                                 </NumberInputStepper>
-                            </NumberInput>
-                            <Input name={email} onChange={(e) => setEmail(e.target.value)} placeholder="Mobile number" />
+                            </NumberInput> */}
+                            <Input name={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
                         </HStack>
                     </FormControl>
                     <FormControl mt="4">
