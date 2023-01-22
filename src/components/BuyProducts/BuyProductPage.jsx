@@ -13,7 +13,7 @@ export default function BuyProductPage() {
   return (
     <div>
       <YourOrders/>
-      {/* <Grocery/> */}
+      <Grocery/>
       <PetSupplies/>
       <Supplies/>
       <Bestseller/>

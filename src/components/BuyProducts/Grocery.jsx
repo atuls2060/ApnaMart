@@ -96,11 +96,21 @@ import {
     //     ]
     //   };
   return (
-    <Box minWidth={95} border='2px solid black' margin='25px'>
+    <Box minWidth={95} 
+    // border='2px solid black' 
+    margin='25px'
+    marginTop="10px">
         <Text fontSize={['md', 'lg', 'xl', '25px']} fontWeight='bold' marginBottom={5}>Discover</Text>
         <Text fontSize={['md', 'lg', 'xl', '24px']} fontWeight='bold'>Frequently repurchased in Grocery</Text>
         {/* <Slider {...settings}> */}
-            {data.products.map((el,index) => (
+        <Box 
+        // border="2px solid black"
+        display="flex"
+        width="100%"
+        gap="2px"
+        textAlign='center'
+        >
+        {data.products.map((el,index) => (
               <Itemcard 
               key={index}
               item={el}
@@ -115,6 +125,8 @@ import {
               buttontext={el.buttontext}
               company={el.company}
               />
+        
+            
             // <Box 
             //   key={el.id} 
             //   style={{
@@ -166,6 +178,7 @@ import {
             //   </Button>
             // </Box>
             ))}
+            </Box>
         {/* </Slider> */}
     </Box>
   )
