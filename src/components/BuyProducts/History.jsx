@@ -16,7 +16,14 @@ import cart_history7 from "../../Images/cart_history7.png";
 
 export default function History() {
   return (
-    <Box textAlign='center' justifyContent='center' alignItems='center' padding={10}>
+    <Box 
+    textAlign='center' 
+    justifyContent='center' 
+    alignItems='center' 
+    padding={10}
+    // border='2px solid black'
+    paddingTop={0}
+    >
         <Flex gap={2} textAlign='center' justifyContent='left' alignItems='center'>
             <Text fontSize={['md', 'lg', 'xl', '24px']} fontWeight='bold'>Your browsing history </Text>
             <Text fontSize={['xs', 'sm', 'md', 'md']} color="#007185">View or edit your browsing history</Text>

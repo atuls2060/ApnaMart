@@ -13,7 +13,7 @@ const nextConfig = {
       hostname: "m.media-amazon.com",
       port: "",
       pathname: "**"
-    },
+    }
     ]
   }
 }
