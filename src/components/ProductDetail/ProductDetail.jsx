@@ -40,7 +40,7 @@ const ProductDetail = () => {
 
     const getProduct =async (id)=>{
         try {
-             const res = await axios.get(`http://localhost:8080/products/${id}`)
+             const res = await axios.get(`https://amazon-t415.onrender.com/products/${id}`)
              setData(res.data)
         } catch (error) {
             
