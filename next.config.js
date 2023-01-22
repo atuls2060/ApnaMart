@@ -2,13 +2,31 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    unoptimized:true,
-    remotePatterns:[{
-      protocol:"https",
-      hostname:"m.media-amazon.com",
-      port:"",
-      pathname:"**"
-    }]
+    remotePatterns: [{
+      protocol: "https",
+      hostname: "firebasestorage.googleapis.com",
+      port: "",
+      pathname: "**"
+    },
+    {
+      protocol: "https",
+      hostname: "m.media-amazon.com",
+      port: "",
+      pathname: "**"
+    },
+    {
+      protocol: "https",
+      hostname: "images-eu.ssl-images-amazon.com",
+      port: "",
+      pathname: "**"
+    },
+    {
+      protocol: "https",
+      hostname: "i.ibb.co",
+      port: "",
+      pathname: "**"
+    }
+    ]
   }
 }
 
