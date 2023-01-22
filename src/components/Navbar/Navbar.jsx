@@ -8,6 +8,7 @@ import { BsSearch } from "react-icons/bs"
 import { SlLocationPin } from "react-icons/sl"
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
+import {useCart} from 'react-use-cart';
 
 const Navbar = ({ showBottomNav = false }) => {
   const dispatch = useDispatch()
@@ -22,6 +23,7 @@ const Navbar = ({ showBottomNav = false }) => {
 }
 
 export const NavbarTop = () => {
+  const {totalItems} = useCart();
   return <HStack bg="#131921" p="2" color="white" justifyContent="space-between" gap="4">
     <HStack spacing="15px">
       <Link href="/">
@@ -81,7 +83,7 @@ export const NavbarTop = () => {
       <Link href="/cart">
         <HStack>
           <BiCart size="35px" />
-          <Text>Cart</Text>
+          <Text>Cart <span style={{fontSize:'20px', fontWeight:"bold"}}>{totalItems}</span></Text>
         </HStack>
       </Link>
     </HStack>

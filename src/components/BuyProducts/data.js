@@ -7,11 +7,12 @@ const data ={
         details: "Tata Sampann 100% Pure Premium Cashews Whole, 500g",
         brand: "Flavourful·500 g (Pack of 1)",
         rating: "2,544 ratings",
-        prize: 585.00,
+        price:585,
         prizestrike:"M.R.P: ₹1,340.00",
         discount:"(₹145.80/kg)",
         delivery: "Sat, January 21",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Tata Sampann"
       },
       {
         id: 2,
@@ -19,11 +20,12 @@ const data ={
         details: "Nuts About You RAISIN, 500 g | 100% Natural | Premium| Kishmish | Saugi",
         brand: "500 g (Pack of 1)",
         rating: "5,030 ratings",
-        prize: 435.00,
+        price:435,
         prizestrike:"M.R.P: ₹600.00",
         discount:"(₹28.80/100 g)",
         delivery: "Sat, January 21",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Florio"
       },
       {
         id: 3,
@@ -31,11 +33,12 @@ const data ={
         details: "DiSano Pure Honey 500 g (pack of 1)",
         brand: "Pure honeynatural & raw",
         rating: "3,742 ratings",
-        prize: 99.00,
+        price: 99,
         prizestrike:"M.R.P: ₹520.00",
         discount:"1offer from ₹99",
         delivery: "",
-        buttontext: "See buying options"
+        buttontext: "See buying options",
+        company:"by Disano"
       },
       {
         id: 4,
@@ -43,11 +46,12 @@ const data ={
         details: "Manna Millets 5Kg Combo Pack of 10 | Natural Grains | Unpolished Millets",
         brand: "White Rice",
         rating: "104 ratings",
-        prize: 699.00,
+        price: 699,
         prizestrike:"M.R.P: ₹1,300.00",
         discount:"(₹139.80/kg)",
         delivery: "Sat, January 21",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Manna"
       },
       {
         id: 5,
@@ -55,11 +59,12 @@ const data ={
         details: "Nuts About You ALMONDS California, 500 g | New Crop 2022 | Premium ",
         brand: "Whole natural·500 g",
         rating: "3,140 ratings",
-        prize: 349.00,
+        price: 349.00,
         prizestrike:"M.R.P: ₹750.00",
         discount:"(₹69.80/100 g)",
         delivery: "Sat, January 21",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Happilo"
       },
       {
         id: 6,
@@ -67,11 +72,12 @@ const data ={
         details: "Nikunj Assam Tea, 1kgNikunj Assam Tea, 1kg",
         brand: "Assam·1 Count (Pack of 1)",
         rating: "390 ratings",
-        prize: 165.00,
+        price: 165.00,
         prizestrike:"M.R.P: ₹220.00",
         discount:"(₹165.00/count)",
         delivery: "Sat, January 21",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Nikunj"
       },
       {
         id: 7,
@@ -79,11 +85,12 @@ const data ={
         details: "Happilo 100% Natural Californian Inshell Raw Walnut Kernels 500g Value Pack | Premium Akrot Giri | High in Protein & Iron | Low Calorie NutHappilo 100% Natural Californian Inshell Raw Walnu…",
         brand: "Walnut·500 g (Pack of 1)",
         rating: "ratings",
-        prize: 431.00,
+        price: 431.00,
         prizestrike:"M.R.P: ₹575.00",
         discount:"(₹86.20/100 g)",
         delivery: "Get it by Sat, January 21",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Happilo"
       },
     
       {
@@ -92,11 +99,12 @@ const data ={
         details: "Ferrero Rocher Moments, 12 Pieces (69.6 g)Ferrero Rocher Moments, 12 Pieces (69.6 g)",
         brand: "Praline·69.6 g (Pack of 1)",
         rating: "804 ratings",
-        prize: 154.00,
+        price: 154.00,
         prizestrike:"M.R.P: ₹199.00",
         discount:"(₹221.26/100 g)",
         delivery: "Get it by Sat, January 22",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Ferrero"
       },
       {
         id: 9,
@@ -104,11 +112,12 @@ const data ={
         details: "NAMHYA PCOS PCOD Green Tea (with Shatavari, Ashoka) with Natural Ayurvedic Herbs for Hormonal Balance and Better Period Cycle NAMHYA PCOS PCOD Green Tea (with Shatavari, Ashoka) with Natural Ayurvedic Herbs for Hormonal Balance and Better Period Cycle 3.53 oz (100 Grams)NAMHYA PCOS PCOD Green Tea (with Shatavari, Ashoka)",
         brand: "Green·100 g (Pack of 1)",
         rating: "231 ratings",
-        prize: 522.00,
+        price: 522.00,
         prizestrike:"M.R.P: ₹599.00",
         discount:"(₹522.00/100 g)₹0.00 shipping",
         delivery: "",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by NAMHYA"
       },
       {
         id: 10,
@@ -116,11 +125,12 @@ const data ={
         details: "Cadbury Celebrations Premium Selections Chocolates Gift Pack, Assorted, 268 gCadbury Celebrations Premium Selections Chocolates Gift Packet",
         brand: "Chocolate·1 Count (Pack of 1)",
         rating: "9,902 ratings",
-        prize: 243.00,
+        price: 243.00,
         prizestrike:"M.R.P: ₹375.00",
         discount:"(₹90.67/100 g)",
         delivery: "Get it by Sun, January 22",
-        buttontext: "See buying options"
+        buttontext: "See buying options",
+        company:"by Cadbury"
       },
       {
         id: 11,
@@ -128,11 +138,12 @@ const data ={
         details: "Hershey's Kisses Everyday Moments Gift Pack 103.2gHershey's Kisses Everyday Moments Gift Pack 103.2g",
         brand: "Almond",
         rating: "142 ratings",
-        prize: 131.00,
+        price: 131.00,
         prizestrike:"M.R.P: ₹175.00",
         discount:"(₹126.94/100 g)",
         delivery: "Get it by Fri, January 20",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Hershey"
       },
       {
         id: 12,
@@ -140,11 +151,12 @@ const data ={
         details: "Pintola All Natural Peanut Butter (Crunchy) | Unsweetened | 30g Protein | Non GMO | Gluten Free | Vegan | Cholesterol Free (350g)Pintola All Natural Peanut Butter (Crunchy) | Unsweeten…",
         brand: "Crunchy",
         rating: "57,573 ratings",
-        prize: 150.00,
+        price: 150.00,
         prizestrike:"M.R.P: ₹165.00",
         discount:"(₹42.86/100 g)",
         delivery: "Get it by Sat, January 21",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Pintola"
       },
       {
         id: 13,
@@ -152,11 +164,12 @@ const data ={
         details: "JEENI MILLET HEALTH MIX millet and multi grains | All Natural Multigrain | Organic and Natural Product for 12 Year & Above Ag JEENI MILLET HEALTH MIX millet and multi grains | All Natural Multigrain | Organic and Natural Product for 12 Year & Above Age Pack of 1JEENI MILLET HEALTH MIX millet and multi grains | All N",
         brand: "1 Count (Pack of 1)",
         rating: "31 ratings",
-        prize: 396.00,
+        price: 396.00,
         prizestrike:"M.R.P: ₹220.00",
         discount:"(₹396.00/count)",
         delivery: "₹0.00 shipping",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by EENI"
       },
       {
         id: 14,
@@ -164,11 +177,12 @@ const data ={
         details: "Happilo 100% Natural Californian Inshell Raw Walnut Kernels 500g Value Pack | Premium Akrot Giri | High in Protein & Iron | Low Calorie NutHappilo 100% Natural Californian Inshell Raw Walnu…",
         brand: "Walnut·500 g (Pack of 1)",
         rating: "ratings",
-        prize: 431.00,
+        price: 431.00,
         prizestrike:"M.R.P: ₹575.00",
         discount:"(₹86.20/100 g)",
         delivery: "Get it by Sat, January 21",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Nikunj"
       },
       {
         id: 15,
@@ -176,11 +190,12 @@ const data ={
         details: "Nikunj Assam Tea, 1kgNikunj Assam Tea, 1kg",
         brand: "Assam·1 Count (Pack of 1)",
         rating: "390 ratings",
-        prize: 165.00,
+        price: 165.00,
         prizestrike:"M.R.P: ₹220.00",
         discount:"(₹165.00/count)",
         delivery: "Get it by Sat, January 21",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Cadbury"
       },
       {
         id: 16,
@@ -188,11 +203,12 @@ const data ={
         details: "Happilo 100% Natural Californian Inshell Raw Walnut Kernels 500g Value Pack | Premium Akrot Giri | High in Protein & Iron | Low Calorie NutHappilo 100% Natural Californian Inshell Raw Walnu…",
         brand: "Walnut·500 g (Pack of 1)",
         rating: "ratings",
-        prize: 431.00,
+        price: 431.00,
         prizestrike:"M.R.P: ₹575.00",
         discount:"(₹86.20/100 g)",
         delivery: "Get it by Sat, January 21",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Nikunj"
       },
       {
         id: 17,
@@ -200,11 +216,12 @@ const data ={
         details: "Nikunj Assam Tea, 1kgNikunj Assam Tea, 1kg",
         brand: "Assam·1 Count (Pack of 1)",
         rating: "390 ratings",
-        prize: 165.00,
+        price: 165.00,
         prizestrike:"M.R.P: ₹220.00",
         discount:"(₹165.00/count)",
         delivery: "Get it by Sat, January 21",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Nikunj"
       },
       {
         id: 18,
@@ -212,11 +229,12 @@ const data ={
         details: "Happilo 100% Natural Californian Inshell Raw Walnut Kernels 500g Value Pack | Premium Akrot Giri | High in Protein & Iron | Low Calorie NutHappilo 100% Natural Californian Inshell Raw Walnu…",
         brand: "Walnut·500 g (Pack of 1)",
         rating: "ratings",
-        prize: 431.00,
+        price: 431.00,
         prizestrike:"M.R.P: ₹575.00",
         discount:"(₹86.20/100 g)",
         delivery: "Get it by Sat, January 21",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Happilo"
       },
       {
         id: 19,
@@ -224,11 +242,12 @@ const data ={
         details: "Nikunj Assam Tea, 1kgNikunj Assam Tea, 1kg",
         brand: "Assam·1 Count (Pack of 1)",
         rating: "390 ratings",
-        prize: 165.00,
+        price: 165.00,
         prizestrike:"M.R.P: ₹220.00",
         discount:"(₹165.00/count)",
         delivery: "Get it by Sat, January 21",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Nikunj"
       },
       {
         id: 20,
@@ -236,11 +255,12 @@ const data ={
         details: "Happilo 100% Natural Californian Inshell Raw Walnut Kernels 500g Value Pack | Premium Akrot Giri | High in Protein & Iron | Low Calorie NutHappilo 100% Natural Californian Inshell Raw Walnu…",
         brand: "Walnut·500 g (Pack of 1)",
         rating: "ratings",
-        prize: 431.00,
+        price: 431.00,
         prizestrike:"M.R.P: ₹575.00",
         discount:"(₹86.20/100 g)",
         delivery: "Get it by Sat, January 21",
-        buttontext: "Add to Cart"
+        buttontext: "Add to Cart",
+        company:"by Happilo"
       }
     ]
 }

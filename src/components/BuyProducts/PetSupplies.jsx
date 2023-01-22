@@ -33,14 +33,16 @@ function SampleNextArrow(props) {
       className={className}
       style={{ ...style, 
         display: "block", 
-        background: "RGB(203 210 217)", 
-        width:"30px", 
-        height:"30px",
-        padding:"5px", 
+        backgroundColor:"#E0E9F2",
+        width:"40px", 
+        height:"40px",
+        paddingTop:"10px", 
+        paddingLeft:"10px",
         justifyContent:"center", 
         alignItems:"center",
         borderRadius:"8px",
-        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"
+        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+        
       }}
       onClick={onClick}
     />
@@ -53,15 +55,19 @@ function SamplePrevArrow(props) {
     <div
       className={className}
       style={{ ...style, 
-        display: "block", 
-        background: "RGB(203 210 217)", 
-        width:"30px", 
-        height:"30px",
-        padding:"5px", 
+        // display: "block", 
+        backgroundColor:"#E0E9F2",
+        width:"40px", 
+        height:"40px",
+        paddingTop:"10px", 
+        paddingLeft:"8px",
         justifyContent:"center", 
         alignItems:"center",
         borderRadius:"8px",
-        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"
+        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+        marginLeft:"-10px",
+        z:'5'
+        // marginRight:'10px'
       }}
       onClick={onClick}
     />
@@ -107,10 +113,19 @@ export default class PetSupplies extends Component {
       ]
     };
   return (
-    <Box Width="70%" border='2px solid black' margin='25px'>
-        <Text fontSize={['md', 'lg', 'xl', '24px']} fontWeight='bold'>Frequently repurchased in Pet Supplies</Text>
+    <Box 
+    Width="70%" 
+    // border='2px solid black' 
+    margin='25px' >
+        <Text 
+        fontSize={['md', 'lg', 'xl', '24px']} 
+        fontWeight='bold'>Frequently repurchased in Pet Supplies</Text>
         
-        <Box>
+        <Box 
+        // border='2px solid red' 
+        width="97%" 
+        margin='auto' 
+        paddingLeft={2}>
           <Slider {...settings}>
             <div>
               <Image src={gro1} width="255px" height="500px" alt="img"/>
