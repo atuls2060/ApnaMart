@@ -8,6 +8,8 @@ export const loginUser = (cred) => async (dispatch) => {
     try {
         const data = await loginUserApi(cred)
         dispatch({ type: AUTH_SIGN_IN_SUCCESS, payload: data })
+
+
     } catch (error) {
         dispatch({ type: AUTH_SIGN_IN_ERROR })
     }

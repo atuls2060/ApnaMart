@@ -10,6 +10,7 @@ import Footer2 from '../Home/Footer/footer2'
 import Footer1 from '../Home/Footer/footer1'
 import Footer3 from '../Home/Footer/footer3'
 import Footer4 from '../Home/Footer/footer4'
+import { useCart } from 'react-use-cart'
 
 
 
@@ -17,19 +18,20 @@ import Footer4 from '../Home/Footer/footer4'
 
 const ProductDetail = () => {
 
-
+    let {addItem} = useCart();
     const [cart,setCart]=useState([])
     const [data,setData] = useState({})
 
     const addtocart=async()=>{
       setCart([...cart,data])
-      await fetch("http://localhost:8080/cart",{
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify(data)
-      })
+      addItem({...data})
+    //   await fetch("http://localhost:8080/cart",{
+    //     method:"POST",
+    //     headers:{
+    //         "Content-Type":"application/json"
+    //     },
+    //     body:JSON.stringify(data)
+    //   })
     }
     console.log(cart)
     
@@ -45,6 +47,9 @@ const ProductDetail = () => {
         } catch (error) {
             
         }
+    }
+    const goBack = ()=>{
+        router.back()
     }
 
     useEffect(()=>{
@@ -63,28 +68,15 @@ const ProductDetail = () => {
             </Box>
             <Box >
                 <Flex justifyContent={"space-between"}>
-                <Text style={{textDecoration:"underline",cursor:"pointer"}}><span>-</span>Back to result</Text>
+                <Text p={2} onClick={goBack} style={{textDecoration:"underline",cursor:"pointer"}}><span>-</span>Back to result</Text>
                 <Text style={{textDecoration:"underline",cursor:"pointer"}}>Sponsored</Text>
                 </Flex>
             </Box>
             <Box style={{height:"120vh",  width:"100%"}}>
                 <Flex>
-                <Box  style={{height:"120vh",  width:"40%"}}>
-                    <VStack style={{marginRight:"80%" ,marginTop:"20px"}}>
-                    {/* <Box style={{height:"12vh", width:"40%",border:"1px solid red"}} ></Box>
-                    <Box style={{height:"12vh", width:"40%",border:"1px solid red"}} ></Box>
-                    <Box style={{height:"12vh",  width:"40%",border:"1px solid red"}} ></Box>
-                    <Box style={{height:"12vh", width:"40%",border:"1px solid red"}} ></Box>
-                    <Box style={{height:"12vh", width:"40%",border:"1px solid red"}} ></Box>
-                    <Box style={{height:"12vh", width:"40%",border:"1px solid red"}} ></Box> */}
-                    </VStack>
-                    <HStack></HStack>
-                    <Image style={{height:"500px", marginLeft:"7%"}} src={data.url}></Image>
-                    
-                    <Box></Box>
-                    <Box></Box>
-                    <Box></Box>
-                </Box>
+                <HStack align="stretch" style={{height:"100vh",  width:"40%"}}  >
+                    <Image  mx="auto" style={{height:"500px",}} src={data.url}></Image>
+                </HStack>
                 <Box padding={"10px"} border={"3px solid #F7F8F8"} style={{height:"120vh", width:"45%",}}>
                     
                     <VStack>

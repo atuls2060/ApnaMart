@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from 'react'
-import { Card, CardBody, Container, FormControl, FormLabel, Heading, Input, Button, Text, Divider, FormHelperText, InputLeftAddon, InputGroup, HStack, NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper, InputLeftElement } from '@chakra-ui/react'
+import { Card, CardBody, Container, FormControl, FormLabel, Heading, Input, Button, Text, Divider, FormHelperText, Alert, InputGroup, HStack, NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper, InputLeftElement, InputRightElement, AlertIcon, AlertTitle, AlertDescription, useToast } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import { createAccount } from '@/redux/auth/auth.action'
 import { auth } from '@/utils/firebase'
+import { BsFillEyeFill, BsFillEyeSlashFill } from 'react-icons/bs'
 
 const RegisterPage = () => {
+    const [showPassword, setShowPassword] = useState(false)
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPasseord] = useState("")
-    const currentUser = auth    .currentUser
+    const currentUser = auth.currentUser
+    const toast = useToast();
 
     const dispatch = useDispatch()
-    const { data: { isAuthenticated } } = useSelector((store) => store.authManager)
+    const { errorMessage, data: { isAuthenticated } } = useSelector((store) => store.authManager)
     const router = useRouter()
+
+  
 
     const handleSubmit = () => {
         if (!name || !email || !password) {
@@ -25,14 +30,25 @@ const RegisterPage = () => {
     }
 
     useEffect(() => {
-        if (currentUser !== null) {
-            router.replace("/")
+        if (currentUser !== null && currentUser.displayName !== null) {
+           router.replace("/")   
         }
-    }, [currentUser])
+        if (errorMessage != "") {
+            toast({
+                title: 'Error',
+                position: 'top',
+                description: errorMessage.split(":")[1],
+                status: 'error',
+                duration: 5000,
+                isClosable: true,
+            })
+        }
+    }, [currentUser,errorMessage])
 
+    const disable = password === ""
 
     return (
-        <Container mt="20px">
+        <Container mt="40px" minH="100vh">
             <Card border="1px solid #e4e4e4">
                 <CardBody>
                     <Heading fontWeight="medium">Create Account</Heading>
@@ -55,7 +71,16 @@ const RegisterPage = () => {
                     </FormControl>
                     <FormControl mt="4">
                         <FormLabel>Password</FormLabel>
-                        <Input value={password} onChange={(e) => setPasseord(e.target.value)} placeholder="At least 6 characters" />
+                        <InputGroup>
+                            <Input value={password} type={showPassword ? "text" : "password"} onChange={(e) => setPasseord(e.target.value)} placeholder="At least 6 characters" />
+                            <InputRightElement onClick={() => setShowPassword(!showPassword)}>
+
+                                {
+                                    showPassword ? <BsFillEyeFill /> : <BsFillEyeSlashFill />
+                                }
+
+                            </InputRightElement>
+                        </InputGroup>
                         <FormHelperText fontSize="13px">Passwords must be at least 6 characters.</FormHelperText>
                     </FormControl>
                     <Text fontSize="14px" mt="4">By enrolling your mobile phone number, you consent to receive automated security notifications via text message from Amazon. Message and data rates may apply</Text>
@@ -63,11 +88,12 @@ const RegisterPage = () => {
                         mt="4"
                         type='submit'
                         w='100%'
-                        bg="#F3A847"
                         _hover={{
                             bg: "#EFBE42"
                         }}
                         onClick={handleSubmit}
+                        pointerEvents={disable ? "none" : "all"}
+                        bg={disable ? "lightgray" : "#ffe100"} 
                     >
                         Continue
                     </Button>

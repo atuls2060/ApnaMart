@@ -11,3 +11,31 @@
     border-bottom-color: white;
     border-right-color: white;
 }
+.nav_link_arrow_top{
+    position: absolute;
+    left: 45%;
+    top: -7px;
+    transform: rotate(45deg);
+    background-color: white;
+    width: 13px;
+    height: 13px;
+    border: 1px solid gray;
+    z-index: 2;
+    border-bottom-color: white;
+    border-right-color: white;
+}
+.search_input:focus ~ .search_result_container{
+    display: block;
+ 
+}
+.search_result_container{
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    top: 48px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}

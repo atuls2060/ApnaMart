@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Card, CardBody, Container, FormControl, FormLabel, Heading, Input, Button, Text, HStack, Divider, Checkbox } from '@chakra-ui/react'
+import { Card, CardBody, Container, FormControl, FormLabel, Heading, Input, Button, Text, HStack, Divider, Checkbox, InputGroup, InputRightElement, useToast } from '@chakra-ui/react'
 import Link from 'next/link'
 import { loginUser } from '@/redux/auth/auth.action'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import { auth } from '@/utils/firebase'
+import { BsFillEyeFill, BsFillEyeSlashFill } from 'react-icons/bs'
 
 const LoginPage = () => {
     const [email, setEmail] = useState("")
@@ -12,9 +13,10 @@ const LoginPage = () => {
     const [toggleView, setToggleView] = useState(true)
 
     const dispatch = useDispatch()
-    const { data: { isAuthenticated } } = useSelector((store) => store.authManager)
+    const { errorMessage, data: { isAuthenticated } } = useSelector((store) => store.authManager)
     const router = useRouter()
     const currentUser = auth.currentUser
+    const toast = useToast();
 
     const handleSubmit = () => {
         if (!email || !password) {
@@ -26,19 +28,33 @@ const LoginPage = () => {
 
     useEffect(() => {
         if (currentUser !== null) {
-            
+
             router.replace("/")
         }
-    }, [currentUser])
+        if (errorMessage != "") {
+            toast({
+                title: 'Error',
+                position: 'top',
+                description: errorMessage.split(":")[1],
+                status: 'error',
+                duration: 5000,
+                isClosable: true,
+            })
+        }
+    }, [currentUser,errorMessage])
+
+   
+
 
     return (
         toggleView ? <EmailView toggleView={setToggleView} email={email} onChange={(value) => setEmail(value)} />
-            : <PasswordView onSubmit={handleSubmit} toggleView={setToggleView} email={email} password={password} onChange={(value) => setPasseord(value)} />
+            : <PasswordView onSubmit={handleSubmit} toggleView={setToggleView} email={email} password={password} disable={password===""}  onChange={(value) => setPasseord(value)} />
     )
 }
 
 const EmailView = ({ toggleView, email, onChange }) => {
-    return <Container mt="20px">
+    const disable = email=== "" 
+    return <Container mt="40px"  minH="100vh">
         <Card border="1px solid #e4e4e4">
             <CardBody>
                 <Heading fontWeight="medium">Sign In</Heading>
@@ -51,11 +67,12 @@ const EmailView = ({ toggleView, email, onChange }) => {
                     mt="4"
                     type='submit'
                     w='100%'
-                    bg="#F3A847"
                     _hover={{
                         bg: "#EFBE42"
                     }}
                     onClick={() => toggleView(false)}
+                    pointerEvents={disable ? "none" : "all"}
+                    bg={disable ? "lightgray" : "#ffe100"} 
                 >
                     Continue
                 </Button>
@@ -81,7 +98,10 @@ const EmailView = ({ toggleView, email, onChange }) => {
             </Button></Link>
     </Container>
 }
-const PasswordView = ({ toggleView, email, password, onChange, onSubmit }) => {
+const PasswordView = ({ toggleView, email, password, onChange, onSubmit,disable }) => {
+   
+    const [showPassword, setShowPassword] = useState(false)
+
     return <Container mt="20px">
         <Card border="1px solid #e4e4e4">
             <CardBody>
@@ -96,17 +116,26 @@ const PasswordView = ({ toggleView, email, password, onChange, onSubmit }) => {
                             <Link href="/">Forgot Password</Link>
                         </HStack>
                     </FormLabel>
-                    <Input value={password} onChange={(e) => onChange(e.target.value)} />
+                    <InputGroup>
+                        <Input type={showPassword ? "text" : "password"} value={password} onChange={(e) => onChange(e.target.value)} />
+                        <InputRightElement onClick={() => setShowPassword(!showPassword)}>
+
+                            {
+                                showPassword ? <BsFillEyeFill /> : <BsFillEyeSlashFill />
+                            }
+
+                        </InputRightElement></InputGroup>
                 </FormControl>
                 <Button
                     mt="4"
                     type='submit'
                     w='100%'
-                    bg="#F3A847"
                     _hover={{
                         bg: "#EFBE42"
                     }}
                     onClick={onSubmit}
+                    pointerEvents={disable ? "none" : "all"}
+                    bg={disable ? "lightgray" : "#ffe100"} 
                 >
                     Continue
                 </Button>

@@ -9,8 +9,10 @@ export const authInitalState = {
   data: {
     uid: currentUser !== null ? currentUser.uid:"",
     isAuthenticated: currentUser !== null,
+    name:""
   },
   error: false,
+  errorMessage:""
 };
 
 export const authReducer = (state = authInitalState, { type, payload }) => {
@@ -20,14 +22,16 @@ export const authReducer = (state = authInitalState, { type, payload }) => {
       return {
         ...state,
         loading: true,
-        error: false
+        error: false,
+        errorMessage:""
       }
     }
     case AUTH_SIGN_IN_ERROR: {
       return {
         ...state,
         loading: false,
-        error: true
+        error: true,
+        errorMessage:payload.errorMessage
       }
     }
     case AUTH_SIGN_IN_SUCCESS: {
@@ -37,8 +41,10 @@ export const authReducer = (state = authInitalState, { type, payload }) => {
         error: false,
         data: {
           uid: payload.uid,
-          isAuthenticated: true
-        }
+          isAuthenticated: true,
+          name:payload.name
+        },
+        errorMessage:payload.errorMessage
       }
     }
     default: {

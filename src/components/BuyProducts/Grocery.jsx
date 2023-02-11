@@ -114,8 +114,8 @@ import {
               <Itemcard 
               key={index}
               item={el}
-              image={el.image}  
-              details={el.details} 
+              image={el.url}  
+              details={el.title} 
               brand={el.brand} 
               rating={el.rating} 
               price={el.price}

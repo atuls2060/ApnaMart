@@ -1,55 +1,119 @@
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Styles from "./Navbar.module.css"
 
-import { Box, Text, Heading, HStack, Input, InputGroup, InputLeftElement, InputRightElement } from '@chakra-ui/react'
+import { Box, Text, Heading, HStack, Input, InputGroup, InputLeftElement, InputRightElement, Show, useBreakpointValue, VStack } from '@chakra-ui/react'
 import { BiCart, BiMenu } from "react-icons/bi"
+import { FaRegUser } from "react-icons/fa"
 import { BsSearch } from "react-icons/bs"
 import { SlLocationPin } from "react-icons/sl"
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import SignInPopUp from './SignInPopUp'
-import {useCart} from 'react-use-cart';
+import { useCart } from 'react-use-cart';
 import { useEffect } from 'react'
 import { auth } from '@/utils/firebase'
-const Navbar = ({ showBottomNav = false }) => {
-  
-  const dispatch = useDispatch()
-  const { data: { token, isAuthenticated } } = useSelector((store) => store.authManager)
-  const currentUser = auth.currentUser
+import { onAuthStateChanged } from 'firebase/auth'
+import { searchProductsApi } from '@/redux/products/products.api'
+import SearchItem from './SearchItem'
+import { useRouter } from 'next/router'
 
-  useEffect(()=>{
-  
-  },[currentUser])
+const Navbar = ({ showBottomNav = false, hideNav = false }) => {
+  const dispatch = useDispatch()
+  const currentUser = auth.currentUser
+  const [name, setName] = useState("sign in")
+
+  const checkAuth = () => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setName(user.displayName)
+      } else {
+        setName("sign in")
+      }
+    });
+  }
+
+  useEffect(() => {
+    checkAuth()
+  }, [])
+
 
   return <>
-    <NavbarTop name={currentUser != null ? currentUser.displayName : "sign in"} />
-    <NavbarMiddle />
+    {!hideNav && <NavbarTop dName={name} />}
+    {!hideNav && <NavbarMiddle />
+    }
     {showBottomNav && <NavbarBottom />}
   </>
 
 }
 
-export const NavbarTop = ({name = "rahul"}) => {
-  const {totalItems} = useCart();
+export const NavbarTop = ({ dName }) => {
+  const { totalItems } = useCart();
   const [showSignIn, toggleSignInPopUp] = useState(false);
+  const [keyword, setKeyword] = useState("");
+  const [show, setShow] = useState(false);
+  const [result, setResult] = useState([])
+  const timerRef = useRef(null);
+  const router = useRouter()
 
-  return <HStack bg="#131921" zIndex="5" top="0" p="2" position="fixed" w="100%" color="white" justifyContent="space-between" gap="4" onMouseLeave={() => toggleSignInPopUp(false)}>
+  const { data: { name } } = useSelector((store) => store.authManager)
+  if (name !== "") {
+    dName = name
+  }
+
+  const changeHandler = (e) => {
+    const val = e.target.value
+    setKeyword(val)
+    search(val)
+  }
+
+  const search = (keyword) => {
+    if (timerRef.current !== null) {
+      clearTimeout(timerRef.current)
+      timerRef.current = null
+    }
+    timerRef.current = setTimeout(() => {
+      getSearchResults(keyword)
+    }, 700)
+  }
+  const getSearchResults = async (keyword) => {
+    const data = await searchProductsApi(keyword)
+    setResult(data);
+
+    console.log(data)
+    if (data.length > 0) {
+      setShow(true)
+    } else {
+      setShow(false)
+    }
+  }
+
+  const openSearchResult = (id) => {
+    setShow(false)
+    router.push(`/products/${id}`)
+  }
+
+
+  return <HStack whiteSpace={'nowrap'} bg="#131921" zIndex="5" top="0" p="2" position="fixed" w="100%" color="white" justifyContent="space-between" gap="4" onMouseLeave={() => toggleSignInPopUp(false)}>
     <HStack spacing="15px">
       <Link href="/">
-        <Image src="https://firebasestorage.googleapis.com/v0/b/look-your-best.appspot.com/o/Amazon-clone%2Flogos%2Flogo.png?alt=media&token=0d097020-fb24-4bc4-9367-e9fbb75192b4" alt='logo'
-          width="140"
-          height="50" />
+        <Box w={{ base: '70px', md: '100px', lg: '100px', xl: "140px" }}>
+          <Image src="https://firebasestorage.googleapis.com/v0/b/look-your-best.appspot.com/o/Amazon-clone%2Flogos%2Flogo.png?alt=media&token=0d097020-fb24-4bc4-9367-e9fbb75192b4" alt='logo'
+            width="140"
+            height="50" />
+        </Box>
       </Link>
       <HStack>
         <SlLocationPin />
-        <Box>
-          <Text fontSize="12px">Hello</Text>
-          <Heading size="xs">Select your address</Heading>
-        </Box>
+        <Show above='lg'>
+          <Box>
+            <Text fontSize="12px">Hello</Text>
+            <Heading size="xs">Select your address</Heading>
+          </Box>
+        </Show>
       </HStack>
     </HStack>
-    <Box flex="1">
+    <Box flex="1" >
 
       <InputGroup>
         <InputLeftElement>
@@ -60,7 +124,14 @@ export const NavbarTop = ({name = "rahul"}) => {
           </Box>
 
         </InputLeftElement>
-        <Input focusBorderColor="#daaa4d" bg="white" type="text" placeholder="" />
+        <Input paddingLeft="50px" className={Styles.search_input} focusBorderColor="#daaa4d" color="black" bg="white" type="text" onChange={changeHandler} placeholder="" />
+        <VStack display={show ? "block" : "none"} p={show ? 2 : 0} border={` ${show ? 1 : 0}px solid #e4e4e4`} align={"start"} gap={2} className={Styles.search_result_container}>
+          {
+            result?.map((item, index) => {
+              return <Link key={index} href={`/products/${item.id}`} onClick={() => openSearchResult(item.id)}> <SearchItem key={index} {...item} /></Link>
+            })
+          }
+        </VStack>
         <InputRightElement>
           <Box bg="#F3A847" p="3" borderRightRadius="4">
             <BsSearch color='black' />
@@ -70,27 +141,36 @@ export const NavbarTop = ({name = "rahul"}) => {
 
     </Box>
     <HStack spacing="20px">
-      <HStack>
-        <img src="https://firebasestorage.googleapis.com/v0/b/look-your-best.appspot.com/o/Amazon-clone%2Flogos%2FFlag-of-India.svg?alt=media&token=3a3a7538-fdd7-4989-b252-7a4fa043897e"
-          alt='india flag'
-          width="25"
-          height="10"
-        />
-        <Text>EN</Text>
-      </HStack>
-      <Box  onMouseEnter={() => toggleSignInPopUp(true)} >
-        <Text fontSize="12px">Hello, {name}</Text>
-        <Heading size="xs">Account & Lists</Heading>
+      <Show above='md'>
+        <HStack>
+          <img src="https://firebasestorage.googleapis.com/v0/b/look-your-best.appspot.com/o/Amazon-clone%2Flogos%2FFlag-of-India.svg?alt=media&token=3a3a7538-fdd7-4989-b252-7a4fa043897e"
+            alt='india flag'
+            width="25"
+            height="10"
+          />
+          <Text>EN</Text>
+        </HStack>
+      </Show>
+      <Box onMouseEnter={() => toggleSignInPopUp(true)} >
+        <Show above='md'>
+          <Text fontSize="12px">Hello, {dName}</Text>
+          <Heading size="xs">Account & Lists</Heading>
+        </Show>
+        <Show below='md'>
+          <FaRegUser size="23px" />
+        </Show>
         {
-          showSignIn && <SignInPopUp togglePopUp={(value)=>toggleSignInPopUp(value)} />
+          showSignIn && <SignInPopUp togglePopUp={(value) => toggleSignInPopUp(value)} />
         }
       </Box>
-      <Link href="/products/1">
-        <Box>
-          <Text fontSize="12px">Returns</Text>
-          <Heading size="xs">& Orders</Heading>
-        </Box>
-      </Link>
+      <Show above='lg'>
+        <Link href="/products/1">
+          <Box>
+            <Text fontSize="12px">Returns</Text>
+            <Heading size="xs">& Orders</Heading>
+          </Box>
+        </Link>
+      </Show>
       <Link href="/cart">
         <HStack>
           <BiCart size="35px" />
@@ -157,12 +237,12 @@ export const NavbarMiddle = () => {
     },
   ]
 
-  return <HStack bg="#232F3E" color="white" py="1" px="3" mt="56px" justifyContent="space-between">
-    <HStack spacing="3">
+  return <HStack bg="#232F3E" color="white" py="1" mt="56px" justifyContent="space-between">
+    <HStack spacing="3" overflow="hidden" whiteSpace={'nowrap'}>
       <BiMenu />
       {
         Links.map((link) => {
-          return <Link key={link.label} href={link.href}>{link.label}</Link>
+          return <Link key={link.label} href={link.href}><Text py={1}>{link.label}</Text></Link>
         })
       }
     </HStack>
