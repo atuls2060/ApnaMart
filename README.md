@@ -38,7 +38,7 @@ website link - https://apna-mart.vercel.app/
 <h3>HTML</h3>
 <h3>CSS</h3>
 <h3>javascript</h3>
-<h3>Next Js</h3>
+<h3>Next JS</h3>
 <h3>Redux</h3>
 <h3>chakra ui</h3>
 <h3>json server</h3>
