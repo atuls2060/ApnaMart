@@ -1,10 +1,58 @@
 import { Box, Button, HStack, Image, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
+import Slider from 'react-slick';
+import {NextArrow,PrevArrow} from "react-slick"
+
+const settings = {
+  infinite: false,
+  speed: 1000,
+  slidesToShow: 6,
+  slidesToScroll: 6,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 5,
+      },
+    },
+    {
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4,
+      },
+    },
+    {
+      breakpoint: 816,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      },
+    },
+    {
+      breakpoint: 570,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      },
+    },
+    {
+      breakpoint: 420,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
 
 const Carousel = () => {
   return (
     <>
-    
+    <Slider>
   <Box  h={"280px"} width={"100%"} >
     <HStack>
     <Box cursor={"pointer"}  h={"300px"} w={"12%"} border={"1px solid #949696"}>
@@ -77,6 +125,7 @@ const Carousel = () => {
     
 
   </Box>
+  </Slider>
 
 
     </>
