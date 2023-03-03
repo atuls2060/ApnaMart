@@ -57,7 +57,7 @@ const RegisterPage = () => {
                         <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="First and last name " />
                     </FormControl>
                     <FormControl mt="4">
-                        <FormLabel>Mobile number</FormLabel>
+                        <FormLabel>Email</FormLabel>
                         <HStack spacing="4">
                             {/* <NumberInput maxW="80px" value="+91">
                                 <NumberInputField />

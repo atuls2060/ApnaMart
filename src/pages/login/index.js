@@ -60,7 +60,7 @@ const EmailView = ({ toggleView, email, onChange }) => {
                 <Heading fontWeight="medium">Sign In</Heading>
 
                 <FormControl mt="4">
-                    <FormLabel>Email or mobile phone number</FormLabel>
+                    <FormLabel>Email </FormLabel>
                     <Input value={email} onChange={(e) => onChange(e.target.value)} />
                 </FormControl>
                 <Button

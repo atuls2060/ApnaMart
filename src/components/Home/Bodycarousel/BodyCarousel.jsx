@@ -56,12 +56,50 @@ const BodyCarousel = () => {
     infinite: true,
     speed: 500,
     dots:false,
-    slidesToShow: 7,
+    slidesToShow: 6,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 816,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 570,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 420,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   }
-  return (<>
+  return (
+     <>
     <div className={styles.container2}>
     <span className={styles.headingbody}>Blockbusters Deals</span>
     <span className={styles.headingbody1}>See all details</span>
