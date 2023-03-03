@@ -85,6 +85,7 @@
 //       <Button _hover={{backgroundColor:"#B12704"}} h={"10%"} color={"white"} bg={"#B12704"}>Deal of the Day</Button>
 
       
+
 //       <Text style={{fontSize:"20px" ,color:"#AE2E0E",fontWeight:"bold"}}>₹2,190 <span style={{color:"#2992BD",fontSize:"16px" ,fontWeight:"bold"}}>prime</span></Text>
 //     </Box>
 //     <Box  cursor={"pointer"} h={"300px"} w={"12%"} border={"1px solid #949696"}>
@@ -114,7 +115,6 @@
 //     <Box  cursor={"pointer"} h={"300px"} w={"12%"} border={"1px solid #949696"}>
 //     <Image src="https://m.media-amazon.com/images/I/41i+1P4qZrL._AC_SR160,200_.jpg"></Image>
 //       <Text style={{color:"#007AA0",fontSize:"12px",fontWeight:"medium"}}>Amazon Brand - Symbol Men Sweatshirt</Text>
-//       <Button _hover={{backgroundColor:"#B12704"}} h={"10%"} color={"white"} bg={"#B12704"}>Deal of the Day</Button>
 
       
 //       <Text style={{fontSize:"20px" ,color:"#AE2E0E",fontWeight:"bold"}}>₹1,490 <span style={{color:"#2992BD",fontSize:"16px" ,fontWeight:"bold"}}>prime</span></Text>
