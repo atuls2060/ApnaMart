@@ -8,7 +8,7 @@ const Categories = () => {
   return (
     <>
       <ImgSlider/>
-      <SecondImgSlider/>
+     <SecondImgSlider/>
       <Clothing/>
     </>
   )

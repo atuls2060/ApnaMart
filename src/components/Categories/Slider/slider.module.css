@@ -7,16 +7,30 @@
 }
 .card {
     width: 25%;
+    margin: auto;
     border-radius: 5px;
     flex-direction: row;
+    align-items: center;
     text-align: center;
     font-weight: bold;
     outline: none;
   }
+  @media screen and (max-width:500px) {
+    .card>h1{
+    width: 100%;
+    /* text-align: justify; */
+    /* margin-left:10%; */
+  }
+  .card{
+    width: 100%;
+    margin: auto;
+    justify-content: space-around;
+  }
+  }
   .container2{
     width: 100%; 
     margin: auto;
-    height: 300px;
+    /* height: 300px; */
     margin-top: 0px;
     /* margin-right: 2%; */
     border-left: 20px solid #eaeaea;
@@ -26,7 +40,14 @@
   .card2{
     width: 90%;
     margin: auto;
-    height: 250px;
+    /* height: 250px; */
+  }
+  @media screen and (max-width:860px){
+    .card2{
+    width: 100%;
+    margin: auto;
+    /* height: 250px; */
+  }
   }
   .innerContainer{
   
@@ -47,6 +68,16 @@
     grid-template-columns: repeat(6,1fr);
     column-gap: 20px;
     text-align: center;
+  }
+  @media screen and (max-width:900px){
+    .clothing{
+      grid-template-columns: repeat(4,1fr);
+    }
+  }
+  @media screen and (max-width:600px){
+    .clothing{
+      grid-template-columns: repeat(3,1fr);
+    }
   }
   .clothing>div{
     cursor: pointer;
@@ -72,6 +103,11 @@
   gap: 30px;
   text-align: center;
 }
+ @media screen and (max-width:550px){
+    .trendyFashion{
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
 .trendyImg{
   cursor: pointer;
   width: 80%;
@@ -87,6 +123,11 @@
   /* column-gap: 20px; */
   text-align: center;
 }
+@media screen and (max-width:550px){
+    .bandg{
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
 .bandg>div{
   cursor: pointer;
 }
@@ -124,3 +165,19 @@
 .brandsfashion>div{
   cursor: pointer;
 }
+
+@media screen and (max-width:800px){
+    .brandsfashion{
+      grid-template-columns: repeat(4,1fr);
+    }
+  }
+  @media screen and (max-width:600px){
+    .brandsfashion{
+      grid-template-columns: repeat(3,1fr);
+    }
+  }
+   @media screen and (max-width:410px){
+    .brandsfashion{
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
