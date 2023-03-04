@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { Box,Text,Button } from "@chakra-ui/react";
 import styles from "./bodycarousel.module.css"
+import axios from "axios";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -52,6 +53,7 @@ function PrevArrow(props) {
 
 
 const BodyCarousel = () => {
+
   const settings = {
     infinite: true,
     speed: 500,
@@ -98,6 +100,7 @@ const BodyCarousel = () => {
       },
     ],
   }
+
   return (
      <>
     <div className={styles.container2}>
@@ -106,18 +109,25 @@ const BodyCarousel = () => {
         <div className={styles.innerContainer}>
           
       <Slider {...settings}>
-        <div  className={styles.card2}>
-          <div className={styles.cardimage}>
-          <Image src="https://m.media-amazon.com/images/I/41ezRvTwcaL._AC_SY200_.jpg" />
+       
+        
+       
+        
+          <div  className={styles.card2}>
+            <div className={styles.cardimage}>
+            <Image src="https://m.media-amazon.com/images/I/41ezRvTwcaL._AC_SY200_.jpg"  />
+            </div>
+           
+            <div>
+              <button className={styles.buttoncarousel}>60% Off</button>
+              <button className={styles.buttoncarousel1}>Republic Day Sale</button>
+              <p className={styles.textcarousel}><sup>₹</sup>29,900<sup>00</sup></p>
+            </div>
           </div>
-          
-          <div>
-            <button className={styles.buttoncarousel}>60% Off</button>
-            <button className={styles.buttoncarousel1}>Republic Day Sale</button>
-            <p className={styles.textcarousel}><sup>₹</sup>29,900<sup>00</sup></p>
-          </div>
-        </div>
-
+         
+    
+        
+      
         <div  className={styles.card2}>
           <div className={styles.cardimage}>
           <Image src="https://m.media-amazon.com/images/I/51DLLa8HNWL._AC_SY200_.jpg" />
@@ -213,3 +223,6 @@ const BodyCarousel = () => {
 }
 
 export default BodyCarousel
+
+
+// https://m.media-amazon.com/images/I/41ezRvTwcaL._AC_SY200_.jpg
