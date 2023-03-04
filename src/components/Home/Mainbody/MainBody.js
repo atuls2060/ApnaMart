@@ -105,7 +105,7 @@ const MainBody = () => {
                           Sign in for your best experience
                            </Text>
                           <Button backgroundColor="#ff9900" w="100%" fontSize="13px" mt='10px' >
-                           <Link href="/signin">Sign in securely</Link> 
+                           <Link href="/login">Sign in securely</Link> 
                           </Button>
                 </Box>
             <Box  w='100%'  color='white' boxShadow='md' >
