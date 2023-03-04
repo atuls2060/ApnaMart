@@ -38,17 +38,6 @@ npm i @chakra-ui/react @chakra-ui/icons axios  react-icons react-icons react-mul
 
 ![Screenshot (369)](https://user-images.githubusercontent.com/112796001/218478151-3d5cc131-5526-42a8-b0b7-d260cc28b3cb.png)
 
-<h1  align='center'>SIGNUP </h1>
-
-![Screenshot (370)]()
-
-<h1  align='center'>LOGIN </h1>
-
-![Screenshot (371)]()
-
-<h1  align='center'>PRODUCTS PAGE </h1>
-
-![Screenshot (372)](https://user-images.githubusercontent.com/112796001/218477433-1d34670f-57bc-49fb-accf-de2135a80709.png)
 
 <h1  align='center'>Category Page </h1>
 
