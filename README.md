@@ -6,7 +6,7 @@ PROJECT DESCRIPTION:- Apna mart is a clone of Amazon website, here your can crea
 
 
 
-<p><img src="https://www.amazon.in/ref=nav_logo" /> </p>
+<p><img src=https://seeklogo.com/images/A/amazon-logo-3F973DA9CA-seeklogo.com.png /> </p>
 
 <h2>Tech Stacks</h2>
 <p><img src="https://cdn.iconscout.com/icon/free/png-256/html-2752158-2284975.png?w=256&f=avif" width='80' alt="HTML" /> 
@@ -24,10 +24,7 @@ PROJECT DESCRIPTION:- Apna mart is a clone of Amazon website, here your can crea
 </p>
 
 ##Dependencies
-  ### For Frontend
-```bash
-cd frontend
-```
+
 Chakra ui, Chakra Icons, Axios, React React Icons, React Icons, React Carousel, React Router Dom, React Slick, Slick Carousel
 ```bash
 npm i @chakra-ui/react @chakra-ui/icons axios  react-icons react-icons react-multi-carousel react-router-dom react-slick  slick-carousel
@@ -43,19 +40,15 @@ npm i @chakra-ui/react @chakra-ui/icons axios  react-icons react-icons react-mul
 
 <h1  align='center'>SIGNUP </h1>
 
-![Screenshot (370)](https://user-images.githubusercontent.com/109611448/221431737-09d26b4d-106e-41cd-a431-a8f2e2366101.png)
+![Screenshot (370)]()
 
 <h1  align='center'>LOGIN </h1>
 
-![Screenshot (371)](https://user-images.githubusercontent.com/109611448/221431740-11bf3ed3-9159-47b1-aa46-3c65710569fa.png)
+![Screenshot (371)]()
 
 <h1  align='center'>PRODUCTS PAGE </h1>
 
 ![Screenshot (372)](https://user-images.githubusercontent.com/112796001/218477433-1d34670f-57bc-49fb-accf-de2135a80709.png)
-
-<h1  align='center'>PRODUCT DETAILS PAGE </h1>
-
-![Screenshot (373)](https://user-images.githubusercontent.com/109611448/221431751-89a32165-bb8e-4f63-bb0b-18058888d2ca.png)
 
 <h1  align='center'>Category Page </h1>
 
