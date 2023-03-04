@@ -9,8 +9,8 @@ import {
   import {useCart} from 'react-use-cart';
 
 export default function Itemcard(props) {
+
     let {addItem} = useCart();
-    // console.log('addItem:',addItem(props))
   return (
     <div 
     style={{

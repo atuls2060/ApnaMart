@@ -29,7 +29,6 @@ const Cart = () => {
     emptyCart
   } = useCart();
 
-  console.log(items)
 
   if (isEmpty) return (
     <>
@@ -267,6 +266,7 @@ const Cart = () => {
                               paddingBottom={1}
                               marginRight={-2}
                               onClick={() => updateItemQuantity(el.id, el.quantity - 1)}
+                              isDisabled={el.quantity == 1}
                             >-</Button>
                             <Text>Qty : {el.quantity}</Text>
                             <Button
@@ -304,7 +304,7 @@ const Cart = () => {
               textAlign='right'
               fontSize='xl'
             >
-              Subtotal ({totalItems} items): <span style={{ fontSize: '14px', fontWeight: 'bold' }}>₹ </span><span style={{ fontWeight: 'bold' }}>{cartTotal}  </span>
+              Subtotal ({totalItems} items): <span style={{ fontSize: '14px', fontWeight: 'bold' }}>₹ </span><span style={{ fontWeight: 'bold' }}>{cartTotal.toFixed(2)}  </span>
             </Box>
           </Box>
           <Box
@@ -362,7 +362,7 @@ const Cart = () => {
                 marginLeft={5}
               >
                 Subtotal ({totalItems} items): ₹
-                <span style={{ fontWeight: "bold", fontSize: "20px" }}> {cartTotal} </span>
+                <span style={{ fontWeight: "bold", fontSize: "20px" }}> {cartTotal.toFixed(2)} </span>
               </Text>
               <Box marginLeft={5} borderColor='white'>
                 <input type="checkbox" /> This order contains a gift

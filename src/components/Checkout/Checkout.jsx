@@ -1,5 +1,5 @@
 import { AddIcon, MinusIcon } from '@chakra-ui/icons'
-import { Box, Accordion, Button, AccordionButton, AccordionItem, AccordionPanel, Heading, AccordionIcon, Text, Flex, Divider, VStack, HStack, Image, Input, Card, CardBody, Grid, useRadioGroup } from '@chakra-ui/react'
+import { Box, Accordion, Button, AccordionButton, AccordionItem, AccordionPanel, Heading, AccordionIcon, Text, Flex, Divider, VStack, HStack, Image, Input, Card, CardBody, Grid, useRadioGroup, useToast } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { useState } from 'react'
@@ -16,6 +16,7 @@ const Checkout = () => {
     const [street, setStreet] = useState("")
     const [click, setClick] = useState(false)
     const [loading, setLoading] = useState(false);
+    const toast = useToast();
 
     const router = useRouter();
 
@@ -31,6 +32,16 @@ const Checkout = () => {
     } = useCart();
 
     const placeOrder = () => {
+        if(isEmpty){
+            toast({
+                title:"Cart is Empty!",
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+                position:"top"
+            })
+            return
+        }
         setLoading(true)
         setTimeout(() => {
             setClick(!click)
