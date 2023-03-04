@@ -2,7 +2,7 @@ PROJECT NAME :- Apna Mart [Clone of Amazone]
 
 DEPLOYED LINK :- https://apna-mart.vercel.app/
 
-PROJECT DESCRIPTION:- Apna mart is a clone of Amazon website, here your can create account search products and place orders
+PROJECT DESCRIPTION:- Apna mart is a clone of Amazon website, here your can create account search products and place orders.Amazon.com, Inc. is an American multinational technology company which focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence.
 
 
 
