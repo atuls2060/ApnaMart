@@ -160,7 +160,7 @@ useEffect(() => {
           <Filter filters={filters} onCheckboxChange={handleCheckboxChange} />
         </div>
         <div className={styles.leftDiv2}>
-          <Sidebar filters={filters} onCheckboxChange={handleCheckboxChange} />
+          <Sidebar isOpen={isOpen} onClose={handleClose} filters={filters} onCheckboxChange={handleCheckboxChange} />
         </div>
         <div className={styles.rightDiv}>
           <div style={{ marginTop: "60px", marginLeft: "5%" }}>
