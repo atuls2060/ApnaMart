@@ -28,6 +28,9 @@ const Products = (props) => {
 
 
 const [filters, setFilters] = useState({
+  Jeans: false,
+  Tshirt: false,
+  Shirt: false,
   symbol: false,
   reebok: false,
   puma: false,
@@ -37,14 +40,11 @@ const [filters, setFilters] = useState({
   pod: false,
   sweet: false,
   jacket: false,
-  Jeans: false,
-  Tshirt: false,
-  Shirt: false,
   under3: false,
   under3to5: false,
   under5to1: false,
   under1to15: false,
-  over15:false
+  over15: false,
 });
 const handleCheckboxChange = (e) => {
   const { name, checked } = e.target;
