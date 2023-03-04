@@ -16,7 +16,7 @@ const Footer3 = () => {
                     <GridItem w='100%' mt={8}>
                             
                             <Select placeholder='English' color="#FFFF">
-                                    <option value='option1'>Hindi</option>
+                                    <option value='option1' >Hindi</option>
                                     <option value='option2'>Chinese</option>
                                     <option value='option3'>Spanish</option>
                              </Select>
