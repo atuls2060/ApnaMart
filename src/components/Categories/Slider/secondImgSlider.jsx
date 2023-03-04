@@ -16,9 +16,9 @@ function NextArrow(props) {
       style={{ ...style,
         display: "block",
         color: "grey",
-        height: "5.5rem",
-        width: "2.5rem",
-        right:"-120",
+         height: "2rem",
+         width: "2rem",
+        right:"-9.5%",
         boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"
 
         // marginRight:"-25px"
@@ -37,11 +37,11 @@ function PrevArrow(props) {
         ...style,
         display: "block",
         color: "grey",
-        height: "5.5rem",
-        width: "2.5rem",
-        zIndex:"5",
-        left:"-120",
-        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"
+         height: "2rem",
+         width: "2rem",
+        zIndex: "5",
+        left: "-9.5%",
+        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
       }}
       onClick={onClick}
     />
@@ -52,29 +52,37 @@ const SecondImgSlider = () => {
   const settings = {
     infinite: true,
     speed: 500,
-    dots:true,
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 850,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (<>
-          <Image style={{marginTop:"15px"}} src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Cashaback/banner1._CB615765745_.gif" width={1600} height={300} alt="hello"/>
+          <Image style={{marginBottom:"15px"}} src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Cashaback/banner1._CB615765745_.gif" width={1600} height={300} alt="hello"/>
     <div className={styles.container2}>
       
         <div className={styles.innerContainer}>
       <Slider {...settings}>
         <div  >
-        <Image className={styles.card2} src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Unrec/Header/unrec__pc_day1._SX3000_QL85_.jpg" width={1250} height={150} alt="Hello"/>
+        <img className={styles.card2}  src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/Unrec/Header/unrec__pc_day1._SX3000_QL85_.jpg"  alt="Hello"/>
         </div>
         <div  >
-        <Image className={styles.card2} src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/topbanner/PC/Steal-deals-Header-3000x770._SX3000_QL85_.jpg" width={1250} height={150} alt="Hello"/>
+        <img className={styles.card2} src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Eventpage/topbanner/PC/Steal-deals-Header-3000x770._SX3000_QL85_.jpg"  alt="Hello"/>
         </div>
         <div  >
-        <Image className={styles.card2} src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Event/stealdealspage/BxGy-Header-3000x770._SX3000_QL85_.jpg" width={1250} height={150} alt="Hello"/>
+        <img className={styles.card2} src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Event/stealdealspage/BxGy-Header-3000x770._SX3000_QL85_.jpg"  alt="Hello"/>
         </div>
         <div  >
-        <Image className={styles.card2} src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Event/stealdealspage/coupon-Header-3000x770._SX3000_QL85_.jpg" width={1250} height={150} alt="Hello"/>
+        <img className={styles.card2} src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JanART/Event/stealdealspage/coupon-Header-3000x770._SX3000_QL85_.jpg"  alt="Hello"/>
         </div>
       </Slider>
       </div>

@@ -1,71 +1,213 @@
 import React from 'react'
-import Image from 'next/image'
-import { useSelector } from 'react-redux'
 
-const Filter = ({onChange1,onChange2,onChange3,onChange4,onChange6,onChange7,onChange8,onclick1,onclick2,onclick3,onclick4,onclick6,onclick7,onclick8,onclick9,onclick10,onclick11}) => {
-  const {data} = useSelector((state)=>state.productsManager)
+const Filter = ({ filters, onCheckboxChange}) => {
   return (
-    <div style={{width:"80%",margin:"auto",marginTop:"62px"}}>
-        <h1 style={{fontWeight:"bold",fontSize:"18px"}}>Category</h1>
-        <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`}}>
-        <h1 onClick={onclick1}>Jeans</h1>
-        <h1 onClick={onclick2}>T-Shirt</h1>
-        <h1 onClick={onclick3}>Shirt</h1>
+    <div style={{ width: "80%", margin: "auto", marginTop: "62px" }}>
+      <h1 style={{ fontWeight: "bold", fontSize: "18px" }}>Category</h1>
+      <div
+        style={{
+          cursor: "pointer",
+          fontFamily: `"Times New Roman", Times, serif`,
+        }}
+      >
+        <div>
+          <input
+            type="checkbox"
+            name="Jeans"
+            checked={filters.Jeans}
+            onChange={onCheckboxChange}
+          />
+          Jeans
         </div>
-            <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Winter Wear</h1>
-            <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`}}>
-            <h1 onClick={onclick4}>Coats, Jackets & Vests</h1>
-            <h1 onClick={onclick6} >Sweatshirts & Hoodies</h1>
-            </div>
-        <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Avg. Customer Review</h1>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(6,20px)"}}><Image src="https://i.ibb.co/G9KvM8Q/star.png" width={20} height={20} alt="image"/><Image src="https://i.ibb.co/G9KvM8Q/star.png" width={20} height={20} alt="image"/><Image src="https://i.ibb.co/G9KvM8Q/star.png" width={20} height={20} alt="image"/><Image src="https://i.ibb.co/G9KvM8Q/star.png" width={20} height={20} alt="image"/><Image src="https://i.ibb.co/ZJFJbZG/rating.png" width={20} height={20} alt="image"/></div>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(6,20px)"}}><Image src="https://i.ibb.co/G9KvM8Q/star.png" width={20} height={20} alt="image"/><Image src="https://i.ibb.co/G9KvM8Q/star.png" width={20} height={20} alt="image"/><Image src="https://i.ibb.co/G9KvM8Q/star.png" width={20} height={20} alt="image"/><Image src="https://i.ibb.co/ZJFJbZG/rating.png" width={20} height={20} alt="image"/></div>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(6,20px)"}}><Image src="https://i.ibb.co/G9KvM8Q/star.png" width={20} height={20} alt="image"/><Image src="https://i.ibb.co/G9KvM8Q/star.png" width={20} height={20} alt="image"/><Image src="https://i.ibb.co/ZJFJbZG/rating.png" width={20} height={20} alt="image"/></div>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(6,20px)"}}><Image src="https://i.ibb.co/G9KvM8Q/star.png" width={20} height={20} alt="image"/><Image src="https://i.ibb.co/ZJFJbZG/rating.png" width={20} height={20} alt="image"/></div>
-        <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Brands</h1>
-        <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`}}>
-        <div><input onChange={e => onChange7(e.target.checked)} type="checkbox" name="" value="" id="" /> Amazon Brand - Symbol</div>
-        <div><input onChange={e => onChange6(e.target.checked)} type="checkbox" name="" value="" id="" /> Reebok</div>
-        <div><input onChange={e => onChange4(e.target.checked)} type="checkbox" name="" value="" id="" /> Puma</div>
-        <div><input onChange={e => onChange2(e.target.checked)} type="checkbox" name="" value="" id="" /> Raymond</div>
-        <div><input onChange={e => onChange3(e.target.checked)} type="checkbox" name="" value="" id="" /> Levi&apos;s</div>
-        <div><input onChange={e => onChange8(e.target.checked)} type="checkbox" name="" value="" id="" /> U.S. POLO ASSN.</div>
+        <div>
+          <input
+            type="checkbox"
+            name="Tshirt"
+            checked={filters.Tshirt}
+            onChange={onCheckboxChange}
+          />
+          T-shirt
         </div>
-        <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Price</h1>
-        <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`,fontWeight:"500"}}>
-        <h1 onClick={onclick7}>Under ₹300</h1>
-        <h1 onClick={onclick8}>₹300 - ₹500</h1>
-        <h1 onClick={onclick9}>₹500 - ₹1,000</h1>
-        <h1 onClick={onclick10}>₹1,000 - ₹1,500</h1>
-        <h1 onClick={onclick11}>Over ₹1,500</h1>
+        <div>
+          <input
+            type="checkbox"
+            name="Shirt"
+            checked={filters.Shirt}
+            onChange={onCheckboxChange}
+          />
+          Shirt
         </div>
-        <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Pay On Delivery</h1>
-        <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`}}>
-        <div><input type="checkbox" name="" value="" id="" onChange={e => onChange1(e.target.checked)} /> Eligible for Pay On Delivery</div>
+      </div>
+      <h1 style={{ fontWeight: "bold", fontSize: "18px", marginTop: "10px" }}>
+        Winter Wear
+      </h1>
+      <div
+        style={{
+          cursor: "pointer",
+          fontFamily: `"Times New Roman", Times, serif`,
+        }}
+      >
+        <div>
+          <input
+            type="checkbox"
+            name="jacket"
+            checked={filters.jacket}
+            onChange={onCheckboxChange}
+          />
+          Coats, Jackets & Vests
         </div>
-        <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Deals & Discounts</h1>
-        <h1 style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`,fontWeight:"500"}}>Today&apos; Deals</h1>
-        <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Amazon Fashion</h1>
-        <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`}}>
-        <div><input type="checkbox" name="" value="" id="" /> Top Brands</div>
-        <div><input type="checkbox" name="" value="" id="" /> Made for Amazon</div>
-        <div><input type="checkbox" name="" value="" id="" /> Premium Brands</div>
+        <div>
+          <input
+            type="checkbox"
+            name="sweet"
+            checked={filters.sweet}
+            onChange={onCheckboxChange}
+          />
+          Sweatshirts & Hoodies
         </div>
-        <h1 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px"}}>Seller</h1>
-        <div style={{cursor:"pointer",fontFamily:`"Times New Roman", Times, serif`}}>
-        <div><input type="checkbox" name="" value="" id="" /> Cocoblu Retail</div>
-        <div><input type="checkbox" name="" value="" id="" /> Rhine Retails Pvt. Ltd.</div>
-        <div><input type="checkbox" name="" value="" id="" /> SHOPPERS STOP COM</div>
-        <div><input type="checkbox" name="" value="" id="" /> Monte Carlo Fashions Ltd.</div>
-        <div><input type="checkbox" name="" value="" id="" /> Puma Sports India</div>
-        <div><input type="checkbox" name="" value="" id="" /> Cravatex Brands</div>
-        <div><input type="checkbox" name="" value="" id="" /> plusS</div>
-        <div><input type="checkbox" name="" value="" id="" /> Sera Brands</div>
-        </div>
+      </div>
 
-        
+      <h1 style={{ fontWeight: "bold", fontSize: "18px", marginTop: "10px" }}>
+        Brands
+      </h1>
+      <div
+        style={{
+          cursor: "pointer",
+          fontFamily: `"Times New Roman", Times, serif`,
+        }}
+      >
+        <div>
+          <input
+            type="checkbox"
+            name="symbol"
+            checked={filters.symbol}
+            onChange={onCheckboxChange}
+          />{" "}
+          Amazon Brand - Symbol
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="reebok"
+            checked={filters.reebok}
+            onChange={onCheckboxChange}
+          />{" "}
+          Reebok
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="puma"
+            checked={filters.puma}
+            onChange={onCheckboxChange}
+          />{" "}
+          Puma
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="raymond"
+            checked={filters.raymond}
+            onChange={onCheckboxChange}
+          />{" "}
+          Raymond
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="levis"
+            checked={filters.levis}
+            onChange={onCheckboxChange}
+          />{" "}
+          Levi&apos;s
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="uspolo"
+            checked={filters.uspolo}
+            onChange={onCheckboxChange}
+          />{" "}
+          U.S. POLO ASSN.
+        </div>
+      </div>
+      <h1 style={{ fontWeight: "bold", fontSize: "18px", marginTop: "10px" }}>
+        Price
+      </h1>
+      <div
+        style={{
+          cursor: "pointer",
+          fontFamily: `"Times New Roman", Times, serif`,
+          fontWeight: "500",
+        }}
+      >
+        <div>
+          <input
+            type="checkbox"
+            name="under3"
+            checked={filters.under3}
+            onChange={onCheckboxChange}
+          />
+          Under ₹300
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="under3to5"
+            checked={filters.under3to5}
+            onChange={onCheckboxChange}
+          />
+          ₹300 - ₹500
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="under5to1"
+            checked={filters.under5to1}
+            onChange={onCheckboxChange}
+          />
+          ₹500 - ₹1,000
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="under1to15"
+            checked={filters.under1to15}
+            onChange={onCheckboxChange}
+          />
+          ₹1,000 - ₹1,500
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="over15"
+            checked={filters.over15}
+            onChange={onCheckboxChange}
+          />
+          Over ₹1,500
+        </div>
+      </div>
+      <h1 style={{ fontWeight: "bold", fontSize: "18px", marginTop: "10px" }}>
+        Pay On Delivery
+      </h1>
+      <div
+        style={{
+          cursor: "pointer",
+          fontFamily: `"Times New Roman", Times, serif`,
+        }}
+      >
+        <div>
+          <input
+            type="checkbox"
+            name="pod"
+            checked={filters.pod}
+            onChange={onCheckboxChange}
+          />
+          Eligible for Pay On Delivery
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Filter
