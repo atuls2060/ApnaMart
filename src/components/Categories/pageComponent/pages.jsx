@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const Pages = ({url,title,desc,price,cutprice,save,cut,base,id}) =>{
-  console.log(price,cutprice,save,cut,base)
 
   return (
     <>
