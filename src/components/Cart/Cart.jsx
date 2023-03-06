@@ -233,67 +233,127 @@ const Cart = () => {
                           src={el.url}
                           width={120}
                           height={120}
-                          alt='img' />
+                          alt="img"
+                        />
                       </Box>
                       <Box
                         // border="2px solid blue"
                         flex="5"
                       >
-                        <Flex justifyContent='space-between'>
-                          <Text
-                            fontSize='19px'
-                            fontWeight="500"
-                          >{el.title}
+                        <Flex justifyContent="space-between">
+                          <Text fontSize="19px" fontWeight="500">
+                            {el.title}
                           </Text>
-                          <Text
-                            fontSize='sm'
-                            fontWeight='bold'>₹
-                            <span style={{ fontWeight: "bold", fontSize: "20px" }}>{el.price}</span>
+                          <Text fontSize="sm" fontWeight="bold">
+                            ₹
+                            <span
+                              style={{ fontWeight: "bold", fontSize: "20px" }}
+                            >
+                              {el.price}
+                            </span>
                           </Text>
                         </Flex>
                         <Box>
-                          <Text fontSize='sm' marginTop={1} marginBottom={1}>{el.company}</Text>
-                          <Text fontSize='xs' color='#007600'>In stock</Text>
-                          <Text fontSize='xs' marginBottom={1}>Eligible for FREE Shipping</Text>
-                          <Image src='https://m.media-amazon.com/images/G/31/marketing/fba/fba-badge_18px._CB485936079_.png' width={70} height={10} alt='img' />
-                          <input type='checkbox' /><span fontSize='10px'>This will be a giftThis is a gift <span>Learn more</span></span>
-                          <Flex gap={4} textAlign='center' marginTop={4} >
+                          <Text fontSize="sm" marginTop={1} marginBottom={1}>
+                            {el.company}
+                          </Text>
+                          <Text fontSize="xs" color="#007600">
+                            In stock
+                          </Text>
+                          <Text fontSize="xs" marginBottom={1}>
+                            Eligible for FREE Shipping
+                          </Text>
+                          <Image
+                            src="https://m.media-amazon.com/images/G/31/marketing/fba/fba-badge_18px._CB485936079_.png"
+                            width={70}
+                            height={10}
+                            alt="img"
+                          />
+                          <input type="checkbox" />
+                          <span fontSize="10px">
+                            This will be a giftThis is a gift{" "}
+                            <span>Learn more</span>
+                          </span>
+                          <Flex gap={4} textAlign="center" marginTop={4}>
                             <Button
-                              fontWeight='bold'
-                              fontSize='xl'
+                              fontWeight="bold"
+                              fontSize="xl"
                               width={2}
                               height={5}
-                              textAlign='center'
+                              textAlign="center"
                               paddingBottom={1}
                               marginRight={-2}
-                              onClick={() => updateItemQuantity(el.id, el.quantity - 1)}
-                            >-</Button>
+                              onClick={() =>
+                                updateItemQuantity(el.id, el.quantity - 1)
+                              }
+                              isDisabled={el.quantity == 1}
+                            >
+                              -
+                            </Button>
                             <Text>Qty : {el.quantity}</Text>
                             <Button
-                              fontWeight='bold'
-                              fontSize='xl'
+                              fontWeight="bold"
+                              fontSize="xl"
                               width={2}
                               height={5}
-                              textAlign='center'
+                              textAlign="center"
                               paddingBottom={1}
                               marginLeft={-2}
-                              onClick={() => updateItemQuantity(el.id, el.quantity + 1)}
-                            >+</Button>
+                              onClick={() =>
+                                updateItemQuantity(el.id, el.quantity + 1)
+                              }
+                            >
+                              +
+                            </Button>
                             <Text>|</Text>
-                            <Text cursor="pointer" bgColor='white' color='#007185' fontSize='12px' height={2} marginTop={1} onClick={() => removeItem(el.id)}>Delete</Text>
+                            <Text
+                              cursor="pointer"
+                              bgColor="white"
+                              color="#007185"
+                              fontSize="12px"
+                              height={2}
+                              marginTop={1}
+                              onClick={() => removeItem(el.id)}
+                            >
+                              Delete
+                            </Text>
                             <Text>|</Text>
-                            <Text bgColor='white' color='#007185' fontSize='12px' height={2} marginTop={1}>Save for later   </Text>
+                            <Text
+                              bgColor="white"
+                              color="#007185"
+                              fontSize="12px"
+                              height={2}
+                              marginTop={1}
+                            >
+                              Save for later{" "}
+                            </Text>
                             <Text>|</Text>
-                            <Text bgColor='white' color='#007185' fontSize='12px' height={2} marginTop={1}>Add to list  </Text>
+                            <Text
+                              bgColor="white"
+                              color="#007185"
+                              fontSize="12px"
+                              height={2}
+                              marginTop={1}
+                            >
+                              Add to list{" "}
+                            </Text>
                             <Text>|</Text>
-                            <Text bgColor='white' color='#007185' fontSize='12px' height={2} marginTop={1}>See more like this</Text>
+                            <Text
+                              bgColor="white"
+                              color="#007185"
+                              fontSize="12px"
+                              height={2}
+                              marginTop={1}
+                            >
+                              See more like this
+                            </Text>
                           </Flex>
                         </Box>
                       </Box>
                     </Box>
                     <hr />
                   </Box>
-                )
+                );
               })}
 
             </Box>
