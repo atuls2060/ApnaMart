@@ -1,6 +1,3 @@
-
- import { useRouter } from 'next/router'
-
 import React, { useEffect,useState } from 'react'
 import Pages from '../../components/Categories/pageComponent/pages'
 import Sidebar from "../../components/Categories/pageComponent/Sidebar"
@@ -11,6 +8,7 @@ import { getProducts } from '@/redux/products/products.action'
 import ImgSlider from '@/components/Categories/Slider/imgSlider'
 import styles from "../../components/Categories/pageComponent/page.module.css"
 import { BsFillFilterSquareFill } from 'react-icons/bs';
+import { Center, Heading } from '@chakra-ui/react';
 
 
 const Products = (props) => {
@@ -42,8 +40,8 @@ const high = ((slider[1] * 3995) / 100);
 
 
 
-const totalFilteredItems =data.length
-const itemsPerPage = totalFilteredItems <= 12 ? totalFilteredItems : 12;
+const totalItems =data.length
+const itemsPerPage = 12;
 const [currentPage, setCurrentPage] = useState(1);
 
 const indexOfLastItem = currentPage * itemsPerPage;
@@ -51,7 +49,7 @@ const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 const currentItems =data.slice(indexOfFirstItem, indexOfLastItem)
 
 
-const totalPages = Math.ceil(totalFilteredItems / itemsPerPage);
+const totalPages = Math.ceil(totalItems / itemsPerPage);
 
 const handlePageClick = (pageNumber) => {
   setCurrentPage(pageNumber);
@@ -61,6 +59,7 @@ const dispatch = useDispatch();
 
 useEffect(() => {
   setCurrentPage(1);
+  
 }, [category]);
 
 
@@ -103,17 +102,74 @@ useEffect(() => {
   if(error){
     return <h1 style={{width:"100%",fontSize:"40px",margin:"auto",textAlign:"center",marginTop:"100px"}}>Error...</h1>
   }
+
+  
   return (
     <div>
       <ImgSlider />
 
       <div className={styles.mainDiv}>
         <div className={styles.leftDiv}>
-          <Filter slider={slider} setSlider={setSlider} jeans={jeans} setjeans={setjeans} shirt={shirt} setshirt={setshirt} tshirt={tshirt} settshirt={settshirt} sweat={sweat} setsweat={setsweat} jacket={jacket} setjacket={setjacket}
-           Amazon={Amazon} setAmazon={setAmazon} Reebok={Reebok} setReebok={setReebok} Puma={Puma} setPuma={setPuma} levi={levi} setlevi={setlevi} polo={polo} setpolo={setpolo} Raymond={Raymond} setRaymond={setRaymond} low={low} high={high} />
+          <Filter
+            slider={slider}
+            setSlider={setSlider}
+            jeans={jeans}
+            setjeans={setjeans}
+            shirt={shirt}
+            setshirt={setshirt}
+            tshirt={tshirt}
+            settshirt={settshirt}
+            sweat={sweat}
+            setsweat={setsweat}
+            jacket={jacket}
+            setjacket={setjacket}
+            Amazon={Amazon}
+            setAmazon={setAmazon}
+            Reebok={Reebok}
+            setReebok={setReebok}
+            Puma={Puma}
+            setPuma={setPuma}
+            levi={levi}
+            setlevi={setlevi}
+            polo={polo}
+            setpolo={setpolo}
+            Raymond={Raymond}
+            setRaymond={setRaymond}
+            low={low}
+            high={high}
+          />
         </div>
         <div className={styles.leftDiv2}>
-          {/* <Sidebar isOpen={isOpen} onClose={handleClose} filters={filters} onCheckboxChange={handleCheckboxChange} /> */}
+          <Sidebar
+            isOpen={isOpen}
+            onClose={handleClose}
+            slider={slider}
+            setSlider={setSlider}
+            jeans={jeans}
+            setjeans={setjeans}
+            shirt={shirt}
+            setshirt={setshirt}
+            tshirt={tshirt}
+            settshirt={settshirt}
+            sweat={sweat}
+            setsweat={setsweat}
+            jacket={jacket}
+            setjacket={setjacket}
+            Amazon={Amazon}
+            setAmazon={setAmazon}
+            Reebok={Reebok}
+            setReebok={setReebok}
+            Puma={Puma}
+            setPuma={setPuma}
+            levi={levi}
+            setlevi={setlevi}
+            polo={polo}
+            setpolo={setpolo}
+            Raymond={Raymond}
+            setRaymond={setRaymond}
+            low={low}
+            high={high}
+          />
         </div>
         <div className={styles.rightDiv}>
           <div style={{ marginTop: "60px", marginLeft: "5%" }}>
@@ -139,11 +195,17 @@ useEffect(() => {
               <Pages key={el.id} {...el} />
             ))}
           </div>
-          <Pagination
-            totalPages={totalPages}
-            currentPage={currentPage}
-            onPageClick={handlePageClick}
-          />
+          {currentItems.length === 0 ? (
+            <Center>
+              <Heading mt="5">No data found</Heading>
+            </Center>
+          ) : (
+            <Pagination
+              totalPages={totalPages}
+              currentPage={currentPage}
+              onPageClick={handlePageClick}
+            />
+          )}
         </div>
       </div>
     </div>

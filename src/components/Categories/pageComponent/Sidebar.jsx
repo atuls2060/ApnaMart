@@ -1,269 +1,321 @@
-// import {
-//   Drawer,
-//   DrawerBody,
-//   DrawerFooter,
-//   DrawerHeader,
-//   DrawerOverlay,
-//   DrawerContent,
-//   DrawerCloseButton,
-//   useDisclosure
-// } from "@chakra-ui/react";
-// import React from "react";
-// import Image from "next/image";
-// export default function Sidebar({
-//  filters, onCheckboxChange,
-//   isOpen,
-//   onOpen,
-//   onClose,
-// }) {
-//   const btnRef = React.useRef();
 
-//   return (
-//     <>
-//       <Drawer
-//         size="xs"
-//         isOpen={isOpen}
-//         placement="left"
-//         onClose={onClose}
-//         finalFocusRef={btnRef}
-//       >
-//         <DrawerOverlay />
-//         <DrawerContent>
-//           <DrawerCloseButton />
+import {
+  Drawer,
+  DrawerBody,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  Box,
+  Flex,
+  RangeSlider,
+  RangeSliderFilledTrack,
+  RangeSliderThumb,
+  RangeSliderTrack,
+  Spacer,
+} from "@chakra-ui/react";
 
-//           <DrawerBody>
-//             <div style={{ width: "80%", margin: "auto", marginTop: "62px" }}>
-//               <h1 style={{ fontWeight: "bold", fontSize: "18px" }}>Category</h1>
-//               <div
-//                 style={{
-//                   cursor: "pointer",
-//                   fontFamily: `"Times New Roman", Times, serif`,
-//                 }}
-//               >
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="Jeans"
-//                     checked={filters.Jeans}
-//                     onChange={onCheckboxChange}
-//                   />
-//                   Jeans
-//                 </div>
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="Tshirt"
-//                     checked={filters.Tshirt}
-//                     onChange={onCheckboxChange}
-//                   />
-//                   T-shirt
-//                 </div>
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="Shirt"
-//                     checked={filters.Shirt}
-//                     onChange={onCheckboxChange}
-//                   />
-//                   Shirt
-//                 </div>
-//               </div>
-//               <h1
-//                 style={{
-//                   fontWeight: "bold",
-//                   fontSize: "18px",
-//                   marginTop: "10px",
-//                 }}
-//               >
-//                 Winter Wear
-//               </h1>
-//               <div
-//                 style={{
-//                   cursor: "pointer",
-//                   fontFamily: `"Times New Roman", Times, serif`,
-//                 }}
-//               >
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="jacket"
-//                     checked={filters.jacket}
-//                     onChange={onCheckboxChange}
-//                   />
-//                   Coats, Jackets & Vests
-//                 </div>
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="sweet"
-//                     checked={filters.sweet}
-//                     onChange={onCheckboxChange}
-//                   />
-//                   Sweatshirts & Hoodies
-//                 </div>
-//               </div>
+import React from "react";
+export default function Sidebar({
+  isOpen,
+  onOpen,
+  onClose,
+  jeans,
+  setjeans,
+  shirt,
+  setshirt,
+  tshirt,
+  settshirt,
+  jacket,
+  setjacket,
+  sweat,
+  setsweat,
+  Amazon,
+  setAmazon,
+  Reebok,
+  setReebok,
+  Puma,
+  setPuma,
+  levi,
+  setlevi,
+  polo,
+  setpolo,
+  Raymond,
+  setRaymond,
+  low,
+  high,
+  slider,
+  setSlider,
+}) {
+  const btnRef = React.useRef();
 
-//               <h1
-//                 style={{
-//                   fontWeight: "bold",
-//                   fontSize: "18px",
-//                   marginTop: "10px",
-//                 }}
-//               >
-//                 Brands
-//               </h1>
-//               <div
-//                 style={{
-//                   cursor: "pointer",
-//                   fontFamily: `"Times New Roman", Times, serif`,
-//                 }}
-//               >
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="symbol"
-//                     checked={filters.symbol}
-//                     onChange={onCheckboxChange}
-//                   />{" "}
-//                   Amazon Brand - Symbol
-//                 </div>
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="reebok"
-//                     checked={filters.reebok}
-//                     onChange={onCheckboxChange}
-//                   />{" "}
-//                   Reebok
-//                 </div>
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="puma"
-//                     checked={filters.puma}
-//                     onChange={onCheckboxChange}
-//                   />{" "}
-//                   Puma
-//                 </div>
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="raymond"
-//                     checked={filters.raymond}
-//                     onChange={onCheckboxChange}
-//                   />{" "}
-//                   Raymond
-//                 </div>
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="levis"
-//                     checked={filters.levis}
-//                     onChange={onCheckboxChange}
-//                   />{" "}
-//                   Levi&apos;s
-//                 </div>
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="uspolo"
-//                     checked={filters.uspolo}
-//                     onChange={onCheckboxChange}
-//                   />{" "}
-//                   U.S. POLO ASSN.
-//                 </div>
-//               </div>
-//               <h1
-//                 style={{
-//                   fontWeight: "bold",
-//                   fontSize: "18px",
-//                   marginTop: "10px",
-//                 }}
-//               >
-//                 Price
-//               </h1>
-//               <div
-//                 style={{
-//                   cursor: "pointer",
-//                   fontFamily: `"Times New Roman", Times, serif`,
-//                   fontWeight: "500",
-//                 }}
-//               >
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="under3"
-//                     checked={filters.under3}
-//                     onChange={onCheckboxChange}
-//                   />
-//                   Under ₹300
-//                 </div>
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="under3to5"
-//                     checked={filters.under3to5}
-//                     onChange={onCheckboxChange}
-//                   />
-//                   ₹300 - ₹500
-//                 </div>
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="under5to1"
-//                     checked={filters.under5to1}
-//                     onChange={onCheckboxChange}
-//                   />
-//                   ₹500 - ₹1,000
-//                 </div>
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="under1to15"
-//                     checked={filters.under1to15}
-//                     onChange={onCheckboxChange}
-//                   />
-//                   ₹1,000 - ₹1,500
-//                 </div>
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="over15"
-//                     checked={filters.over15}
-//                     onChange={onCheckboxChange}
-//                   />
-//                   Over ₹1,500
-//                 </div>
-//               </div>
-//               <h1
-//                 style={{
-//                   fontWeight: "bold",
-//                   fontSize: "18px",
-//                   marginTop: "10px",
-//                 }}
-//               >
-//                 Pay On Delivery
-//               </h1>
-//               <div
-//                 style={{
-//                   cursor: "pointer",
-//                   fontFamily: `"Times New Roman", Times, serif`,
-//                 }}
-//               >
-//                 <div>
-//                   <input
-//                     type="checkbox"
-//                     name="pod"
-//                     checked={filters.pod}
-//                     onChange={onCheckboxChange}
-//                   />
-//                   Eligible for Pay On Delivery
-//                 </div>
-//               </div>
-//             </div>
-//           </DrawerBody>
-//         </DrawerContent>
-//       </Drawer>
-//     </>
-//   );
-// }
+  return (
+    <>
+      <Drawer
+        size="xs"
+        isOpen={isOpen}
+        placement="left"
+        onClose={onClose}
+        finalFocusRef={btnRef}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+
+          <DrawerBody>
+            <div style={{ width: "80%", margin: "auto", marginTop: "62px" }}>
+              <h1 style={{ fontWeight: "bold", fontSize: "18px" }}>Category</h1>
+              <div
+                style={{
+                  cursor: "pointer",
+                  fontFamily: `"Times New Roman", Times, serif`,
+                }}
+              >
+                <div>
+                  <input
+                    type="checkbox"
+                    value="Jeans"
+                    onChange={(e) => {
+                      let { value, checked } = e.target;
+                      if (checked) {
+                        setjeans(value);
+                      } else {
+                        let new_str = jeans.replace(value, "");
+                        setjeans(new_str);
+                      }
+                    }}
+                  />
+                  Jeans & Trousers
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    value="T-Shirts"
+                    onChange={(e) => {
+                      let { value, checked } = e.target;
+                      if (checked) {
+                        settshirt(value);
+                      } else {
+                        let new_str = tshirt.replace(value, "");
+                        settshirt(new_str);
+                      }
+                    }}
+                  />
+                  T-shirts
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    value="Shirt"
+                    onChange={(e) => {
+                      let { value, checked } = e.target;
+                      if (checked) {
+                        setshirt(value);
+                      } else {
+                        let new_str = shirt.replace(value, "");
+                        setshirt(new_str);
+                      }
+                    }}
+                  />
+                  Shirt
+                </div>
+              </div>
+              <h1
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "18px",
+                  marginTop: "10px",
+                }}
+              >
+                Winter Wear
+              </h1>
+              <div
+                style={{
+                  cursor: "pointer",
+                  fontFamily: `"Times New Roman", Times, serif`,
+                }}
+              >
+                <div>
+                  <input
+                    type="checkbox"
+                    value="Jacket"
+                    onChange={(e) => {
+                      let { value, checked } = e.target;
+                      if (checked) {
+                        setjacket(value);
+                      } else {
+                        let new_str = jacket.replace(value, "");
+                        setjacket(new_str);
+                      }
+                    }}
+                  />
+                  Jackets & Sweater
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    value="Sweatshirt"
+                    onChange={(e) => {
+                      let { value, checked } = e.target;
+                      if (checked) {
+                        setsweat(value);
+                      } else {
+                        let new_str = sweat.replace(value, "");
+                        setsweat(new_str);
+                      }
+                    }}
+                  />
+                  SweatShirt & Hoodies
+                </div>
+              </div>
+
+              <h1
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "18px",
+                  marginTop: "10px",
+                }}
+              >
+                Brands
+              </h1>
+              <div
+                style={{
+                  cursor: "pointer",
+                  fontFamily: `"Times New Roman", Times, serif`,
+                }}
+              >
+                <div>
+                  <input
+                    type="checkbox"
+                    value="Amazon Brand - Jam & Honey"
+                    onChange={(e) => {
+                      let { value, checked } = e.target;
+                      if (checked) {
+                        setAmazon(value);
+                      } else {
+                        let new_str = Amazon.replace(value, "");
+                        setAmazon(new_str);
+                      }
+                    }}
+                  />{" "}
+                  Amazon Brand
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    value="Reebok"
+                    onChange={(e) => {
+                      let { value, checked } = e.target;
+                      if (checked) {
+                        setReebok(value);
+                      } else {
+                        let new_str = Reebok.replace(value, "");
+                        setReebok(new_str);
+                      }
+                    }}
+                  />{" "}
+                  Reebok
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    value="Puma"
+                    onChange={(e) => {
+                      let { value, checked } = e.target;
+                      if (checked) {
+                        setPuma(value);
+                      } else {
+                        let new_str = Puma.replace(value, "");
+                        setPuma(new_str);
+                      }
+                    }}
+                  />{" "}
+                  Puma
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    value="Raymond"
+                    onChange={(e) => {
+                      let { value, checked } = e.target;
+                      if (checked) {
+                        setRaymond(value);
+                      } else {
+                        let new_str = Raymond.replace(value, "");
+                        setRaymond(new_str);
+                      }
+                    }}
+                  />{" "}
+                  Raymond
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    value="Levi's"
+                    onChange={(e) => {
+                      let { value, checked } = e.target;
+                      if (checked) {
+                        setlevi(value);
+                      } else {
+                        let new_str = levi.replace(value, "");
+                        setlevi(new_str);
+                      }
+                    }}
+                  />{" "}
+                  Levi&apos;s
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    value="U.S. POLO ASSN."
+                    onChange={(e) => {
+                      let { value, checked } = e.target;
+                      if (checked) {
+                        setpolo(value);
+                      } else {
+                        let new_str = polo.replace(value, "");
+                        setpolo(new_str);
+                      }
+                    }}
+                  />{" "}
+                  U.S. POLO ASSN.
+                </div>
+              </div>
+
+              <Box as="span" flex="1" textAlign="left">
+                Price
+              </Box>
+              <Flex flexDirection="column">
+                <Box p="0px 15px">
+                  <RangeSlider
+                    colorScheme="grey"
+                    aria-label={["min", "max"]}
+                    defaultValue={[0, 100]}
+                    onChange={(val) => {
+                      setSlider(val);
+                    }}
+                  >
+                    <RangeSliderTrack>
+                      <RangeSliderFilledTrack />
+                    </RangeSliderTrack>
+                    <RangeSliderThumb bgColor="red.200" index={0} />
+                    <RangeSliderThumb bgColor="red.200" index={1} />
+                  </RangeSlider>
+                </Box>
+
+                <Flex direction="row">
+                  <Box fontSize={{ md: "13px", lg: "15px" }}>
+                    Rs. {low ? low.toFixed() : 0}
+                  </Box>
+                  <Spacer />
+                  <Box fontSize={{ md: "13px", lg: "15px" }}>
+                    Rs. {high ? high.toFixed() : 3995}
+                  </Box>
+                </Flex>
+              </Flex>
+            </div>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </>
+  );
+}

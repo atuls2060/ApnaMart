@@ -7,7 +7,7 @@ const Pages = ({url,title,desc,price,cutprice,save,cut,base,id}) =>{
   return (
     <>
       <Link
-        href={`http://localhost:3000/products/${id}`}
+        href={`/products/${id}`}
         style={{ margin: "auto", textAlign: "center" }}
       >
         <div style={{ width: "50%", margin: "auto" }}>

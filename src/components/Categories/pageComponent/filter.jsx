@@ -26,12 +26,12 @@ const Filter = ({ jeans,setjeans,shirt,setshirt,tshirt,settshirt,jacket,setjacke
               }
             }}
           />
-          Jeans
+          Jeans & Trousers
         </div>
         <div>
           <input
             type="checkbox"
-            value="Polos"
+            value="T-Shirts"
             onChange={(e) => {
               let { value, checked } = e.target;
               if (checked) {
@@ -42,7 +42,7 @@ const Filter = ({ jeans,setjeans,shirt,setshirt,tshirt,settshirt,jacket,setjacke
               }
             }}
           />
-          T-shirt
+          T-shirts
         </div>
         <div>
           <input
@@ -84,12 +84,12 @@ const Filter = ({ jeans,setjeans,shirt,setshirt,tshirt,settshirt,jacket,setjacke
               }
             }}
           />
-          Coats, Jackets & Vests
+          Jackets & Sweater
         </div>
         <div>
           <input
             type="checkbox"
-            value="Sweater"
+            value="Sweatshirt"
             onChange={(e) => {
               let { value, checked } = e.target;
               if (checked) {
@@ -116,7 +116,7 @@ const Filter = ({ jeans,setjeans,shirt,setshirt,tshirt,settshirt,jacket,setjacke
         <div>
           <input
             type="checkbox"
-            value="Amazon"
+            value="Amazon Brand - Jam & Honey"
             onChange={(e) => {
               let { value, checked } = e.target;
               if (checked) {
@@ -217,7 +217,7 @@ const Filter = ({ jeans,setjeans,shirt,setshirt,tshirt,settshirt,jacket,setjacke
       <Flex flexDirection="column">
         <Box p="0px 15px">
           <RangeSlider
-            colorScheme="red"
+            colorScheme="grey"
             aria-label={["min", "max"]}
             defaultValue={[0, 100]}
             onChange={(val) => {

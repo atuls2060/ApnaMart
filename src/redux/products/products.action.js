@@ -1,7 +1,6 @@
 import { GET_PRODUCTS_LOADING, GET_PRODUCTS_SUCCESS,GET_PRODUCTS_ERROR} from "./products.types";
 import axios from "axios";
 
-
 export const getProducts =
   (
     category,
@@ -17,64 +16,53 @@ export const getProducts =
     polo,
     Raymond,
     low,
-    high
+    high,
   ) =>
   async (dispatch) => {
+    
     dispatch({ type: GET_PRODUCTS_LOADING });
     try {
-      let url = `https://amazon-t415.onrender.com/products?category=${category}`;
-      const res = await axios.get(url);
-      let products = res.data;
-
-      // Filter by keywords
-      if (jeans) {
-        products = products.filter((product) => product.desc.includes(jeans));
-      }
-      if (shirt) {
-        products = products.filter((product) => product.desc.includes(shirt));
-      }
-      if (tshirt) {
-        products = products.filter((product) => product.desc.includes(tshirt));
-      }
-      if (jacket) {
-        products = products.filter((product) => product.desc.includes(jacket));
-      }
-      if (sweat) {
-        products = products.filter((product) => product.desc.includes(sweat));
-      }
-      if (Amazon) {
-        products = products.filter((product) => product.title.includes(Amazon));
-      }
-      if (Reebok) {
-        products = products.filter((product) => product.title.includes(Reebok));
-      }
-      if (Puma) {
-        products = products.filter((product) => product.title.includes(Puma));
-      }
-      if (levi) {
-        products = products.filter((product) => product.title.includes(levi));
-      }
-      if (polo) {
-        products = products.filter((product) => product.title.includes(polo));
-      }
-      if (Raymond) {
-        products = products.filter((product) =>
-          product.title.includes(Raymond)
-        );
+      let url = `https://happy-moccasins-goat.cyclic.app/products?category=${category}`;
+      if (low || high) {
+        url = `https://happy-moccasins-goat.cyclic.app/products?category=${category}&price_gte=${low}&price_lte=${high}`;
+      } else {
+        url = `https://happy-moccasins-goat.cyclic.app/products?category=${category}`;
       }
 
-      // Filter by price range
-      if (low && high) {
-        products = products.filter(
-          (product) => product.price >= low && product.price <= high
-        );
-      } else if (low) {
-        products = products.filter((product) => product.price >= low);
-      } else if (high) {
-        products = products.filter((product) => product.price <= high);
+
+      if((jeans||shirt||tshirt||jacket||sweat)&&(Amazon||Reebok||Puma||levi||polo||Raymond)){
+        if(low||high){
+         url = `https://happy-moccasins-goat.cyclic.app/products?category=${category}&desc2=${jeans}&desc2=${shirt}&desc2=${tshirt}&desc2=${jacket}&desc2=${sweat}&title=${Amazon}&title=${Reebok}&title=${Puma}&title=${levi}&title=${polo}&title=${Raymond}&price_gte=${low}&price_lte=${high}`;
+        }else{
+         url = `https://happy-moccasins-goat.cyclic.app/products?category=${category}&desc2=${jeans}&desc2=${shirt}&desc2=${tshirt}&desc2=${jacket}&desc2=${sweat}&title=${Amazon}&title=${Reebok}&title=${Puma}&title=${levi}&title=${polo}&title=${Raymond}`;
+        }
       }
 
-      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
+      if (
+        (jeans || shirt || tshirt || jacket || sweat) &&!
+        (Amazon || Reebok || Puma || levi || polo || Raymond)
+      ) {
+        if (low || high) {
+          url = `https://happy-moccasins-goat.cyclic.app/products?category=${category}&desc2=${jeans}&desc2=${shirt}&desc2=${tshirt}&desc2=${jacket}&desc2=${sweat}&price_gte=${low}&price_lte=${high}`;
+        } else {
+          url = `https://happy-moccasins-goat.cyclic.app/products?category=${category}&desc2=${jeans}&desc2=${shirt}&desc2=${tshirt}&desc2=${jacket}&desc2=${sweat}`;
+        }
+      }
+
+      if (
+        !(jeans || shirt || tshirt || jacket || sweat) &&
+        (Amazon || Reebok || Puma || levi || polo || Raymond)
+      ) {
+        if (low || high) {
+          url = `https://happy-moccasins-goat.cyclic.app/products?category=${category}&title=${Amazon}&title=${Reebok}&title=${Puma}&title=${levi}&title=${polo}&title=${Raymond}&price_gte=${low}&price_lte=${high}`;
+        } else {
+          url = `https://happy-moccasins-goat.cyclic.app/products?category=${category}&title=${Amazon}&title=${Reebok}&title=${Puma}&title=${levi}&title=${polo}&title=${Raymond}`;
+        }
+      }
+      let res = await fetch(url)
+      res = await res.json()
+      console.log(res)
+      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: res });
     } catch (e) {
       dispatch({ type: GET_PRODUCTS_ERROR });
     }
