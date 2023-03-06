@@ -42,6 +42,16 @@ const Checkout = () => {
     } = useCart();
 
     const placeOrder = () => {
+      if (isEmpty) {
+        toast({
+          title: "Cart is Empty!",
+          status: "error",
+          duration: 9000,
+          isClosable: true,
+          position: "top",
+        });
+        return;
+      }
         setLoading(true)
         setTimeout(() => {
             setClick(!click)
