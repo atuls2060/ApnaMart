@@ -152,7 +152,7 @@ const ProductDetail = () => {
                     
                     <VStack margin={"auto"}>
 
-                    <Text fontSize={{base:"9px",sm:"11px",md:"14px",lg:"18px"}} fontWeight={"bold"} fontSize={"1rem"} p={"20px"}>Description</Text>
+                    <Text fontSize={{base:"9px",sm:"11px",md:"14px",lg:"18px"}} fontWeight={"bold"} p={"20px"}>Description</Text>
                     </VStack>
                 <VStack>
                     <Text fontSize={{base:"9px",sm:"11px",md:"14px",lg:"18px"}} fontWeight={"bold"} color={"#007AA0"} ><ChevronDownIcon fontSize={"20px"}></ChevronDownIcon>See more</Text>
